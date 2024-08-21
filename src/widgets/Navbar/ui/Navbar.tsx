@@ -9,13 +9,13 @@ type NavbarProps = {
 };
 
 export const Navbar = ({ className, handlerDrawer }: NavbarProps) => {
-  return (
-    <div className={classNames(cls.navbar, {}, [className])}>
-      <FontAwesomeIcon
-        icon={faBars}
-        onClick={handlerDrawer}
-        className={classNames(cls.btnMenu)}
-      />
-    </div>
-  );
+    return (
+        <div className={classNames(cls.navbar, {}, [className])}>
+            <FontAwesomeIcon
+                icon={faBars}
+                onClick={handlerDrawer}
+                className={classNames(cls.btnMenu)}
+            />
+        </div>
+    );
 };

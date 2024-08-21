@@ -13,41 +13,41 @@ type SidebarProps = {
 };
 
 export const Sidebar = ({ className, collapsed }: SidebarProps) => {
-  const { t } = useTranslation("navigation");
+    const { t } = useTranslation("navigation");
 
-  const links = [
+    const links = [
     // TODO: получать из config
-    { path: "/", title: "Главная", icon: faHome },
-    {
-      path: "/about",
-      title: "O сайте",
-      icon: faClipboardList,
-    },
-  ];
+        { path: "/", title: "Главная", icon: faHome },
+        {
+            path: "/about",
+            title: "O сайте",
+            icon: faClipboardList,
+        },
+    ];
 
-  return (
-    <div
-      className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
-        className,
-      ])}
-    >
-      <div className={classNames(cls.links)}>
-        {links.map((l) => (
-          <AppLink key={l.path} to={l.path} className={cls.link}>
-            {" "}
-            <FontAwesomeIcon
-              icon={l.icon}
-              className={classNames("", {}, ["fa-fw"])}
-            />
-            <span className={cls.linkTitle}>{t(l.title)}</span>
-          </AppLink>
-        ))}
-      </div>
+    return (
+        <div
+            className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
+                className,
+            ])}
+        >
+            <div className={classNames(cls.links)}>
+                {links.map((l) => (
+                    <AppLink key={l.path} to={l.path} className={cls.link}>
+                        {" "}
+                        <FontAwesomeIcon
+                            icon={l.icon}
+                            className={classNames("", {}, ["fa-fw"])}
+                        />
+                        <span className={cls.linkTitle}>{t(l.title)}</span>
+                    </AppLink>
+                ))}
+            </div>
 
-      <div className={cls.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher short={collapsed} />
-      </div>
-    </div>
-  );
+            <div className={cls.switchers}>
+                <ThemeSwitcher />
+                <LangSwitcher short={collapsed} />
+            </div>
+        </div>
+    );
 };

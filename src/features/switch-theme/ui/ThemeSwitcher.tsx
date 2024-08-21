@@ -10,19 +10,19 @@ type ThemeSwitcherProps = {
 };
 
 export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
-  const { theme, toggleTheme } = useTheme();
+    const { theme, toggleTheme } = useTheme();
 
-  return (
-    <Button
-      onClick={toggleTheme}
-      variant={ButtonVariants.clear}
-      className={classNames(cls.themeSwitcher, {}, [className])}
-    >
-      {theme === Themes.light ? (
-        <FontAwesomeIcon icon={faMoon} />
-      ) : (
-        <FontAwesomeIcon icon={faSun} />
-      )}
-    </Button>
-  );
+    return (
+        <Button
+            onClick={toggleTheme}
+            variant={ButtonVariants.clear}
+            className={classNames(cls.themeSwitcher, {}, [className])}
+        >
+            {theme === Themes.light ? (
+                <FontAwesomeIcon icon={faMoon} />
+            ) : (
+                <FontAwesomeIcon icon={faSun} />
+            )}
+        </Button>
+    );
 };

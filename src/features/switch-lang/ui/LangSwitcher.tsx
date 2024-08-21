@@ -9,18 +9,18 @@ type LangSwitcherProps = {
 };
 
 export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
-  const { t, i18n } = useTranslation();
-  const handleClick = () => {
-    i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
-  };
+    const { t, i18n } = useTranslation();
+    const handleClick = () => {
+        i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
+    };
 
-  return (
-    <Button
-      onClick={handleClick}
-      variant={ButtonVariants.clear}
-      className={classNames(cls.langSwitcher, {}, [className])}
-    >
-      {short ? t("Короткий язык") : t("Язык")}
-    </Button>
-  );
+    return (
+        <Button
+            onClick={handleClick}
+            variant={ButtonVariants.clear}
+            className={classNames(cls.langSwitcher, {}, [className])}
+        >
+            {short ? t("Короткий язык") : t("Язык")}
+        </Button>
+    );
 };

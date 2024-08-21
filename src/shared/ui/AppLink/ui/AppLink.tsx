@@ -4,7 +4,7 @@ import { Link, LinkProps } from "react-router-dom";
 import { FC, PropsWithChildren } from "react";
 
 const AppLinkVariants = {
-  bordered: "bordered",
+    bordered: "bordered",
 } as const;
 
 type AppLinkVariant = (typeof AppLinkVariants)[keyof typeof AppLinkVariants];
@@ -16,16 +16,16 @@ type AppLinkProps = PropsWithChildren &
   };
 
 const AppLink: FC<AppLinkProps> = (props: AppLinkProps) => {
-  const { children, className, variant, ...otherProps } = props;
+    const { children, className, variant, ...otherProps } = props;
 
-  return (
-    <Link
-      className={classNames(cls.applink, {}, [className, cls[variant]])}
-      {...otherProps}
-    >
-      {children}
-    </Link>
-  );
+    return (
+        <Link
+            className={classNames(cls.applink, {}, [className, cls[variant]])}
+            {...otherProps}
+        >
+            {children}
+        </Link>
+    );
 };
 
 export { AppLink, AppLinkVariants };

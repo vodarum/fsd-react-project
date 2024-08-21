@@ -3,8 +3,8 @@ import cls from "./Button.module.scss";
 import { ButtonHTMLAttributes, FC, PropsWithChildren } from "react";
 
 const ButtonVariants = {
-  clear: "clear",
-  outlined: "outlined",
+    clear: "clear",
+    outlined: "outlined",
 } as const;
 
 type ButtonVariant = (typeof ButtonVariants)[keyof typeof ButtonVariants];
@@ -16,16 +16,16 @@ type ButtonProps = PropsWithChildren &
   };
 
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  const { children, className, variant, ...otherProps } = props;
+    const { children, className, variant, ...otherProps } = props;
 
-  return (
-    <button
-      className={classNames(cls.button, {}, [className, cls[variant]])}
-      {...otherProps}
-    >
-      {children}
-    </button>
-  );
+    return (
+        <button
+            className={classNames(cls.button, {}, [className, cls[variant]])}
+            {...otherProps}
+        >
+            {children}
+        </button>
+    );
 };
 
 export { Button, ButtonVariants };
