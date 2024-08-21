@@ -1,28 +1,27 @@
 import "./styles/index.scss";
-import { Link } from "react-router-dom";
-import { Themes, useTheme } from "shared/lib/theme";
+import { useTheme } from "shared/lib/theme";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
+import { Navbar } from "widgets/Navbar";
+import { Sidebar } from "widgets/Sidebar";
+import { Suspense, useState } from "react";
 
 export const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
+  const [collapsed, setCollapsed] = useState<boolean>(true);
+  const toggleDrawer = () => {
+    setCollapsed((prev) => !prev);
+  };
 
   return (
-    <div className={classNames("app", { foo: true, bar: false }, [theme])}>
-      <button
-        type="button"
-        onClick={toggleTheme}
-        style={{ textTransform: "uppercase" }}
-      >
-        {theme === Themes.light ? Themes.dark : Themes.light}
-      </button>
-
-      <div style={{ display: "flex", gap: "4px" }}>
-        <Link to={"/"}>Main</Link>
-        <Link to={"/about"}>About</Link>
-      </div>
-
-      <AppRouter />
+    <div className={classNames("app layout", {}, [theme])}>
+      <Suspense fallback="">
+        <Navbar className="layout-navbar" handlerDrawer={toggleDrawer} />
+        <Sidebar className="layout-sidebar" collapsed={collapsed} />
+        <main className="layout-main">
+          <AppRouter />
+        </main>
+      </Suspense>
     </div>
   );
 };
