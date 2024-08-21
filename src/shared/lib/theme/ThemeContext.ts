@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 const THEME_LS_KEY = '026f69982e81a913f6f63af0ccb4e1b1';
 
@@ -7,7 +7,7 @@ const Themes = {
     light: 'light',
 } as const;
 
-type Theme = typeof Themes[keyof typeof Themes];
+type Theme = (typeof Themes)[keyof typeof Themes];
 
 type ThemeContextProps = Partial<{
     theme: Theme;
@@ -16,9 +16,4 @@ type ThemeContextProps = Partial<{
 
 const ThemeContext = createContext<ThemeContextProps>({});
 
-export {
-    Theme,
-    THEME_LS_KEY,
-    ThemeContext,
-    Themes,
-};
+export { Theme, THEME_LS_KEY, ThemeContext, Themes };

@@ -1,8 +1,8 @@
-import { About } from "pages/about";
-import { Main } from "pages/main";
-import { Suspense } from "react";
-import { RouteObject, useRoutes } from "react-router-dom";
-import { appRoutes, appRoutePaths } from "../config";
+import { About } from 'pages/about';
+import { Main } from 'pages/main';
+import { Suspense } from 'react';
+import { RouteObject, useRoutes } from 'react-router-dom';
+import { appRoutes, appRoutePaths } from '../config';
 
 const routeConfig: RouteObject[] = [
     {

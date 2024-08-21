@@ -14,7 +14,9 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
                         namedExport: false,
                         mode: 'local',
                         auto: /\.module\.\w+$/i,
-                        localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:5]',
+                        localIdentName: isDev
+                            ? '[path][name]__[local]'
+                            : '[hash:base64:5]',
                     },
                 },
             },
@@ -28,8 +30,5 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
         exclude: '/node_modules/',
     };
 
-    return [
-        tsLoader,
-        cssLoader,
-    ];
+    return [tsLoader, cssLoader];
 };

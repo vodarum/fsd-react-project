@@ -21,4 +21,4 @@ export default function (env: BuildEnv): Configuration {
         isDev,
         port,
     });
-};
+}

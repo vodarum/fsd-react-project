@@ -1,7 +1,7 @@
-@import "./reset";
-@import "./variables/global";
-@import "./themes/light";
-@import "./themes/dark";
+@import './reset';
+@import './variables/global';
+@import './themes/light';
+@import './themes/dark';
 
 .app {
     min-height: 100vh;
@@ -17,9 +17,9 @@ a {
 .layout {
     display: grid;
     grid-template:
-        "navbar navbar navbar" auto
-        "sidebar main main" 1fr
-        "sidebar main main" 1fr / auto 1fr 1fr;
+        'navbar navbar navbar' auto
+        'sidebar main main' 1fr
+        'sidebar main main' 1fr / auto 1fr 1fr;
 
     &-navbar {
         grid-area: navbar;

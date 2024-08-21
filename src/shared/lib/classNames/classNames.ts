@@ -1,7 +1,7 @@
 export const classNames = (
     base: string,
     conditional: Record<string, boolean> = {},
-    additional: string[] = []
+    additional: string[] = [],
 ): string => {
     return [
         base,
