@@ -1,0 +1,49 @@
+.sidebar {
+    padding: var(--padding);
+    padding-right: 200px;
+    transition: padding 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &Title {
+        transition: all 0.2s ease-out;
+    }
+}
+
+.switchers {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.collapsed {
+    padding-right: var(--padding);
+
+    .link {
+        gap: 0;
+
+        &Title {
+            width: 0;
+            opacity: 0;
+        }
+    }
+
+    .switchers {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+}
