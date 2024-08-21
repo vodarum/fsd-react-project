@@ -1,0 +1,16 @@
+.navbar {
+    padding: var(--padding);
+    border-bottom: 1px solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnMenu {
+    cursor: pointer;
+}
+
+.btnLogin {
+    padding: 6px 12px;
+    border-radius: 2px;
+}
