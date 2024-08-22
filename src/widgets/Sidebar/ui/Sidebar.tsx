@@ -30,6 +30,7 @@ export const Sidebar = ({ className, collapsed }: SidebarProps) => {
             className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
                 className,
             ])}
+            data-testid='sidebar'
         >
             <div className={classNames(cls.links)}>
                 {links.map((l) => (
