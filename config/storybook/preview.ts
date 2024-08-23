@@ -1,6 +1,7 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator';
+import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator';
 
 const preview: Preview = {
     parameters: {
@@ -10,6 +11,7 @@ const preview: Preview = {
                 date: /Date$/i,
             },
         },
+        layout: 'fullscreen',
     },
     decorators: [
         withThemeByClassName({
@@ -20,6 +22,7 @@ const preview: Preview = {
             defaultTheme: 'light',
         }),
         StyleDecorator,
+        RouterDecorator,
     ],
 };
 
