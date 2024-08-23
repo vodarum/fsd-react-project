@@ -1,0 +1,45 @@
+name: CI
+
+on:
+    push:
+        branches: [main, development]
+    pull_request:
+        branches: [main, development]
+
+jobs:
+    build:
+        strategy:
+            matrix:
+                os: [ubuntu-latest]
+                node: [17.x]
+        runs-on: ${{ matrix.os }}
+
+        steps:
+            - name: Setup Node.js environment
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node }}
+
+            - name: Checkout branch
+              uses: actions/checkout@v2
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Run ESLint Typescript
+              run: npm run lint:ts
+
+            - name: Run ESLint SCSS
+              run: npm run lint:scss
+
+            - name: Run unit tests
+              run: npm run test:unit
+
+            - name: Build Storybook
+              run: npm run storybook:build
+
+            - name: Run UI tests
+              run: npm run test:ui:ci
+
+            - name: Build production project
+              run: npm run build:prod
