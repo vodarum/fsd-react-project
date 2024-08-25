@@ -8,11 +8,12 @@ type ModalProps = PropsWithChildren & {
     className?: string;
     isOpen?: boolean;
     onClose?: () => void;
+    targetContainer?: Element;
 };
 
 export const Modal = (props: ModalProps) => {
     const { theme } = useTheme();
-    const { className, children, isOpen, onClose } = props;
+    const { children, className, isOpen, onClose, targetContainer } = props;
     const contentElementDataId = `modal-${Date.now()}`;
 
     const handleClick = useCallback(
@@ -41,7 +42,7 @@ export const Modal = (props: ModalProps) => {
     }, [isOpen, handleKeyDown]);
 
     return (
-        <Portal>
+        <Portal container={targetContainer}>
             <div
                 className={classNames(cls.modal, { [cls.opened]: isOpen }, [
                     className,
