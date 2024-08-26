@@ -14,12 +14,12 @@ type ModalProps = PropsWithChildren & {
 export const Modal = (props: ModalProps) => {
     const { theme } = useTheme();
     const { children, className, isOpen, onClose, targetContainer } = props;
-    const contentElementDataId = `modal-${Date.now()}`;
+    const dataRole = `modalWrapper`;
 
     const handleClick = useCallback(
         (e: MouseEvent) => {
-            if ((e.target as HTMLElement)?.dataset.id !== contentElementDataId)
-                onClose?.();
+            const parent = (e.target as HTMLElement)?.parentElement;
+            if (parent.dataset.role === dataRole) onClose?.();
         },
         [onClose],
     );
@@ -49,11 +49,10 @@ export const Modal = (props: ModalProps) => {
                     theme,
                 ])}
                 onClick={handleClick}
+                data-role={dataRole}
             >
                 <div className={cls.overlay}>
-                    <div className={cls.content} data-id={contentElementDataId}>
-                        {children}
-                    </div>
+                    <div className={cls.content}>{children}</div>
                 </div>
             </div>
         </Portal>
