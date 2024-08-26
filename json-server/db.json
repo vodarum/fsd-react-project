@@ -1,0 +1,8 @@
+{
+    "users": [
+      { "id": 1, "username": "spiderMonkey", "password": "qwerty123" }
+    ],
+    "profile": {
+      "name": "typicode"
+    }
+}
