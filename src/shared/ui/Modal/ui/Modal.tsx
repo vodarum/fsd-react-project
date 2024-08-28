@@ -1,4 +1,10 @@
-import { MouseEvent, PropsWithChildren, useCallback, useEffect } from 'react';
+import {
+    MouseEvent,
+    PropsWithChildren,
+    useCallback,
+    useEffect,
+    useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'shared/lib/theme';
 import { Portal } from 'shared/ui/Portal';
@@ -7,13 +13,22 @@ import cls from './Modal.module.scss';
 type ModalProps = PropsWithChildren & {
     className?: string;
     isOpen?: boolean;
+    keepOnClose?: boolean;
     onClose?: () => void;
     targetContainer?: Element;
 };
 
 export const Modal = (props: ModalProps) => {
     const { theme } = useTheme();
-    const { children, className, isOpen, onClose, targetContainer } = props;
+    const {
+        children,
+        className,
+        isOpen,
+        keepOnClose,
+        onClose,
+        targetContainer,
+    } = props;
+    const [isMounted, setIsMounted] = useState(false);
     const dataRole = `modalWrapper`;
 
     const handleClick = useCallback(
@@ -34,12 +49,15 @@ export const Modal = (props: ModalProps) => {
     useEffect(() => {
         if (isOpen) {
             addEventListener('keydown', handleKeyDown);
+            setIsMounted(true);
         }
 
         return () => {
             removeEventListener('keydown', handleKeyDown);
         };
     }, [isOpen, handleKeyDown]);
+
+    if (!isMounted || (!keepOnClose && !isOpen)) return null;
 
     return (
         <Portal container={targetContainer}>
