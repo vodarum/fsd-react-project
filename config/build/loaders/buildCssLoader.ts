@@ -16,6 +16,7 @@ export const buildCssLoader = (isDev: BuildOptions['isDev']): RuleSetRule => ({
                     localIdentName: isDev
                         ? '[path][name]__[local]'
                         : '[hash:base64:5]',
+                    exportLocalsConvention: 'as-is',
                 },
             },
         },
