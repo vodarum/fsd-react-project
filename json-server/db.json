@@ -1,6 +1,6 @@
 {
     "users": [
-      { "id": 1, "username": "spiderMonkey", "password": "qwerty123" }
+      { "id": 1, "username": "spiderMonkey", "password": "qwerty123", "token": "f39d6798-19c5-40f5-8200-a31e910ca6a9" }
     ],
     "profile": {
       "name": "typicode"
