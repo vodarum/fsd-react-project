@@ -16,7 +16,11 @@ export default [
             i18next: pluginI18next,
         },
         rules: {
-            indent: ['error', 4],
+            indent: [
+                'error',
+                4,
+                { SwitchCase: 1 },
+            ],
             'i18next/no-literal-string': [
                 'error',
                 { markupOnly: true, ignoreAttribute: ['data-testid'] },
