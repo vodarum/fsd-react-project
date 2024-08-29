@@ -1,0 +1,11 @@
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 400px;
+}
+
+.loginBtn {
+    align-self: flex-end;
+    margin-top: 14px;
+}
