@@ -2,6 +2,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './LoginForm.module.scss';
 import { Input, InputVariants } from 'shared/ui/Input';
 import { Button, ButtonVariants } from 'shared/ui/Button';
+import { Text } from 'shared/ui/Text';
+import { Title, TitleLevels } from 'shared/ui/Title';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
@@ -45,7 +47,10 @@ const LoginForm = memo(({ className, isOpen }: indexProps) => {
 
     return (
         <form className={classNames(cls.loginForm, {}, [className])}>
-            {error}
+            <Title level={TitleLevels.H4}>{t('Форма авторизации')}</Title>
+
+            {error && <Text className='text-error'>{error}</Text>}
+
             <Input
                 label={t('Имя пользователя')}
                 variant={InputVariants.outlined}
