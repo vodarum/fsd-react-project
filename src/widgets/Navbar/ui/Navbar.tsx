@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonVariants } from 'shared/ui/Button';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { LoginModal } from 'features/login';
 import { LogoutButton } from 'features/logout';
 import { selectIsAuth } from 'entities/user/model/selectors';
@@ -28,6 +28,10 @@ export const Navbar = ({ className, handlerDrawer }: NavbarProps) => {
     const handleLoginModalClose = useCallback(() => {
         setIsLoginModal(false);
     }, []);
+
+    useEffect(() => {
+        if (isAuth && isLoginModal) handleLoginModalClose();
+    }, [isAuth, isLoginModal]);
 
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
