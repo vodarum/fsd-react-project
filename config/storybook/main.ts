@@ -45,9 +45,11 @@ const config: StorybookConfig = {
 
         config.module?.rules?.push(buildCssLoader(true));
 
-        config.plugins?.push(new DefinePlugin({
-            __IS_DEV__: true,
-        }));
+        config.plugins?.push(
+            new DefinePlugin({
+                __IS_DEV__: true,
+            }),
+        );
 
         return config;
     },
