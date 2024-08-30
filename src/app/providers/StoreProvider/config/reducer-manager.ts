@@ -6,7 +6,9 @@ import {
 } from '@reduxjs/toolkit';
 import { ReducerManager, State, StateKey } from './types';
 
-export const createReducerManager = (initialReducers: ReducersMapObject<State>): ReducerManager => {
+export const createReducerManager = (
+    initialReducers: ReducersMapObject<State>,
+): ReducerManager => {
     const reducers = { ...initialReducers };
     let combinedReducer = combineReducers(reducers);
     let keysToRemove: StateKey[] = [];
@@ -38,4 +40,4 @@ export const createReducerManager = (initialReducers: ReducersMapObject<State>):
             combinedReducer = combineReducers(reducers);
         },
     };
-}
+};
