@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
-import { configureAppStore } from '../store';
-import { State } from '../types';
+import { configureAppStore } from '../config/store';
+import { State } from '../config/types';
 
 type StoreProviderProps = PropsWithChildren & {
     initialState?: State;

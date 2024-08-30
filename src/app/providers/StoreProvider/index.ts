@@ -1,2 +1,3 @@
 export { StoreProvider } from './ui';
-export * from './types';
+export { State, StateKey, StoreWithReducerManager } from './config/types';
+export { useAppDispatch } from './config/store';

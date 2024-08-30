@@ -10,74 +10,79 @@ import { memo, useCallback } from 'react';
 import {
     loginActions,
     loginByUsername,
+    loginReducer,
     loginSelectors,
 } from 'features/login/model';
-import { useAppDispatch } from 'app/providers/StoreProvider/store';
+import { useAppDispatch } from 'app/providers/StoreProvider';
+import { withAsyncStore } from 'shared/lib/with-async-store';
 
 type indexProps = {
     className?: string;
     isOpen?: boolean;
 };
 
-const LoginForm = memo(({ className, isOpen }: indexProps) => {
-    const { t } = useTranslation();
-    const dispatch = useAppDispatch();
-    const username = useSelector(loginSelectors.selectUsername);
-    const password = useSelector(loginSelectors.selectPassword);
-    const error = useSelector(loginSelectors.selectError);
-    const loading = useSelector(loginSelectors.selectLoading);
+const LoginForm = withAsyncStore(
+    memo(({ className, isOpen }: indexProps) => {
+        const { t } = useTranslation();
+        const dispatch = useAppDispatch();
+        const username = useSelector(loginSelectors.selectUsername);
+        const password = useSelector(loginSelectors.selectPassword);
+        const error = useSelector(loginSelectors.selectError);
+        const loading = useSelector(loginSelectors.selectLoading);
 
-    const handleUsernameInputChange = useCallback(
-        (value: string) => {
-            dispatch(loginActions.setUsername(value));
-        },
-        [dispatch],
-    );
+        const handleUsernameInputChange = useCallback(
+            (value: string) => {
+                dispatch(loginActions.setUsername(value));
+            },
+            [dispatch],
+        );
 
-    const handlePasswordInputChange = useCallback(
-        (value: string) => {
-            dispatch(loginActions.setPassword(value));
-        },
-        [dispatch],
-    );
+        const handlePasswordInputChange = useCallback(
+            (value: string) => {
+                dispatch(loginActions.setPassword(value));
+            },
+            [dispatch],
+        );
 
-    const handleSubmitBtnClick = useCallback(() => {
-        dispatch(loginByUsername({ username, password }));
-    }, [dispatch, username, password]);
+        const handleSubmitBtnClick = useCallback(() => {
+            dispatch(loginByUsername({ username, password }));
+        }, [dispatch, username, password]);
 
-    return (
-        <form className={classNames(cls.loginForm, {}, [className])}>
-            <Title level={TitleLevels.H4}>{t('Форма авторизации')}</Title>
+        return (
+            <form className={classNames(cls.loginForm, {}, [className])}>
+                <Title level={TitleLevels.H4}>{t('Форма авторизации')}</Title>
 
-            {error && <Text className='text-error'>{error}</Text>}
+                {error && <Text className='text-error'>{error}</Text>}
 
-            <Input
-                label={t('Имя пользователя')}
-                variant={InputVariants.outlined}
-                autoFocus={isOpen}
-                value={username}
-                onChange={handleUsernameInputChange}
-            />
-            <Input
-                label={t('Пароль')}
-                type='password'
-                variant={InputVariants.outlined}
-                value={password}
-                onChange={handlePasswordInputChange}
-            />
+                <Input
+                    label={t('Имя пользователя')}
+                    variant={InputVariants.outlined}
+                    autoFocus={isOpen}
+                    value={username}
+                    onChange={handleUsernameInputChange}
+                />
+                <Input
+                    label={t('Пароль')}
+                    type='password'
+                    variant={InputVariants.outlined}
+                    value={password}
+                    onChange={handlePasswordInputChange}
+                />
 
-            <Button
-                className={cls.loginBtn}
-                variant={ButtonVariants.outlined}
-                disabled={loading}
-                onClick={handleSubmitBtnClick}
-            >
-                {t('Авторизоваться')}
-            </Button>
-        </form>
-    );
-});
-
-LoginForm.displayName = 'LoginForm';
+                <Button
+                    className={cls.loginBtn}
+                    variant={ButtonVariants.outlined}
+                    disabled={loading}
+                    onClick={handleSubmitBtnClick}
+                >
+                    {t('Авторизоваться')}
+                </Button>
+            </form>
+        );
+    }),
+    {
+        login: loginReducer,
+    },
+);
 
 export default LoginForm;
