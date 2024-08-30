@@ -2,6 +2,7 @@ import type { StorybookConfig } from '@storybook/react-webpack5';
 import path from 'path';
 import { BuildPaths } from '../build/types';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
+import { DefinePlugin } from 'webpack';
 
 const config: StorybookConfig = {
     stories: [
@@ -43,6 +44,10 @@ const config: StorybookConfig = {
         }
 
         config.module?.rules?.push(buildCssLoader(true));
+
+        config.plugins?.push(new DefinePlugin({
+            __IS_DEV__: true,
+        }));
 
         return config;
     },

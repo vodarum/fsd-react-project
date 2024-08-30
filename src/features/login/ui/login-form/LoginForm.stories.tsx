@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import LoginForm from './LoginForm';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 
 const meta = {
     title: 'features/LoginForm',
@@ -8,6 +9,7 @@ const meta = {
         layout: 'centered',
     },
     tags: ['autodocs'],
+    decorators: [StoreDecorator({})],
 } satisfies Meta<typeof LoginForm>;
 
 export default meta;
@@ -17,4 +19,41 @@ export const Default: Story = {
     args: {
         isOpen: true,
     },
+};
+
+export const WithInputsFilled: Story = {
+    decorators: [
+        StoreDecorator({
+            login: {
+                username: 'ivan123',
+                password: 'qwerty123',
+                loading: false,
+            },
+        }),
+    ],
+};
+
+export const WithLoading: Story = {
+    decorators: [
+        StoreDecorator({
+            login: {
+                username: 'ivan123',
+                password: 'qwerty123',
+                loading: true,
+            },
+        }),
+    ],
+};
+
+export const WithError: Story = {
+    decorators: [
+        StoreDecorator({
+            login: {
+                username: 'ivan123',
+                password: 'qwerty123',
+                loading: false,
+                error: 'Some error',
+            },
+        }),
+    ],
 };
