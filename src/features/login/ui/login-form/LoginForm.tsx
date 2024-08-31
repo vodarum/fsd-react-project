@@ -13,8 +13,8 @@ import {
     loginReducer,
     loginSelectors,
 } from 'features/login/model';
-import { useAppDispatch } from 'app/providers/StoreProvider';
 import { withAsyncStore } from 'shared/lib/with-async-store';
+import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch';
 
 type indexProps = {
     className?: string;

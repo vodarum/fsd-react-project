@@ -6,6 +6,7 @@ import {
 } from '@reduxjs/toolkit';
 import { UserState } from 'entities/user';
 import { LoginState } from 'features/login';
+import { configureAppStore } from './store';
 
 type State = {
     user: UserState;
@@ -25,4 +26,6 @@ type StoreWithReducerManager = EnhancedStore<State> & {
     reducerManager: ReducerManager;
 };
 
-export { ReducerManager, State, StateKey, StoreWithReducerManager };
+type AppDispatch = ReturnType<typeof configureAppStore>['dispatch'];
+
+export { AppDispatch, ReducerManager, State, StateKey, StoreWithReducerManager };

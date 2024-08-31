@@ -1,7 +1,6 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 import { State } from './types';
 import { userReducer } from 'entities/user';
-import { useDispatch } from 'react-redux';
 import { sessionMiddleware } from './session-middleware';
 import { createReducerManager } from './reducer-manager';
 
@@ -26,6 +25,3 @@ export const configureAppStore = (initialState?: State) => {
 
     return store;
 };
-
-export const useAppDispatch = () =>
-    useDispatch<ReturnType<typeof configureAppStore>['dispatch']>();
