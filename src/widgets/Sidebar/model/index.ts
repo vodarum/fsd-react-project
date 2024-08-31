@@ -1,4 +1,8 @@
-import { faAddressCard, faClipboardList, faHome } from '@fortawesome/free-solid-svg-icons';
+import {
+    faAddressCard,
+    faClipboardList,
+    faHome,
+} from '@fortawesome/free-solid-svg-icons';
 
 export const items = [
     { path: '/', title: 'Главная', icon: faHome },

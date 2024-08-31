@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { Sidebar } from './Sidebar';
+import { Sidebar } from '.';
 import { componentRender } from 'shared/lib/tests/componentRender';
 
 const sidebarTestId = 'sidebar';

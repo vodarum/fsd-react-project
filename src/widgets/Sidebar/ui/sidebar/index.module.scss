@@ -13,16 +13,6 @@
     gap: 8px;
 }
 
-.link {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-
-    &Title {
-        transition: all 0.2s ease-out;
-    }
-}
-
 .switchers {
     display: flex;
     justify-content: center;
@@ -32,17 +22,7 @@
 .collapsed {
     padding-right: var(--padding);
 
-    .link {
-        gap: 0;
-
-        &Title {
-            width: 0;
-            opacity: 0;
-        }
-    }
-
     .switchers {
-        display: flex;
         flex-direction: column;
         gap: 4px;
     }

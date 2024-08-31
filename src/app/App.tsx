@@ -3,7 +3,7 @@ import { useTheme } from 'shared/lib/theme';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from './providers/router';
 import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
+import { Sidebar } from 'widgets/sidebar';
 import { Suspense, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/user';
