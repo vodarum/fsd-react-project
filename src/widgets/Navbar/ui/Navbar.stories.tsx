@@ -33,10 +33,12 @@ export const Default: Story = {
 export const ForLoggedUser: Story = {
     decorators: [
         StoreDecorator({
-            user: {
-                session: {
-                    userId: 1,
-                    token: 'qwerty123',
+            preloadedState: {
+                user: {
+                    session: {
+                        userId: 1,
+                        token: 'qwerty123',
+                    },
                 },
             },
         }),

@@ -1,20 +1,21 @@
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
-import { State } from './types';
+import { configureStore } from '@reduxjs/toolkit';
+import { ConfigureAppStoreOptions } from './types';
 import { userReducer } from 'entities/user';
 import { sessionMiddleware } from './session-middleware';
 import { createReducerManager } from './reducer-manager';
 
-export const configureAppStore = (initialState?: State) => {
-    const rootReducer: ReducersMapObject<State> = {
+export const configureAppStore = ({
+    preloadedReducer,
+    preloadedState,
+}: ConfigureAppStoreOptions) => {
+    const reducerManager = createReducerManager({
+        ...preloadedReducer,
         user: userReducer,
-    };
-
-    const reducerManager = createReducerManager(rootReducer);
-
+    });
     const store = configureStore({
         reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
-        preloadedState: initialState,
+        preloadedState,
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware().concat(sessionMiddleware),
     });

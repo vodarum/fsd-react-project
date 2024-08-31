@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import LoginForm from './LoginForm';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { loginReducer } from '../../model';
 
 const meta = {
     title: 'features/LoginForm',
@@ -24,10 +25,15 @@ export const Default: Story = {
 export const WithInputsFilled: Story = {
     decorators: [
         StoreDecorator({
-            login: {
-                username: 'ivan123',
-                password: 'qwerty123',
-                loading: false,
+            preloadedReducer: {
+                login: loginReducer,
+            },
+            preloadedState: {
+                login: {
+                    username: 'ivan123',
+                    password: 'qwerty123',
+                    loading: false,
+                },
             },
         }),
     ],
@@ -36,10 +42,15 @@ export const WithInputsFilled: Story = {
 export const WithLoading: Story = {
     decorators: [
         StoreDecorator({
-            login: {
-                username: 'ivan123',
-                password: 'qwerty123',
-                loading: true,
+            preloadedReducer: {
+                login: loginReducer,
+            },
+            preloadedState: {
+                login: {
+                    username: 'ivan123',
+                    password: 'qwerty123',
+                    loading: true,
+                },
             },
         }),
     ],
@@ -48,11 +59,16 @@ export const WithLoading: Story = {
 export const WithError: Story = {
     decorators: [
         StoreDecorator({
-            login: {
-                username: 'ivan123',
-                password: 'qwerty123',
-                loading: false,
-                error: 'Some error',
+            preloadedReducer: {
+                login: loginReducer,
+            },
+            preloadedState: {
+                login: {
+                    username: 'ivan123',
+                    password: 'qwerty123',
+                    loading: false,
+                    error: 'Some error',
+                },
             },
         }),
     ],

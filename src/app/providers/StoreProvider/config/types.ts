@@ -26,10 +26,16 @@ type StoreWithReducerManager = EnhancedStore<State> & {
     reducerManager: ReducerManager;
 };
 
+type ConfigureAppStoreOptions = Partial<{
+    preloadedReducer: Partial<ReducersMapObject<State>>;
+    preloadedState: State;
+}>;
+
 type AppDispatch = ReturnType<typeof configureAppStore>['dispatch'];
 
 export {
     AppDispatch,
+    ConfigureAppStoreOptions,
     ReducerManager,
     State,
     StateKey,
