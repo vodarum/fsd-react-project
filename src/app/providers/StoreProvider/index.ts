@@ -1,5 +1,5 @@
 export { StoreProvider } from './ui';
-export {
+export type {
     AppDispatch,
     State,
     StateKey,
