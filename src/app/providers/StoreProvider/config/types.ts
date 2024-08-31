@@ -28,4 +28,10 @@ type StoreWithReducerManager = EnhancedStore<State> & {
 
 type AppDispatch = ReturnType<typeof configureAppStore>['dispatch'];
 
-export { AppDispatch, ReducerManager, State, StateKey, StoreWithReducerManager };
+export {
+    AppDispatch,
+    ReducerManager,
+    State,
+    StateKey,
+    StoreWithReducerManager,
+};
