@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Title.module.scss';
 
@@ -19,7 +19,7 @@ type TitleProps = {
     level?: TitleLevel;
 };
 
-const Title = (props: TitleProps) => {
+const Title = memo((props: TitleProps) => {
     const { className, children, level = 1 } = props;
     const _className = classNames('', {}, [className, cls[`title-${level}`]]);
 
@@ -37,6 +37,6 @@ const Title = (props: TitleProps) => {
         default:
             return <h1 className={_className}>{children}</h1>;
     }
-};
+});
 
 export { Title, TitleLevels };

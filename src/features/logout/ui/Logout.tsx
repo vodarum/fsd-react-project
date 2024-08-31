@@ -4,13 +4,13 @@ import { Button, ButtonVariants } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/user';
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 
 type LogoutButtonProps = {
     className?: string;
 };
 
-export const LogoutButton = ({ className }: LogoutButtonProps) => {
+export const LogoutButton = memo(({ className }: LogoutButtonProps) => {
     const { t } = useTranslation('navigation');
     const dispatch = useDispatch();
     const handleClick = useCallback(() => {
@@ -26,4 +26,4 @@ export const LogoutButton = ({ className }: LogoutButtonProps) => {
             {t('Выйти')}
         </Button>
     );
-};
+});

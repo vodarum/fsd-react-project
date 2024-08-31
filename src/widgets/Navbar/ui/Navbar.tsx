@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonVariants } from 'shared/ui/Button';
-import { useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import { LoginModal } from 'features/login';
 import { LogoutButton } from 'features/logout';
 import { selectIsAuth } from 'entities/user/model/selectors';
@@ -15,7 +15,7 @@ type NavbarProps = {
     handlerDrawer?: () => void;
 };
 
-export const Navbar = ({ className, handlerDrawer }: NavbarProps) => {
+export const Navbar = memo(({ className, handlerDrawer }: NavbarProps) => {
     const { t } = useTranslation('navigation');
     const isAuth = useSelector(selectIsAuth);
 
@@ -60,4 +60,4 @@ export const Navbar = ({ className, handlerDrawer }: NavbarProps) => {
             )}
         </div>
     );
-};
+});

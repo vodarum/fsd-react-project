@@ -1,14 +1,13 @@
-import { ReactNode } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { memo, ReactNode } from 'react';
 
 type TextProps = {
     className?: string;
     children?: ReactNode;
 };
 
-const Text = (props: TextProps) => {
+const Text = memo((props: TextProps) => {
     const { className, children } = props;
-    return <p className={classNames('', {}, [className])}>{children}</p>;
-};
+    return <p className={className}>{children}</p>;
+});
 
 export { Text };

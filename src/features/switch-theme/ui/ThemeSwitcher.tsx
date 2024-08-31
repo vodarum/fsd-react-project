@@ -4,12 +4,13 @@ import { Button, ButtonVariants } from 'shared/ui/Button';
 import { Themes, useTheme } from 'shared/lib/theme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { memo } from 'react';
 
 type ThemeSwitcherProps = {
     className?: string;
 };
 
-export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
 
     return (
@@ -25,4 +26,4 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
             )}
         </Button>
     );
-};
+});

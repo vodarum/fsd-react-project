@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './AppLink.module.scss';
 import { Link, LinkProps } from 'react-router-dom';
-import { FC, PropsWithChildren } from 'react';
+import { FC, memo, PropsWithChildren } from 'react';
 
 const AppLinkVariants = {
     bordered: 'bordered',
@@ -15,7 +15,7 @@ type AppLinkProps = PropsWithChildren &
         variant?: AppLinkVariant;
     };
 
-const AppLink: FC<AppLinkProps> = (props: AppLinkProps) => {
+const AppLink: FC<AppLinkProps> = memo((props: AppLinkProps) => {
     const { children, className, variant, ...otherProps } = props;
 
     return (
@@ -26,6 +26,6 @@ const AppLink: FC<AppLinkProps> = (props: AppLinkProps) => {
             {children}
         </Link>
     );
-};
+});
 
 export { AppLink, AppLinkVariants };

@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
-import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes, FC, memo, PropsWithChildren } from 'react';
 
 const ButtonVariants = {
     clear: 'clear',
@@ -15,7 +15,7 @@ type ButtonProps = PropsWithChildren &
         variant?: ButtonVariant;
     };
 
-const Button: FC<ButtonProps> = (props: ButtonProps) => {
+const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
     const { children, className, variant, ...otherProps } = props;
 
     return (
@@ -26,6 +26,6 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
             {children}
         </button>
     );
-};
+});
 
 export { Button, ButtonVariants };
