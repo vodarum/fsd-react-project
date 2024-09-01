@@ -1,6 +1,6 @@
 import cls from './index.module.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink } from 'shared/ui/AppLink';
+import { classNames } from 'shared/lib/class-names';
+import { AppLink } from 'shared/ui/app-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { memo } from 'react';

@@ -1,5 +1,5 @@
 import { mockInitialAppState, mockSession } from '../../__mocks__';
-import { selectIsAuth } from './';
+import { selectIsAuth } from '.';
 
 describe('selectIsAuth', () => {
     test('returns false for initial state', () => {

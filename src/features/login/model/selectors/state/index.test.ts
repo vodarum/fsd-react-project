@@ -3,7 +3,7 @@ import {
     mockAppState,
     mockLoginState,
 } from '../../__mocks__';
-import { selectLoginState } from './';
+import { selectLoginState } from '.';
 
 describe('selectLoginState', () => {
     test('returns undefined for initial state', () => {

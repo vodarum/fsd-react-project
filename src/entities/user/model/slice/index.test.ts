@@ -1,6 +1,6 @@
 import { mockSession, mockUserState } from '../__mocks__';
 import { UserState } from '../types';
-import { userReducer, userActions } from './';
+import { userReducer, userActions } from '.';
 
 describe('userSlice', () => {
     test('should work with empty state', () => {

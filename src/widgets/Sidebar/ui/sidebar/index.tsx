@@ -1,5 +1,5 @@
 import cls from './index.module.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/class-names';
 import { ThemeSwitcher } from 'features/switch-theme';
 import { LangSwitcher } from 'features/switch-lang';
 import { memo } from 'react';

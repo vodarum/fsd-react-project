@@ -1,5 +1,5 @@
 import { mockLoginState } from '../__mocks__';
-import { loginReducer, loginActions } from './';
+import { loginReducer, loginActions } from '.';
 
 describe('loginSlice', () => {
     test('should work with empty state', () => {

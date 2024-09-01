@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { Sidebar } from '.';
-import { componentRender } from 'shared/lib/tests/componentRender';
+import { componentRender } from 'shared/lib/tests/component-render';
 
 const sidebarTestId = 'sidebar';
 const collapsed = 'collapsed';

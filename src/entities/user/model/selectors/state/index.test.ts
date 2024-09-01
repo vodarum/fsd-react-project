@@ -1,5 +1,5 @@
 import { mockInitialAppState, mockUserState } from '../../__mocks__';
-import { selectUserState } from '../state';
+import { selectUserState } from '.';
 
 describe('selectUserState', () => {
     test('', () => {

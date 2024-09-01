@@ -1,2 +1,2 @@
-export { LoginModal } from './ui/login-modal/LoginModal';
-export { type LoginState } from './model';
+export { LoginModal } from './ui/login-modal';
+export { type LoginState, loginByUsername } from './model';

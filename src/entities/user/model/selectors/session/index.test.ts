@@ -1,5 +1,5 @@
 import { mockInitialAppState, mockSession } from '../../__mocks__';
-import { selectSession } from './';
+import { selectSession } from '.';
 
 describe('selectSession', () => {
     test('returns undefined for initial state', () => {

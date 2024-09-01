@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { SidebarItem } from '.';
-import { componentRender } from 'shared/lib/tests/componentRender';
+import { componentRender } from 'shared/lib/tests/component-render';
 import { items } from '../../model';
 
 describe('SidebarItem', () => {

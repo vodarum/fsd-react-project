@@ -3,7 +3,7 @@ import {
     mockAppState,
     mockLoginState,
 } from '../../__mocks__';
-import { selectPassword } from './';
+import { selectPassword } from '.';
 
 describe('selectPassword', () => {
     test('returns empty string for initial state', () => {

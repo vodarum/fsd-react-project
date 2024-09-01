@@ -1,4 +1,4 @@
-import type { State } from 'app/providers/StoreProvider';
+import type { State } from 'app/providers/store-provider';
 import type { Session, UserState } from '../types';
 
 const mockSession: Session = {

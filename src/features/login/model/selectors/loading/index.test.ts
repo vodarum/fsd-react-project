@@ -3,7 +3,7 @@ import {
     mockAppState,
     mockLoginState,
 } from '../../__mocks__';
-import { selectLoading } from './';
+import { selectLoading } from '.';
 
 describe('selectLoading', () => {
     test('returns false for initial state', () => {

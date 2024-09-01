@@ -1,7 +1,7 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
-import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator';
-import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator';
+import { StyleDecorator } from '../../src/shared/config/storybook/style-decorator';
+import { RouterDecorator } from '../../src/shared/config/storybook/router-decorator';
 
 const preview: Preview = {
     parameters: {

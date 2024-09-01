@@ -1,1 +1,1 @@
-export { Input, InputVariants } from './ui/Input';
+export { Input, InputVariants } from './ui';
