@@ -3,7 +3,7 @@ import { AppRouter } from './providers/router';
 import { userActions } from 'entities/user';
 import { Suspense, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { APP_SESSION_LS_KEY } from 'shared/config/const';
+import { APP_SESSION_LS_KEY } from 'shared/api';
 import { classNames } from 'shared/lib/class-names';
 import { useTheme } from 'shared/lib/theme';
 import { Navbar } from 'widgets/navbar';

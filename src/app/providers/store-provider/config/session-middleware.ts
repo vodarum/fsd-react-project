@@ -1,7 +1,7 @@
 import { Dispatch, Action, isFulfilled, isAnyOf } from '@reduxjs/toolkit';
 import { userActions } from 'entities/user';
 import { loginByUsername } from 'features/login';
-import { APP_SESSION_LS_KEY } from 'shared/config/const';
+import { APP_SESSION_LS_KEY } from 'shared/api';
 
 const isLogin = isFulfilled(loginByUsername);
 const isLogout = isAnyOf(userActions.resetSession);
