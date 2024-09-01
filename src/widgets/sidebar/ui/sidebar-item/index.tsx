@@ -2,18 +2,15 @@ import cls from './index.module.scss';
 import { classNames } from 'shared/lib/class-names';
 import { AppLink } from 'shared/ui/app-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { SidebarItem as SidebarItemType } from 'widgets/sidebar/model';
 
-type SidebarProps = {
-    path: string;
-    title: string;
-    icon: IconDefinition;
+type SidebarItemProps = SidebarItemType & {
     collapsed?: boolean;
 };
 
-export const SidebarItem = memo((props: SidebarProps) => {
+export const SidebarItem = memo((props: SidebarItemProps) => {
     const { path, title, icon, collapsed } = props;
     const { t } = useTranslation('navigation');
 

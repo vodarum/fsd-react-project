@@ -4,6 +4,7 @@ import {
     Reducer,
     ReducersMapObject,
 } from '@reduxjs/toolkit';
+import { ProfileState } from 'entities/profile';
 import { UserState } from 'entities/user';
 import { LoginState } from 'features/login';
 import { configureAppStore } from './store';
@@ -11,6 +12,7 @@ import { configureAppStore } from './store';
 type State = {
     user: UserState;
     login?: LoginState;
+    profile?: ProfileState;
 };
 
 type StateKey = keyof State;
