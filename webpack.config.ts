@@ -6,6 +6,7 @@ import { BuildEnv } from './config/build/types';
 export default function (env: BuildEnv): Configuration {
     const mode = env.mode || 'development';
     const port = env.port || 3000;
+    const baseURL = env.baseURL || 'http://localhost:8000';
     const srcPath = path.resolve(__dirname, 'src');
     const paths = {
         build: path.resolve(__dirname, 'dist'),
@@ -17,6 +18,7 @@ export default function (env: BuildEnv): Configuration {
 
     return buildWebpackConfig({
         mode,
+        baseURL,
         paths,
         isDev,
         port,

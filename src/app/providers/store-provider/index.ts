@@ -5,4 +5,5 @@ export type {
     State,
     StateKey,
     StoreWithReducerManager,
+    ThunkAPI,
 } from './config/types';

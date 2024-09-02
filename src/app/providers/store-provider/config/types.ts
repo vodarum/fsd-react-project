@@ -8,6 +8,7 @@ import { ProfileState } from 'entities/profile';
 import { UserState } from 'entities/user';
 import { LoginState } from 'features/login';
 import { configureAppStore } from './store';
+import { AxiosInstance } from 'axios';
 
 type State = {
     user: UserState;
@@ -35,6 +36,15 @@ type ConfigureAppStoreOptions = Partial<{
 
 type AppDispatch = ReturnType<typeof configureAppStore>['dispatch'];
 
+type ThunkExtra = {
+    api: AxiosInstance;
+};
+
+type ThunkAPI<T> = {
+    rejectValue: T;
+    extra: ThunkExtra;
+};
+
 export {
     AppDispatch,
     ConfigureAppStoreOptions,
@@ -42,4 +52,5 @@ export {
     State,
     StateKey,
     StoreWithReducerManager,
+    ThunkAPI,
 };

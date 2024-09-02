@@ -10,6 +10,7 @@ type BuildPaths = {
 type BuildEnv = {
     mode: BuildMode;
     port: number;
+    baseURL: string;
 };
 
 type BuildOptions = BuildEnv & {
