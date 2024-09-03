@@ -1,29 +1,25 @@
-import axios from 'axios';
 import { loginByUsername } from '.';
 import { userActions } from 'entities/user';
 import { testAsyncThunk } from 'shared/lib/tests/test-async-thunk';
 
-jest.mock('axios');
-const axiosMocked = jest.mocked(axios);
-
-const url = 'http://localhost:8000/login';
+const url = '/login';
 const credentialData = { username: 'admin', password: 'qwerty' };
 
 describe('loginByUsername', () => {
     test('with fulfilled', async () => {
         const mockResponseData = { userId: 1, token: 'token' };
+        const { callThunk, dispatch, api } = testAsyncThunk(loginByUsername);
 
-        axiosMocked.post.mockReturnValueOnce(
+        api.post.mockReturnValueOnce(
             Promise.resolve({ data: mockResponseData }),
         );
 
-        const testThunk = testAsyncThunk(loginByUsername);
-        const result = await testThunk.callThunk(credentialData);
+        const result = await callThunk(credentialData);
 
-        expect(testThunk.dispatch).toHaveBeenCalledTimes(3);
-        expect(axiosMocked.post).toHaveBeenCalledWith(url, credentialData);
+        expect(dispatch).toHaveBeenCalledTimes(3);
+        expect(api.post).toHaveBeenCalledWith(url, credentialData);
         expect(result.meta.requestStatus).toBe('fulfilled');
-        expect(testThunk.dispatch).toHaveBeenCalledWith(
+        expect(dispatch).toHaveBeenCalledWith(
             userActions.setSession(mockResponseData),
         );
         expect(result.payload).toEqual(mockResponseData);
@@ -31,15 +27,15 @@ describe('loginByUsername', () => {
 
     test('with rejected', async () => {
         const spyConsoleError = jest.spyOn(global.console, 'error');
+        const { callThunk, dispatch, api } = testAsyncThunk(loginByUsername);
 
-        axiosMocked.post.mockReturnValueOnce(Promise.resolve({ status: 403 }));
+        api.post.mockReturnValueOnce(Promise.resolve({ status: 403 }));
 
-        const testThunk = testAsyncThunk(loginByUsername);
-        const result = await testThunk.callThunk(credentialData);
+        const result = await callThunk(credentialData);
 
-        expect(testThunk.dispatch).toHaveBeenCalledTimes(2);
+        expect(dispatch).toHaveBeenCalledTimes(2);
         expect(spyConsoleError).toHaveBeenCalledTimes(1);
-        expect(axiosMocked.post).toHaveBeenCalledWith(url, credentialData);
+        expect(api.post).toHaveBeenCalledWith(url, credentialData);
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toBe('Error: Error');
 

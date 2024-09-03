@@ -8,6 +8,13 @@
         }
     ],
     "profile": {
-        "name": "typicode"
+        "firstName": "Nashvar",
+        "lastName": "Vodarum",
+        "age": 31,
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Волгоград",
+        "username": "vodarum",
+        "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpikabu.ru%2Fstory%2Favatarki_zverushek_9946640&psig=AOvVaw2z0MQCWU4hrkcYR_IOsTs9&ust=1725299245158000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICbvOKmoogDFQAAAAAdAAAAABAE"
     }
 }
