@@ -1,10 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { ConfigureAppStoreOptions } from './types';
+import { configureStore, Reducer } from '@reduxjs/toolkit';
+import { ConfigureAppStoreOptions, State } from './types';
 import { userReducer } from 'entities/user';
 import { sessionMiddleware } from './session-middleware';
 import { createReducerManager } from './reducer-manager';
 import { $api } from 'shared/api';
 
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 export const configureAppStore = ({
     preloadedReducer,
     preloadedState,
@@ -14,9 +15,10 @@ export const configureAppStore = ({
         user: userReducer,
     });
     const store = configureStore({
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<State>,
         devTools: __IS_DEV__,
         preloadedState,
+        // @ts-ignore
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
                 thunk: {
@@ -27,9 +29,9 @@ export const configureAppStore = ({
             }).concat(sessionMiddleware),
     });
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     store.reducerManager = reducerManager;
 
     return store;
 };
+/* eslint-enable @typescript-eslint/ban-ts-comment */

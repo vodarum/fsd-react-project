@@ -16,7 +16,12 @@ type ButtonProps = PropsWithChildren &
     };
 
 const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
-    const { children, className, variant, ...otherProps } = props;
+    const {
+        children,
+        className,
+        variant = ButtonVariants.outlined,
+        ...otherProps
+    } = props;
 
     return (
         <button

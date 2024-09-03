@@ -1,8 +1,3 @@
-import { createSelector } from '@reduxjs/toolkit';
-import type { LoginState } from '../../types';
-import { selectLoginState } from '../state';
+import { State } from 'app/providers/store-provider';
 
-export const selectUsername = createSelector(
-    [selectLoginState],
-    (state: LoginState) => state?.username || '',
-);
+export const selectUsername = (state: State) => state?.login?.username || '';

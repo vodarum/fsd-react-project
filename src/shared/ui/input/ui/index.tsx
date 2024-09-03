@@ -32,7 +32,7 @@ const Input = memo((props: InputProps) => {
         autoFocus,
         label,
         value,
-        variant,
+        variant = InputVariants.outlined,
         onChange,
         ...otherProps
     } = props;
@@ -66,7 +66,5 @@ const Input = memo((props: InputProps) => {
         </div>
     );
 });
-
-Input.displayName = 'Input';
 
 export { Input, InputVariants };

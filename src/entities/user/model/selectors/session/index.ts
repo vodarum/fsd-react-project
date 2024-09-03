@@ -1,8 +1,3 @@
-import { createSelector } from '@reduxjs/toolkit';
-import type { UserState } from '../../types';
-import { selectUserState } from '../state';
+import { State } from 'app/providers/store-provider';
 
-export const selectSession = createSelector(
-    [selectUserState],
-    (state: UserState) => state?.session,
-);
+export const selectSession = (state: State) => state?.user?.session;

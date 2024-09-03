@@ -2,7 +2,7 @@ import axios, { AxiosStatic } from 'axios';
 import { AsyncThunkAction, Dispatch } from '@reduxjs/toolkit';
 import { State } from 'app/providers/store-provider';
 
-type ActionCreatorType<R, A, C> = (arg: A) => AsyncThunkAction<R, A, C>;
+type ActionCreatorType<R, A, Rj> = (arg: A) => AsyncThunkAction<R, A, { rejectValue: Rj; }>;
 
 jest.mock('axios');
 const axiosMocked = jest.mocked(axios);

@@ -4,6 +4,7 @@ import {
     mockLoginState,
 } from '../../__mocks__';
 import { selectError } from '.';
+import { State } from 'app/providers/store-provider';
 
 describe('selectError', () => {
     test('returns undefined for initial app state', () => {
@@ -26,7 +27,7 @@ describe('selectError', () => {
                         error,
                     },
                 },
-            }),
+            } as State),
         ).toBe(error);
     });
 });

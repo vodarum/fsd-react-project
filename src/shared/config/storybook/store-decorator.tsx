@@ -5,13 +5,9 @@ import {
     StoreProvider,
     type ConfigureAppStoreOptions,
 } from 'app/providers/store-provider';
+import { ReducersMapObject } from '@reduxjs/toolkit';
 
-type StoreDecoratorOptions = Omit<
-    ConfigureAppStoreOptions,
-    'preloadedState'
-> & {
-    preloadedState?: Partial<State>;
-};
+type StoreDecoratorOptions = DeepPartial<ConfigureAppStoreOptions>;
 
 export const StoreDecorator =
     (options: StoreDecoratorOptions) => (Story: StoryFn) => {
@@ -19,7 +15,7 @@ export const StoreDecorator =
 
         return (
             <StoreProvider
-                preloadedReducer={preloadedReducer}
+                preloadedReducer={preloadedReducer as ReducersMapObject<State>}
                 preloadedState={preloadedState as State}
             >
                 <Story />

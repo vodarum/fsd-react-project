@@ -1,7 +1,9 @@
+type ConditionalClasses = Record<string, boolean | undefined>;
+
 export const classNames = (
     base: string,
-    conditional: Record<string, boolean> = {},
-    additional: string[] = [],
+    conditional: ConditionalClasses = {},
+    additional: Array<string | undefined> = [],
 ): string => {
     return [
         base,

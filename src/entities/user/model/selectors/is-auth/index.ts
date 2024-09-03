@@ -4,5 +4,5 @@ import { selectSession } from '../session';
 
 export const selectIsAuth = createSelector(
     [selectSession],
-    (state: Session) => state?.token || false,
+    (state?: Session) => state?.token || false,
 );

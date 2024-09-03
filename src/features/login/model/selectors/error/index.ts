@@ -1,8 +1,3 @@
-import { createSelector } from '@reduxjs/toolkit';
-import type { LoginState } from '../../types';
-import { selectLoginState } from '../state';
+import { State } from 'app/providers/store-provider';
 
-export const selectError = createSelector(
-    [selectLoginState],
-    (state: LoginState) => state?.error,
-);
+export const selectError = (state: State) => state?.login?.error;

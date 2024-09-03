@@ -34,7 +34,7 @@ export const Modal = (props: ModalProps) => {
     const handleClick = useCallback(
         (e: MouseEvent) => {
             const parent = (e.target as HTMLElement)?.parentElement;
-            if (parent.dataset.role === dataRole) onClose?.();
+            if (parent?.dataset.role === dataRole) onClose?.();
         },
         [onClose],
     );

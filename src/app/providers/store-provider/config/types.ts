@@ -1,8 +1,8 @@
 import {
-    Action,
     EnhancedStore,
     Reducer,
     ReducersMapObject,
+    UnknownAction,
 } from '@reduxjs/toolkit';
 import { ProfileState } from 'entities/profile';
 import { UserState } from 'entities/user';
@@ -20,7 +20,7 @@ type StateKey = keyof State;
 
 type ReducerManager = {
     getReducerMap: () => ReducersMapObject<State>;
-    reduce: (state: State, action: Action) => State;
+    reduce: (state: State, action: UnknownAction) => State;
     add: (key: StateKey, reducer: Reducer) => void;
     remove: (key: StateKey) => void;
 };
@@ -30,7 +30,7 @@ type StoreWithReducerManager = EnhancedStore<State> & {
 };
 
 type ConfigureAppStoreOptions = Partial<{
-    preloadedReducer: Partial<ReducersMapObject<State>>;
+    preloadedReducer: ReducersMapObject<State>;
     preloadedState: State;
 }>;
 
@@ -43,6 +43,7 @@ type ThunkExtra = {
 type ThunkAPI<T> = {
     rejectValue: T;
     extra: ThunkExtra;
+    state: State;
 };
 
 export {

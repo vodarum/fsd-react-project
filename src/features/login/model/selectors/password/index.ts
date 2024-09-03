@@ -1,8 +1,4 @@
-import { createSelector } from '@reduxjs/toolkit';
-import type { LoginState } from '../../types';
-import { selectLoginState } from '../state';
+import { State } from 'app/providers/store-provider';
 
-export const selectPassword = createSelector(
-    [selectLoginState],
-    (state: LoginState) => state?.password || '',
-);
+export const selectPassword = (state: State) => state?.login?.password || '';
+

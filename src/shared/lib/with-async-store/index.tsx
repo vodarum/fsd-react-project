@@ -8,9 +8,7 @@ import { useDispatch, useStore } from 'react-redux';
 
 type Reducers = Partial<Record<StateKey, Reducer>>;
 
-type ReducerEntry = [StateKey, Reducer];
-
-export function withAsyncStore<T>(
+export function withAsyncStore<T extends object>(
     Component: ComponentType<T>,
     reducers: Reducers,
 ) {
@@ -19,14 +17,14 @@ export function withAsyncStore<T>(
         const dispatch = useDispatch();
 
         useEffect(() => {
-            Object.entries(reducers).forEach(([k, r]: ReducerEntry) => {
-                store.reducerManager.add(k, r);
+            Object.entries(reducers).forEach(([k, r]) => {
+                store.reducerManager.add(k as StateKey, r);
                 dispatch({ type: `@INIT ${k} reducer` });
             });
 
             return () => {
-                Object.keys(reducers).forEach((k: StateKey) => {
-                    store.reducerManager.remove(k);
+                Object.keys(reducers).forEach((k) => {
+                    store.reducerManager.remove(k as StateKey);
                     dispatch({ type: `@DESTROY ${k} reducer` });
                 });
             };

@@ -20,7 +20,10 @@ const AppLink: FC<AppLinkProps> = memo((props: AppLinkProps) => {
 
     return (
         <Link
-            className={classNames(cls.applink, {}, [className, cls[variant]])}
+            className={classNames(cls.applink, {}, [
+                className,
+                variant && cls[variant],
+            ])}
             {...otherProps}
         >
             {children}

@@ -1,8 +1,8 @@
 import {
-    Action,
     combineReducers,
     Reducer,
     ReducersMapObject,
+    UnknownAction,
 } from '@reduxjs/toolkit';
 import { ReducerManager, State, StateKey } from './types';
 
@@ -15,7 +15,7 @@ export const createReducerManager = (
 
     return {
         getReducerMap: () => reducers,
-        reduce: (state: State, action: Action) => {
+        reduce: (state: State, action: UnknownAction) => {
             if (keysToRemove.length > 0) {
                 state = { ...state };
 
@@ -26,6 +26,8 @@ export const createReducerManager = (
                 keysToRemove = [];
             }
 
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             return combinedReducer(state, action);
         },
         add: (key: StateKey, reducer: Reducer) => {

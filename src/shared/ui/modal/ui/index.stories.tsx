@@ -25,6 +25,8 @@ export const Default: Story = {
     non proident, sunt in culpa qui officia deserunt mollit
     anim id est laborum.`,
         isOpen: true,
-        targetContainer: document.getElementById('storybook-root'),
+        targetContainer: document.getElementById(
+            'storybook-root',
+        ) as HTMLElement,
     },
 };
