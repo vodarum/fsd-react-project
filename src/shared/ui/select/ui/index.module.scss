@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.select {
+    padding: 4px 8px;
+    border-radius: 2px;
+    background-color: transparent;
+}
+
+.option {
+    background-color: var(--bg-color);
+}
+
+.outlined,
+.underlined {
+    outline: 0;
+    border: 1px solid var(--primary-color-dark);
+}
+
+.outlined {
+    &:hover,
+    &:focus {
+        border-color: var(--primary-color);
+    }
+
+    &:focus {
+        border-width: 2px;
+        margin: -1px;
+    }
+}
+
+.underlined {
+    border-radius: 0;
+    border-left-width: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+
+    &:hover,
+    &:focus {
+        border-color: var(--primary-color);
+    }
+
+    &:focus {
+        border-bottom-width: 2px;
+        margin-bottom: -1px;
+    }
+}
