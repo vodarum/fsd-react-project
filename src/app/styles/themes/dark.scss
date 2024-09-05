@@ -6,4 +6,8 @@
     --success-color: #49aa19;
     --warning-color: #d89614;
     --error-color: #cf4041;
+
+    input[type='date']::-webkit-calendar-picker-indicator {
+        filter: invert(0.8);
+    }
 }
