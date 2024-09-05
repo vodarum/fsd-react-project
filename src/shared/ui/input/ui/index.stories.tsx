@@ -9,6 +9,7 @@ const meta = {
     },
     tags: ['autodocs'],
     args: {
+        label: 'Label',
         value: 'Text',
     },
 } satisfies Meta<typeof Input>;
