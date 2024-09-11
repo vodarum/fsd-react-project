@@ -2,5 +2,9 @@
     "Профиль": "Profile",
     "Имя": "Firstname",
     "Фамилия": "Lastname",
-    "Редактировать": "Edit"
+    "Дата рождения": "Birthday",
+    "Страна": "Country",
+    "Валюта": "Currency",
+    "Город": "City",
+    "Имя пользователя": "Username"
 }

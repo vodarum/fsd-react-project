@@ -1,0 +1,17 @@
+.wrapper {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+}
+
+.editBtn {
+    width: auto;
+}
+
+.saveBtn {
+    background-color: var(--success-color);
+}
+
+.cancelBtn {
+    background-color: var(--error-color);
+}

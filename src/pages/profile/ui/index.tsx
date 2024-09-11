@@ -1,34 +1,31 @@
-import {
-    fetchProfileData,
-    ProfileCard,
-    profileReducer,
-} from 'entities/profile';
+import cls from './index.module.scss';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch';
-import { withAsyncStore } from 'shared/lib/with-async-store';
+import { useAppDispatch, useAsyncStore } from 'shared/lib/hooks';
+import { fetchProfileData, profileReducer } from '../model';
+import { Title } from 'shared/ui/title';
+import { ProfilePageContent } from './content';
 
-const Profile = withAsyncStore(
-    () => {
-        const { t } = useTranslation('profile');
-        const dispatch = useAppDispatch();
+const Profile = () => {
+    const { t } = useTranslation('profile');
+    const dispatch = useAppDispatch();
 
-        useEffect(() => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            dispatch(fetchProfileData());
-        }, [dispatch]);
-
-        return (
-            <>
-                <h1>{t('Профиль')}</h1>
-                <ProfileCard />
-            </>
-        );
-    },
-    {
+    useAsyncStore({
         profile: profileReducer,
-    },
-);
+    });
+
+    useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        dispatch(fetchProfileData());
+    }, [dispatch]);
+
+    return (
+        <>
+            <Title className={cls.title}>{t('Профиль')}</Title>
+            <ProfilePageContent />
+        </>
+    );
+};
 
 export default Profile;

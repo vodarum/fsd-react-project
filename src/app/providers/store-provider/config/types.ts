@@ -4,7 +4,7 @@ import {
     ReducersMapObject,
     UnknownAction,
 } from '@reduxjs/toolkit';
-import { ProfileState } from 'entities/profile';
+import { ProfileState } from 'pages/profile';
 import { UserState } from 'entities/user';
 import { LoginState } from 'features/login';
 import { configureAppStore } from './store';
