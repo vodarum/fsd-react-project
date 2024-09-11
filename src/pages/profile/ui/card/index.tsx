@@ -69,7 +69,11 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
     );
 
     return (
-        <div className={classNames(cls.card, {}, [className])}>
+        <div
+            className={classNames(cls.card, { [cls.editable]: editable }, [
+                className,
+            ])}
+        >
             <Input
                 label={t('Имя')}
                 value={form?.firstName}
