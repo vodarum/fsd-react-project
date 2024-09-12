@@ -2,12 +2,14 @@ import { classNames } from 'shared/lib/class-names';
 import cls from './index.module.scss';
 import { Input } from 'shared/ui/input';
 import { Select } from 'shared/ui/select';
+import { Text } from 'shared/ui/text';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { profileActions, profileSelectors } from '../../model';
 import { Countries, Country, Currencies, Currency } from 'shared/api';
 import { useAppDispatch } from 'shared/lib/hooks';
+import { ValidateProfileErrors } from 'pages/profile/model/const';
 
 type ProfileCardProps = {
     className?: string;
@@ -18,6 +20,19 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
     const dispatch = useAppDispatch();
     const form = useSelector(profileSelectors.selectProfileForm);
     const editable = useSelector(profileSelectors.selectEditable);
+    const validateErrors = useSelector(profileSelectors.selectValidateErrors);
+    const validateErrorTranslates = {
+        [ValidateProfileErrors.invalidLocationData]: t(
+            'Некорректные город или страна',
+        ),
+        [ValidateProfileErrors.invalidUserData]: t(
+            'Некорректные имя или фамилия',
+        ),
+        [ValidateProfileErrors.noData]: t('Отсутствуют данные'),
+        [ValidateProfileErrors.serverError]: t(
+            'Ошибка при попытке сохранить данные',
+        ),
+    };
 
     const handleFirstnameInputChange = useCallback(
         (value?: string) => {
@@ -74,6 +89,13 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
                 className,
             ])}
         >
+            {validateErrors?.length &&
+                validateErrors.map((e) => (
+                    <Text key={e} className='text-error'>
+                        {validateErrorTranslates[e]}
+                    </Text>
+                ))}
+
             <Input
                 label={t('Имя')}
                 value={form?.firstName}

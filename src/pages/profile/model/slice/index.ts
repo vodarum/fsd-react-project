@@ -19,6 +19,7 @@ const profileSlice = createSlice({
                 type: 'setEditable',
                 payload: false,
             });
+            state.validateErrors = undefined;
             state.form = state.data;
         },
         setForm: (
@@ -50,7 +51,7 @@ const profileSlice = createSlice({
                 state.loading = false;
             })
             .addCase(updateProfileData.pending, (state) => {
-                state.error = undefined;
+                state.validateErrors = undefined;
                 state.loading = true;
             })
             .addCase(updateProfileData.fulfilled, (state, action) => {
@@ -60,7 +61,7 @@ const profileSlice = createSlice({
                 state.loading = false;
             })
             .addCase(updateProfileData.rejected, (state, action) => {
-                state.error = action.payload;
+                state.validateErrors = action.payload;
                 state.loading = false;
             });
     },

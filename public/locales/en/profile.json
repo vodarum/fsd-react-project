@@ -6,5 +6,9 @@
     "Страна": "Country",
     "Валюта": "Currency",
     "Город": "City",
-    "Имя пользователя": "Username"
+    "Имя пользователя": "Username",
+    "Некорректные город или страна": "Invalid city or country",
+    "Некорректные имя или фамилия": "Invalid firstname or lastname",
+    "Отсутствуют данные": "Data is empty",
+    "Ошибка при попытке сохранить данные": "Error saving data"
 }

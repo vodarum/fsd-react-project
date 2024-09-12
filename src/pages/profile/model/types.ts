@@ -1,4 +1,7 @@
 import { Country, Currency } from 'shared/api';
+import { ValidateProfileErrors } from './const';
+
+type ValidateProfileError = typeof ValidateProfileErrors[keyof typeof ValidateProfileErrors];
 
 type Profile = Partial<{
     firstName: string;
@@ -17,6 +20,7 @@ type ProfileState = {
     editable: boolean;
     loading: boolean;
     error?: string;
+    validateErrors?: ValidateProfileError[];
 };
 
-export { Profile, ProfileState };
+export { Profile, ProfileState, ValidateProfileError };
