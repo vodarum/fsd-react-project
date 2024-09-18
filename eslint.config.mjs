@@ -22,6 +22,7 @@ export default [
                 { markupOnly: true, ignoreAttribute: ['data-testid'] },
             ],
             'react/display-name': 'off',
+            '@typescript-eslint/ban-ts-comment': 'off',
         },
         settings: {
             react: {

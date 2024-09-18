@@ -5,7 +5,6 @@ import { sessionMiddleware } from './session-middleware';
 import { createReducerManager } from './reducer-manager';
 import { $api } from 'shared/api';
 
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 export const configureAppStore = ({
     preloadedReducer,
     preloadedState,
@@ -34,4 +33,3 @@ export const configureAppStore = ({
 
     return store;
 };
-/* eslint-enable @typescript-eslint/ban-ts-comment */

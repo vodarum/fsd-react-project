@@ -45,7 +45,6 @@ const LoginForm = withAsyncStore(
         );
 
         const handleSubmitBtnClick = useCallback(() => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             dispatch(loginByUsername({ username, password }));
         }, [dispatch, username, password]);
