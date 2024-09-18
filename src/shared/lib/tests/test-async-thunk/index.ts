@@ -11,15 +11,15 @@ const axiosMocked = jest.mocked(axios);
 
 export const testAsyncThunk = <Returned, ThunkArg, ThunkApiConfig>(
     actionCreator: ActionCreatorType<Returned, ThunkArg, ThunkApiConfig>,
+    state?: DeepPartial<State>,
 ) => {
     const dispatch: Dispatch = jest.fn();
-    const getState: () => State = jest.fn();
+    const getState: () => State = jest.fn(() => state as State);
     const api: jest.MockedFunctionDeep<AxiosStatic> = axiosMocked;
 
     return {
         callThunk: async (arg: ThunkArg) => {
             const action = actionCreator(arg);
-            // eslint-disable-next-line
             // @ts-ignore
             return await action(dispatch, getState, { api });
         },
