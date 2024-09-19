@@ -1,14 +1,14 @@
-import cls from './index.module.scss';
-import { Button } from 'shared/ui/button';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { memo } from 'react';
+import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch';
+import { Button } from 'shared/ui/button';
+import cls from './index.module.scss';
 import {
     profileActions,
     profileSelectors,
     updateProfileData,
 } from '../../model';
-import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch';
 
 export const ProfileButtonBar = memo(() => {
     const { t } = useTranslation();

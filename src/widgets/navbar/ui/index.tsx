@@ -3,7 +3,7 @@ import cls from './index.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonVariants } from 'shared/ui/button';
+import { Button } from 'shared/ui/button';
 import { memo, useCallback, useEffect, useState } from 'react';
 import { LoginModal } from 'features/login';
 import { LogoutButton } from 'features/logout';
@@ -45,10 +45,7 @@ export const Navbar = memo(({ className, handlerDrawer }: NavbarProps) => {
                 <LogoutButton />
             ) : (
                 <>
-                    <Button
-                        onClick={handleLoginModalOpen}
-                        variant={ButtonVariants.outlined}
-                    >
+                    <Button onClick={handleLoginModalOpen}>
                         {t('Авторизоваться')}
                     </Button>
 

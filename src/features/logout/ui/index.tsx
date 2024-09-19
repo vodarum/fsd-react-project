@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/class-names';
 import cls from './index.module.scss';
-import { Button, ButtonVariants } from 'shared/ui/button';
+import { Button } from 'shared/ui/button';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/user';
@@ -21,7 +21,6 @@ export const LogoutButton = memo(({ className }: LogoutButtonProps) => {
         <Button
             className={classNames(cls.logoutButton, {}, [className])}
             onClick={handleClick}
-            variant={ButtonVariants.outlined}
         >
             {t('Выйти')}
         </Button>
