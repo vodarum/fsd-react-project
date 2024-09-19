@@ -1,20 +1,20 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "username": "spiderMonkey",
-      "password": "qwerty123",
-      "token": "f39d6798-19c5-40f5-8200-a31e910ca6a9"
+    "users": [
+        {
+            "id": 1,
+            "username": "spiderMonkey",
+            "password": "qwerty123",
+            "token": "f39d6798-19c5-40f5-8200-a31e910ca6a9"
+        }
+    ],
+    "profile": {
+        "firstName": "Nashvar",
+        "lastName": "Vodarum",
+        "birthday": "1993-08-13",
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Волгоград",
+        "username": "vodarum",
+        "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpikabu.ru%2Fstory%2Favatarki_zverushek_9946640&psig=AOvVaw2z0MQCWU4hrkcYR_IOsTs9&ust=1725299245158000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICbvOKmoogDFQAAAAAdAAAAABAE"
     }
-  ],
-  "profile": {
-    "firstName": "Nashvar",
-    "lastName": "Vodarum",
-    "birthday": "1993-08-13",
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Волгоград",
-    "username": "vodarum",
-    "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpikabu.ru%2Fstory%2Favatarki_zverushek_9946640&psig=AOvVaw2z0MQCWU4hrkcYR_IOsTs9&ust=1725299245158000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICbvOKmoogDFQAAAAAdAAAAABAE"
-  }
 }

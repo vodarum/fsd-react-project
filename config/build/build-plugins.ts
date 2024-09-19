@@ -12,7 +12,7 @@ export const buildPlugins = ({
     baseURL,
     isDev,
     paths,
-    project
+    project,
 }: BuildOptions): WebpackPluginInstance[] => {
     const plugins = [
         new HtmlWebpackPlugin({
