@@ -22,5 +22,6 @@ export default function (env: BuildEnv): Configuration {
         paths,
         isDev,
         port,
+        project: 'frontend',
     });
 }

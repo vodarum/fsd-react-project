@@ -16,6 +16,7 @@ type BuildEnv = {
 type BuildOptions = BuildEnv & {
     paths: BuildPaths;
     isDev: boolean;
+    project: 'frontend' | 'storybook' | 'jest';
 };
 
 export { BuildEnv, BuildMode, BuildPaths, BuildOptions };

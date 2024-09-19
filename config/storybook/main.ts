@@ -49,6 +49,7 @@ const config: StorybookConfig = {
             new DefinePlugin({
                 __IS_DEV__: JSON.stringify(true),
                 __BASE_URL__: JSON.stringify('http://localhost:8000'),
+                __PROJECT__: JSON.stringify('storybook'),
             }),
         );
 
