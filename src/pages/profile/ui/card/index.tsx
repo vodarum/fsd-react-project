@@ -6,10 +6,13 @@ import { Text } from 'shared/ui/text';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { profileActions, profileSelectors } from '../../model';
+import {
+    profileActions,
+    profileSelectors,
+    ValidateProfileErrors,
+} from '../../model';
 import { Countries, Country, Currencies, Currency } from 'shared/api';
 import { useAppDispatch } from 'shared/lib/hooks';
-import { ValidateProfileErrors } from 'pages/profile/model/const';
 
 type ProfileCardProps = {
     className?: string;

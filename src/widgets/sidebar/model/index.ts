@@ -1,2 +1,2 @@
 export { items } from './items';
-export { SidebarItem } from './types';
+export type { SidebarItem } from './types';

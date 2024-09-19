@@ -1,7 +1,8 @@
 import { Country, Currency } from 'shared/api';
 import { ValidateProfileErrors } from './const';
 
-type ValidateProfileError = typeof ValidateProfileErrors[keyof typeof ValidateProfileErrors];
+type ValidateProfileError =
+    (typeof ValidateProfileErrors)[keyof typeof ValidateProfileErrors];
 
 type Profile = Partial<{
     firstName: string;

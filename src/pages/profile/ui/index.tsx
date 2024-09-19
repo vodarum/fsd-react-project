@@ -15,8 +15,10 @@ const Profile = () => {
     });
 
     useEffect(() => {
-        // @ts-ignore
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            // @ts-ignore
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     return (

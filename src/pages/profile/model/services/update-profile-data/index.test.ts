@@ -60,7 +60,10 @@ describe('updateProfileData', () => {
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(spyConsoleError).toHaveBeenCalledTimes(0);
         expect(result.meta.requestStatus).toBe('rejected');
-        expect(result.payload).toEqual([ValidateProfileErrors.invalidUserData, ValidateProfileErrors.invalidLocationData]);
+        expect(result.payload).toEqual([
+            ValidateProfileErrors.invalidUserData,
+            ValidateProfileErrors.invalidLocationData,
+        ]);
 
         spyConsoleError.mockReset();
         spyConsoleError.mockRestore();

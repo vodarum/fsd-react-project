@@ -4,7 +4,7 @@ import { AppLink } from 'shared/ui/app-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SidebarItem as SidebarItemType } from 'widgets/sidebar/model';
+import { type SidebarItem as SidebarItemType } from '../../model';
 
 type SidebarItemProps = SidebarItemType & {
     collapsed?: boolean;

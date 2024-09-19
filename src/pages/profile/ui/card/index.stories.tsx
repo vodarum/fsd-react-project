@@ -1,11 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ProfileCard } from '.';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
-import { profileReducer } from '../../model';
-import { mockProfile, mockProfileState } from '../../model/__mocks__';
+import {
+    mockProfile,
+    mockProfileState,
+    profileReducer,
+    ValidateProfileErrors,
+} from '../../model';
 
 const meta = {
-    title: 'entities/ProfileCard',
+    title: 'pages/Profile/ProfileCard',
     component: ProfileCard,
     parameters: {
         layout: 'centered',
@@ -28,14 +32,14 @@ export const WithInputsFilled: Story = {
             preloadedState: {
                 profile: {
                     ...mockProfileState,
-                    data: mockProfile,
+                    form: mockProfile,
                 },
             },
         }),
     ],
 };
 
-export const WithLoading: Story = {
+export const Editable: Story = {
     decorators: [
         StoreDecorator({
             preloadedReducer: {
@@ -44,15 +48,15 @@ export const WithLoading: Story = {
             preloadedState: {
                 profile: {
                     ...mockProfileState,
-                    data: mockProfile,
-                    loading: true,
+                    form: mockProfile,
+                    editable: true,
                 },
             },
         }),
     ],
 };
 
-export const WithError: Story = {
+export const WithValidateError: Story = {
     decorators: [
         StoreDecorator({
             preloadedReducer: {
@@ -61,9 +65,16 @@ export const WithError: Story = {
             preloadedState: {
                 profile: {
                     ...mockProfileState,
-                    data: mockProfile,
+                    form: {
+                        ...mockProfile,
+                        lastName: '',
+                        city: '',
+                    },
                     loading: false,
-                    error: 'Some error',
+                    validateErrors: [
+                        ValidateProfileErrors.invalidUserData,
+                        ValidateProfileErrors.invalidLocationData,
+                    ],
                 },
             },
         }),

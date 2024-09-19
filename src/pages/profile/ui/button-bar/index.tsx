@@ -1,5 +1,5 @@
 import cls from './index.module.scss';
-import { Button, ButtonVariants } from 'shared/ui/button';
+import { Button } from 'shared/ui/button';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { memo } from 'react';
@@ -32,25 +32,19 @@ export const ProfileButtonBar = memo(() => {
                 <>
                     <Button
                         className={cls.cancelBtn}
-                        variant={ButtonVariants.outlined}
                         onClick={handleCancelBtnClick}
                     >
                         {t('Отменить')}
                     </Button>
                     <Button
                         className={cls.saveBtn}
-                        variant={ButtonVariants.outlined}
                         onClick={handleSaveBtnClick}
                     >
                         {t('Сохранить')}
                     </Button>
                 </>
             ) : (
-                <Button
-                    className={cls.editBtn}
-                    variant={ButtonVariants.outlined}
-                    onClick={handleEditBtnClick}
-                >
+                <Button className={cls.editBtn} onClick={handleEditBtnClick}>
                     {t('Редактировать')}
                 </Button>
             )}

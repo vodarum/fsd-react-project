@@ -1,7 +1,8 @@
 import { ValidateProfileErrors } from '../../const';
 import { Profile, ValidateProfileError } from '../../types';
 
-const validateTextField = (value?: string): boolean => !value || /\d/.test(value);
+const validateTextField = (value?: string): boolean =>
+    !value || /\d/.test(value);
 
 export const validateProfileData = (data?: Profile): ValidateProfileError[] => {
     if (!data) return [ValidateProfileErrors.noData];

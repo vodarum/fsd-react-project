@@ -1,8 +1,8 @@
-import { profileActions, profileReducer } from ".";
-import { mockProfile, mockProfileState } from "../__mocks__";
-import { ValidateProfileErrors } from "../const";
-import { updateProfileData } from "../services";
-import { Profile } from "../types";
+import { profileActions, profileReducer } from '.';
+import { mockProfile, mockProfileState } from '../__mocks__';
+import { ValidateProfileErrors } from '../const';
+import { updateProfileData } from '../services';
+import { Profile } from '../types';
 
 describe('profileSlice', () => {
     test('setForm', () => {
