@@ -2,12 +2,16 @@
 @import './variables/global';
 @import './themes/light';
 @import './themes/dark';
+@import './themes/magic';
+@import './themes/nature';
+@import './themes/halloween';
 
 .app {
     min-height: 100vh;
     font: var(--font-m);
     background-color: var(--bg-color);
     color: var(--primary-color);
+    position: relative;
 }
 
 a {

@@ -3,15 +3,14 @@ import { Theme, THEME_LS_KEY, ThemeContext, Themes } from './theme-context';
 
 type UseThemeResult = {
     theme: Theme;
-    toggleTheme: () => void;
+    toggleTheme: (theme: Theme) => void;
 };
 
 export const useTheme = (): UseThemeResult => {
     const { theme, setTheme } = useContext(ThemeContext);
-    const toggleTheme = () => {
-        const newTheme = theme === Themes.light ? Themes.dark : Themes.light;
-        setTheme?.(newTheme);
-        localStorage.setItem(THEME_LS_KEY, newTheme);
+    const toggleTheme = (theme: Theme) => {
+        setTheme?.(theme);
+        localStorage.setItem(THEME_LS_KEY, theme);
     };
 
     return { theme: theme || Themes.light, toggleTheme };

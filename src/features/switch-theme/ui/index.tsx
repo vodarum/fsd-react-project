@@ -1,29 +1,44 @@
 import { classNames } from 'shared/lib/class-names';
-import cls from './index.module.scss';
+import { Theme, ThemeIcons, Themes, useTheme } from 'shared/lib/theme';
 import { Button, ButtonVariants } from 'shared/ui/button';
-import { Themes, useTheme } from 'shared/lib/theme';
+import cls from './index.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 type ThemeSwitcherProps = {
     className?: string;
 };
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
+    const { t } = useTranslation();
     const { theme, toggleTheme } = useTheme();
+    const themeTranslates = {
+        [Themes.dark]: t('Темная'),
+        [Themes.halloween]: t('Хэллоуин'),
+        [Themes.light]: t('Светлая'),
+        [Themes.nature]: t('Природа'),
+        [Themes.magic]: t('Магия'),
+    };
 
     return (
-        <Button
-            onClick={toggleTheme}
-            variant={ButtonVariants.clear}
-            className={classNames(cls.themeSwitcher, {}, [className])}
-        >
-            {theme === Themes.light ? (
-                <FontAwesomeIcon icon={faMoon} />
-            ) : (
-                <FontAwesomeIcon icon={faSun} />
-            )}
-        </Button>
+        <div className={classNames(cls.wrapper, {}, [className])}>
+            {Object.entries(ThemeIcons).map(([themeKey, themeIcon]) => (
+                <Button
+                    key={themeKey}
+                    className={cls.btn}
+                    onClick={() => toggleTheme(themeKey as Theme)}
+                    variant={ButtonVariants.clear}
+                >
+                    <span
+                        className={classNames(cls.radio, {
+                            [cls.checked]: theme === themeKey,
+                        })}
+                    />
+                    <FontAwesomeIcon icon={themeIcon} />
+                    <span>{themeTranslates[themeKey as Theme]}</span>
+                </Button>
+            ))}
+        </div>
     );
 });

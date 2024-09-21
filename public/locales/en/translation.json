@@ -1,6 +1,12 @@
 {
     "Язык": "English",
     "Короткий язык": "En",
+    "Настройки": "Settings",
+    "Темная": "Dark",
+    "Хэллоуин": "Halloween",
+    "Светлая": "Light",
+    "Природа": "Nature",
+    "Магия": "Magic",
     "Произошла непредвиденная ошибка": "An unexpected error occurred",
     "Обновить страницу": "Refresh the page",
     "Сгенерировать ошибку": "Throw an error",
