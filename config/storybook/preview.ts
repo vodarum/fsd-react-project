@@ -18,6 +18,9 @@ const preview: Preview = {
             themes: {
                 light: 'light',
                 dark: 'dark',
+                magic: 'magic',
+                nature: 'nature',
+                halloween: 'halloween',
             },
             defaultTheme: 'light',
         }),
