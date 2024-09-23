@@ -1,10 +1,8 @@
 import { classNames } from 'shared/lib/class-names';
 import cls from './index.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/button';
-import { memo, useCallback, useEffect, useState } from 'react';
+import { memo, ReactNode, useCallback, useEffect, useState } from 'react';
 import { LoginModal } from 'features/login';
 import { LogoutButton } from 'features/logout';
 import { selectIsAuth } from 'entities/user';
@@ -12,10 +10,12 @@ import { useSelector } from 'react-redux';
 
 type NavbarProps = {
     className?: string;
-    handlerDrawer?: () => void;
+    append?: ReactNode;
+    prepend?: ReactNode;
 };
 
-export const Navbar = memo(({ className, handlerDrawer }: NavbarProps) => {
+export const Navbar = memo((props: NavbarProps) => {
+    const { className, append, prepend } = props;
     const { t } = useTranslation('navigation');
     const isAuth = useSelector(selectIsAuth);
 
@@ -35,11 +35,9 @@ export const Navbar = memo(({ className, handlerDrawer }: NavbarProps) => {
 
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
-            <FontAwesomeIcon
-                icon={faBars}
-                onClick={handlerDrawer}
-                className={classNames(cls.btnMenu)}
-            />
+            {prepend && <div className={cls.prepend}>{prepend}</div>}
+
+            {append && <div className={cls.append}>{append}</div>}
 
             {isAuth ? (
                 <LogoutButton />

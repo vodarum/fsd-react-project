@@ -4,13 +4,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8px;
 }
 
-.btnMenu {
-    cursor: pointer;
+.append {
+    margin-left: auto;
 }
 
-.btnLogin {
-    padding: 6px 12px;
-    border-radius: 2px;
+.prepend {
+    margin-right: auto;
 }
