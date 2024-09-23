@@ -8,14 +8,12 @@ const meta = {
     parameters: {
         layout: 'centered',
     },
+    args: {
+        open: true,
+    },
 } satisfies Meta<typeof RightSidebar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
-export const Open: Story = {
-    args: {
-        open: true,
-    },
-};
+export const Open: Story = {};
