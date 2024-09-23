@@ -1,28 +1,35 @@
 import cls from './index.module.scss';
+import { type NavRoute } from 'app/providers/router';
 import { classNames } from 'shared/lib/class-names';
 import { AppLink } from 'shared/ui/app-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { type SidebarItem as SidebarItemType } from '../../model';
+import { useSelector } from 'react-redux';
+import { selectIsAuth } from 'entities/user';
 
-type SidebarItemProps = SidebarItemType & {
+type SidebarItemProps = NavRoute & {
     collapsed?: boolean;
 };
 
 export const SidebarItem = memo((props: SidebarItemProps) => {
-    const { path, title, icon, collapsed } = props;
+    const { path, name, meta, collapsed } = props;
     const { t } = useTranslation('navigation');
+    const isAuth = useSelector(selectIsAuth);
+
+    if (meta?.requiresAuth && !isAuth) return null;
 
     return (
         <AppLink
             to={path}
-            className={classNames(cls.link, { [cls.collapsed]: collapsed })}
-            data-testid='link'
+            className={classNames(cls.navItem, { [cls.collapsed]: collapsed })}
+            data-testid='navItem'
         >
-            <FontAwesomeIcon icon={icon} className='fa-fw' />
-            <span className={cls.linkTitle} data-testid='linkTitle'>
-                {t(title)}
+            {meta.icon && (
+                <FontAwesomeIcon icon={meta.icon} className='fa-fw' />
+            )}
+            <span className={cls.navItemName} data-testid='navItemName'>
+                {t(name)}
             </span>
         </AppLink>
     );

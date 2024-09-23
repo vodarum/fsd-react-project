@@ -1,16 +1,16 @@
-.link {
+.navItem {
     display: flex;
     align-items: center;
     gap: 4px;
 
-    &Title {
+    &Name {
         transition: all 0.2s ease-out;
     }
 
     .collapsed & {
         gap: 0;
 
-        &Title {
+        &Name {
             width: 0;
             opacity: 0;
         }

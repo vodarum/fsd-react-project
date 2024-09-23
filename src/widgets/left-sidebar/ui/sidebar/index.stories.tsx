@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { LeftSidebar } from '.';
+import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import { mockSession } from 'entities/user';
 
 const meta = {
     title: 'widgets/LeftSidebar/Sidebar',
@@ -9,6 +11,7 @@ const meta = {
         className: 'layout-sidebar',
     },
     decorators: [
+        StoreDecorator({}),
         (Story) => (
             <div className='layout' style={{ height: '100vh' }}>
                 <Story />
@@ -25,7 +28,23 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
 export const Open: Story = {
+    args: {
+        open: true,
+    },
+};
+
+export const ForLoggedUser: Story = {
+    decorators: [
+        StoreDecorator({
+            preloadedState: {
+                user: {
+                    session: mockSession,
+                },
+            },
+        }),
+    ],
     args: {
         open: true,
     },

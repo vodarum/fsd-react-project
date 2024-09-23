@@ -14,4 +14,4 @@ const appRoutePaths: Record<RouteKey, string> = {
     [appRoutes.notFound]: '*',
 } as const;
 
-export { appRoutes, appRoutePaths };
+export { appRoutePaths };

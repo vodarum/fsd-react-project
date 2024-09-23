@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { SidebarItem } from '.';
-import { items } from '../../model';
+import { navRoutes } from 'app/providers/router';
+import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 
 const meta = {
     title: 'widgets/LeftSidebar/SidebarItem',
@@ -10,8 +11,9 @@ const meta = {
     },
     tags: ['autodocs'],
     args: {
-        ...items[0],
+        ...navRoutes[0],
     },
+    decorators: [StoreDecorator({})],
 } satisfies Meta<typeof SidebarItem>;
 
 export default meta;
