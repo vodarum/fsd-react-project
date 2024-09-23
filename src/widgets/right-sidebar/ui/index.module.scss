@@ -1,0 +1,45 @@
+.wrapper {
+    position: absolute;
+    background-color: var(--overlay-color);
+    z-index: var(--modal-z-index);
+}
+
+.sidebar {
+    --sidebar-width: 100%;
+
+    background-color: var(--bg-color);
+    border-left: 1px solid var(--primary-color-dark);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: calc(var(--sidebar-width) * -1);
+    width: var(--sidebar-width);
+    transition: right 0.3s ease-out;
+
+    @media (min-width: 375px) {
+        --sidebar-width: 350px;
+    }
+}
+
+.header,
+.content {
+    padding: var(--padding);
+}
+
+.header {
+    border-bottom: 1px solid var(--primary-color-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.open {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .sidebar {
+        right: 0;
+    }
+}
