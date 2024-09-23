@@ -3,7 +3,7 @@ import { SidebarItem } from '.';
 import { items } from '../../model';
 
 const meta = {
-    title: 'widgets/SidebarItem',
+    title: 'widgets/LeftSidebar/SidebarItem',
     component: SidebarItem,
     parameters: {
         layout: 'centered',

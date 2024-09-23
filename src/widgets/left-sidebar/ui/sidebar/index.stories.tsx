@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Sidebar } from '.';
+import { LeftSidebar } from '.';
 
 const meta = {
-    title: 'widgets/Sidebar',
-    component: Sidebar,
+    title: 'widgets/LeftSidebar/Sidebar',
+    component: LeftSidebar,
     tags: ['autodocs'],
     args: {
         className: 'layout-sidebar',
@@ -19,14 +19,14 @@ const meta = {
             </div>
         ),
     ],
-} satisfies Meta<typeof Sidebar>;
+} satisfies Meta<typeof LeftSidebar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const Collapsed: Story = {
+export const Open: Story = {
     args: {
-        collapsed: true,
+        open: true,
     },
 };

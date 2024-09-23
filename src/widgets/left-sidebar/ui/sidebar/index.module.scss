@@ -1,6 +1,5 @@
 .sidebar {
     padding: var(--padding);
-    padding-right: 200px;
     transition: padding 0.3s ease-out;
     display: flex;
     flex-direction: column;
@@ -15,15 +14,16 @@
 
 .switchers {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 12px;
+    gap: 4px;
 }
 
-.collapsed {
-    padding-right: var(--padding);
+.open {
+    padding-right: 200px;
 
     .switchers {
-        flex-direction: column;
-        gap: 4px;
+        flex-direction: row;
+        gap: 12px;
     }
 }

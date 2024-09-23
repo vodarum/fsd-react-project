@@ -1,33 +1,31 @@
 import cls from './index.module.scss';
 import { classNames } from 'shared/lib/class-names';
-import { ThemeSwitcher } from 'features/switch-theme';
 import { LangSwitcher } from 'features/switch-lang';
 import { memo } from 'react';
 import { SidebarItem } from '../sidebar-item';
 import { items } from '../../model';
 
-type SidebarProps = {
+type LeftSidebarProps = {
     className?: string;
-    collapsed?: boolean;
+    open?: boolean;
 };
 
-export const Sidebar = memo(({ className, collapsed }: SidebarProps) => {
+export const LeftSidebar = memo(({ className, open }: LeftSidebarProps) => {
     return (
         <div
-            className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
+            className={classNames(cls.sidebar, { [cls.open]: open }, [
                 className,
             ])}
-            data-testid='sidebar'
+            data-testid='leftSidebar'
         >
             <div className={cls.links}>
                 {items.map((i) => (
-                    <SidebarItem key={i.path} {...i} collapsed={collapsed} />
+                    <SidebarItem key={i.path} {...i} collapsed={!open} />
                 ))}
             </div>
 
             <div className={cls.switchers}>
-                <ThemeSwitcher />
-                <LangSwitcher short={collapsed} />
+                <LangSwitcher short={!open} />
             </div>
         </div>
     );
