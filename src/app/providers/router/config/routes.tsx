@@ -1,4 +1,6 @@
 import { About } from 'pages/about';
+import { Article } from 'pages/article';
+import { Articles } from 'pages/articles';
 import { Main } from 'pages/main';
 import { NotFound } from 'pages/not-found';
 import { Profile } from 'pages/profile';
@@ -6,14 +8,25 @@ import {
     faAddressCard,
     faClipboardList,
     faHome,
+    faNewspaper,
 } from '@fortawesome/free-solid-svg-icons';
 import { AppRouteObject, NavRoute } from './types';
 import { appRoutePaths } from './const';
+import { RouteObject } from 'react-router-dom';
 
-const navRouteElements = {
-    [appRoutePaths.main]: <Main />,
-    [appRoutePaths.about]: <About />,
-    [appRoutePaths.profile]: <Profile />,
+const navRouteElements: Record<string, RouteObject> = {
+    [appRoutePaths.main]: {
+        element: <Main />,
+    },
+    [appRoutePaths.about]: {
+        element: <About />,
+    },
+    [appRoutePaths.profile]: {
+        element: <Profile />,
+    },
+    [appRoutePaths.articles]: {
+        element: <Articles />,
+    },
 } as const;
 
 const navRoutes: NavRoute[] = [
@@ -39,13 +52,25 @@ const navRoutes: NavRoute[] = [
             requiresAuth: true,
         },
     },
+    {
+        name: 'Статьи',
+        path: appRoutePaths.articles,
+        meta: {
+            icon: faNewspaper,
+            requiresAuth: true,
+        },
+    },
 ];
 
 const routes: AppRouteObject[] = [
     ...navRoutes.map((r) => ({
         ...r,
-        element: navRouteElements[r.path],
+        ...navRouteElements[r.path],
     })),
+    {
+        path: appRoutePaths.article + ':id',
+        element: <Article />,
+    },
     {
         path: appRoutePaths.notFound,
         element: <NotFound />,
