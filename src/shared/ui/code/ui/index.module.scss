@@ -1,0 +1,13 @@
+.wrapper {
+    border: 1px solid var(--primary-color);
+    padding: var(--padding);
+    position: relative;
+    background: var(--bg-color-light);
+    overflow: auto;
+}
+
+.btn {
+    position: absolute;
+    right: var(--padding);
+    top: var(--padding);
+}
