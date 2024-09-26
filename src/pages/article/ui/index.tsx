@@ -1,11 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+import { Article as ArticleDetails } from 'entities/article';
+import { Text } from 'shared/ui/text';
 
 const Article = () => {
-    const { t } = useTranslation('articles');
-    const { id } = useParams();
+    const { t } = useTranslation('article');
+    const { id } = useParams<{ id: string }>();
 
-    return <h1>{`${t('Статья')} ${id}`}</h1>;
+    if (!id) return <Text>{t('Статья не найдена')}</Text>;
+
+    return <ArticleDetails id={+id} />;
 };
 
 export default Article;
