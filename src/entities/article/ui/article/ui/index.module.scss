@@ -1,0 +1,23 @@
+.article {
+    overflow-y: scroll;
+}
+
+.skeletonWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--font-interval);
+}
+
+.avatar {
+    display: block;
+    margin: 0 auto;
+}
+
+.info {
+    display: flex;
+    gap: var(--font-interval);
+}
+
+.block {
+    margin-top: calc(var(--font-size) * 2);
+}
