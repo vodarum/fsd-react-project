@@ -98,20 +98,29 @@
         {
             "id": 1,
             "text": "Some comment 1",
-            "articleId": 1,
-            "userId": 1
+            "author": {
+                "id": 1,
+                "name": "Автор 1",
+                "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwnsl37CexuUYALyGM7V0V4aaEVA4NPmjP3w&s"
+            }
         },
         {
             "id": 2,
             "text": "Some comment 2",
-            "articleId": 1,
-            "userId": 1
+            "author": {
+                "id": 2,
+                "name": "Автор 2",
+                "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwnsl37CexuUYALyGM7V0V4aaEVA4NPmjP3w&s"
+            }
         },
         {
             "id": 3,
             "text": "Some comment 3",
-            "articleId": 1,
-            "userId": 1
+            "author": {
+                "id": 1,
+                "name": "Автор 1",
+                "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwnsl37CexuUYALyGM7V0V4aaEVA4NPmjP3w&s"
+            }
         }
     ]
 }
