@@ -10,12 +10,14 @@ import { LoginState } from 'features/login';
 import { configureAppStore } from './store';
 import { AxiosInstance } from 'axios';
 import { ArticleState } from 'entities/article';
+import { ArticleCommentsState } from 'features/article';
 
 type State = {
     user: UserState;
     login?: LoginState;
     profile?: ProfileState;
     article?: ArticleState;
+    articleComments?: ArticleCommentsState;
 };
 
 type StateKey = keyof State;
