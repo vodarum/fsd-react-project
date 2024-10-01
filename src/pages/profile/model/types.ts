@@ -5,6 +5,7 @@ type ValidateProfileError =
     (typeof ValidateProfileErrors)[keyof typeof ValidateProfileErrors];
 
 type Profile = Partial<{
+    id: number;
     firstName: string;
     lastName: string;
     birthday: string;

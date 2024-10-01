@@ -1,13 +1,16 @@
 import cls from './index.module.scss';
-import { Text } from 'shared/ui/text';
-import { useSelector } from 'react-redux';
+import { userSelectors } from 'entities/user';
 import { memo } from 'react';
-import { profileSelectors } from '../../model';
+import { useSelector } from 'react-redux';
 import { Loader } from 'shared/ui/loader';
+import { Text } from 'shared/ui/text';
+import { profileSelectors } from '../../model';
 import { ProfileButtonBar } from '../button-bar';
 import { ProfileCard } from '../card';
 
 export const ProfilePageContent = memo(() => {
+    const session = useSelector(userSelectors.selectSession);
+    const data = useSelector(profileSelectors.selectProfileData);
     const loading = useSelector(profileSelectors.selectLoading);
     const error = useSelector(profileSelectors.selectError);
 
@@ -29,7 +32,7 @@ export const ProfilePageContent = memo(() => {
 
     return (
         <>
-            <ProfileButtonBar />
+            {data?.id === session?.userId && <ProfileButtonBar />}
             <ProfileCard />
         </>
     );

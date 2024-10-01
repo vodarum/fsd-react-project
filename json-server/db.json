@@ -2,27 +2,41 @@
     "users": [
         {
             "id": 1,
-            "username": "spiderMonkey",
+            "username": "vodarum",
             "password": "qwerty123",
             "token": "f39d6798-19c5-40f5-8200-a31e910ca6a9"
         },
         {
             "id": 2,
-            "username": "user",
+            "username": "nirvam",
             "password": "qwerty321",
             "token": "e1415b26-5b1a-4b52-a608-af486fccc6e8"
         }
     ],
-    "profile": {
-        "firstName": "Nashvar",
-        "lastName": "Vodarum",
-        "birthday": "1993-08-13",
-        "currency": "RUB",
-        "country": "Russia",
-        "city": "Волгоград",
-        "username": "vodarum",
-        "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpikabu.ru%2Fstory%2Favatarki_zverushek_9946640&psig=AOvVaw2z0MQCWU4hrkcYR_IOsTs9&ust=1725299245158000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICbvOKmoogDFQAAAAAdAAAAABAE"
-    },
+    "profile": [
+        {
+            "id": 1,
+            "username": "vodarum",
+            "firstName": "Nashvar",
+            "lastName": "Vodarum",
+            "birthday": "1993-08-13",
+            "currency": "RUB",
+            "country": "Russia",
+            "city": "Волгоград",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BpA9GG9FEL4I_S-SeTtzjzVCH6ghbj2MGO5Yr4qyHZwNE9O4SZm7EbpBrQ0htTqYecA&usqp=CAU"
+        },
+        {
+            "id": 2,
+            "username": "nirvam",
+            "firstName": "Sats",
+            "lastName": "Nirvam",
+            "birthday": "1992-07-10",
+            "currency": "RUB",
+            "country": "Russia",
+            "city": "Волгоград",
+            "avatar": "https://img.freepik.com/premium-photo/3d-style-avatar-profile-picture-featuring-male-character-generative-ai_739548-13626.jpg"
+        }
+    ],
     "articles": [
         {
             "id": 1,

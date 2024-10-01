@@ -1,17 +1,19 @@
 import cls from './index.module.scss';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import {
     useAppDispatch,
     useAsyncStore,
     useInitialEffect,
 } from 'shared/lib/hooks';
-import { fetchProfileData, profileReducer } from '../model';
+import { fetchProfileData, profileReducer } from '../../model';
 import { Title } from 'shared/ui/title';
-import { ProfilePageContent } from './content';
+import { ProfilePageContent } from '../content';
 
 const Profile = () => {
     const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
+    const { id } = useParams<{ id: string }>();
 
     useAsyncStore({
         profile: profileReducer,
@@ -19,7 +21,7 @@ const Profile = () => {
 
     useInitialEffect(() => {
         // @ts-ignore
-        dispatch(fetchProfileData());
+        if (id) dispatch(fetchProfileData(+id));
     }, [dispatch]);
 
     return (

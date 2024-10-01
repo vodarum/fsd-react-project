@@ -4,6 +4,8 @@ import { ValidateProfileErrors } from '../const';
 import { updateProfileData } from '../services';
 import { Profile } from '../types';
 
+const profileId = mockProfile.id as number;
+
 describe('profileSlice', () => {
     test('setForm', () => {
         const newProfile: Profile = {
@@ -68,7 +70,7 @@ describe('profileSlice', () => {
                     ...mockProfileState,
                     validateErrors: [ValidateProfileErrors.serverError],
                 },
-                updateProfileData.pending(''), // TODO: без вызова функции появляется ts-ошибка
+                updateProfileData.pending('', profileId), // TODO: без вызова функции появляется ts-ошибка
             ),
         ).toEqual({
             ...mockProfileState,
@@ -81,7 +83,7 @@ describe('profileSlice', () => {
         expect(
             profileReducer(
                 mockProfileState,
-                updateProfileData.fulfilled(mockProfile, ''),
+                updateProfileData.fulfilled(mockProfile, '', profileId),
             ),
         ).toEqual({
             ...mockProfileState,

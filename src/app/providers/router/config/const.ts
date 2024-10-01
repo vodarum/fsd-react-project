@@ -12,7 +12,7 @@ type RouteKey = (typeof appRoutes)[keyof typeof appRoutes];
 const appRoutePaths: Record<RouteKey, string> = {
     [appRoutes.main]: '/',
     [appRoutes.about]: '/about',
-    [appRoutes.profile]: '/profile',
+    [appRoutes.profile]: '/profile/',
     [appRoutes.articles]: '/articles',
     [appRoutes.article]: '/articles/',
     [appRoutes.notFound]: '*',

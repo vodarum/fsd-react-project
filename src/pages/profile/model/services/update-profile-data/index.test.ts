@@ -3,7 +3,8 @@ import { testAsyncThunk } from 'shared/lib/tests/test-async-thunk';
 import { mockProfile, mockProfileState } from '../../__mocks__';
 import { ValidateProfileErrors } from '../../const';
 
-const url = '/profile';
+const profileId = mockProfile.id as number;
+const url = `/profile/${profileId}`;
 
 describe('updateProfileData', () => {
     test('with fulfilled', async () => {
@@ -16,7 +17,7 @@ describe('updateProfileData', () => {
 
         api.put.mockReturnValueOnce(Promise.resolve({ data: mockProfile }));
 
-        const result = await callThunk();
+        const result = await callThunk(profileId);
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(api.put).toHaveBeenCalledWith(url, mockProfile);
@@ -35,7 +36,7 @@ describe('updateProfileData', () => {
 
         api.put.mockReturnValueOnce(Promise.resolve({ status: 403 }));
 
-        const result = await callThunk();
+        const result = await callThunk(profileId);
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(spyConsoleError).toHaveBeenCalledTimes(1);
@@ -55,7 +56,7 @@ describe('updateProfileData', () => {
             },
         });
 
-        const result = await callThunk();
+        const result = await callThunk(profileId);
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(spyConsoleError).toHaveBeenCalledTimes(0);

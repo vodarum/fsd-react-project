@@ -1,18 +1,19 @@
 import { classNames } from 'shared/lib/class-names';
 import cls from './index.module.scss';
+import { Countries, Country, Currencies, Currency } from 'shared/api';
+import { useAppDispatch } from 'shared/lib/hooks';
+import { Avatar } from 'shared/ui/avatar';
 import { Input } from 'shared/ui/input';
 import { Select } from 'shared/ui/select';
 import { Text } from 'shared/ui/text';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { memo, useCallback } from 'react';
 import {
     profileActions,
     profileSelectors,
     ValidateProfileErrors,
 } from '../../model';
-import { Countries, Country, Currencies, Currency } from 'shared/api';
-import { useAppDispatch } from 'shared/lib/hooks';
 
 type ProfileCardProps = {
     className?: string;
@@ -98,6 +99,8 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
                         {validateErrorTranslates[e]}
                     </Text>
                 ))}
+
+            <Avatar className={cls.avatar} src={form?.avatar} />
 
             <Input
                 label={t('Имя')}

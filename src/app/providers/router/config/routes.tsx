@@ -23,6 +23,7 @@ const navRouteElements: Record<string, RouteObject> = {
     },
     [appRoutePaths.profile]: {
         element: <Profile />,
+        path: appRoutePaths.profile + ':id',
     },
     [appRoutePaths.articles]: {
         element: <Articles />,
@@ -70,6 +71,9 @@ const routes: AppRouteObject[] = [
     {
         path: appRoutePaths.article + ':id',
         element: <Article />,
+        meta: {
+            requiresAuth: true,
+        },
     },
     {
         path: appRoutePaths.notFound,
