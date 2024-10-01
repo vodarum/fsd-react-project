@@ -1,10 +1,14 @@
 import { classNames } from 'shared/lib/class-names';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faEye } from '@fortawesome/free-solid-svg-icons';
-import { memo, useEffect } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch, useAsyncStore } from 'shared/lib/hooks';
+import {
+    useAppDispatch,
+    useAsyncStore,
+    useInitialEffect,
+} from 'shared/lib/hooks';
 import { Avatar } from 'shared/ui/avatar';
 import { Skeleton } from 'shared/ui/skeleton';
 import { Text } from 'shared/ui/text';
@@ -78,11 +82,9 @@ export const Article = memo(({ className, id }: ArticleProps) => {
         article: articleReducer,
     });
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            // @ts-ignore
-            dispatch(fetchById(id));
-        }
+    useInitialEffect(() => {
+        // @ts-ignore
+        dispatch(fetchById(id));
     }, [dispatch, id]);
 
     if (loading) {
