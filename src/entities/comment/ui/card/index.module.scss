@@ -1,0 +1,14 @@
+.card {
+    padding: var(--font-interval);
+    border: 1px solid var(--primary-color);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: var(--font-interval);
+}
+
+.text {
+    margin-top: var(--font-interval);
+}
