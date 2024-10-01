@@ -1,4 +1,4 @@
 export * from './__mocks__';
-export * from './selectors';
+export * as userSelectors from './selectors';
 export * from './slice';
 export * from './types';

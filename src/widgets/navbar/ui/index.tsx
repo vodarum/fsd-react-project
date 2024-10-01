@@ -5,7 +5,7 @@ import { Button } from 'shared/ui/button';
 import { memo, ReactNode, useCallback, useEffect, useState } from 'react';
 import { LoginModal } from 'features/login';
 import { LogoutButton } from 'features/logout';
-import { selectIsAuth } from 'entities/user';
+import { userSelectors } from 'entities/user';
 import { useSelector } from 'react-redux';
 
 type NavbarProps = {
@@ -17,7 +17,7 @@ type NavbarProps = {
 export const Navbar = memo((props: NavbarProps) => {
     const { className, append, prepend } = props;
     const { t } = useTranslation('navigation');
-    const isAuth = useSelector(selectIsAuth);
+    const isAuth = useSelector(userSelectors.selectIsAuth);
 
     const [isLoginModal, setIsLoginModal] = useState(false);
 
