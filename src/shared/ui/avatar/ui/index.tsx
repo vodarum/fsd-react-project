@@ -1,4 +1,5 @@
 import { CSSProperties, memo, useMemo } from 'react';
+import Image from './image.jpg';
 
 const AvatarShapes = {
     circle: 'circle',
@@ -16,7 +17,7 @@ type AvatarProps = {
 const Avatar = memo(
     ({
         className,
-        src,
+        src = Image,
         alt,
         size,
         shape = AvatarShapes.circle,
