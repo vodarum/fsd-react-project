@@ -4,26 +4,22 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch';
 import { Button } from 'shared/ui/button';
 import cls from './index.module.scss';
-import {
-    profileActions,
-    profileSelectors,
-    updateProfileData,
-} from '../../model';
+import { userActions, userSelectors, updateById } from 'features/user';
 
 export const ProfileButtonBar = memo(() => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
-    const editable = useSelector(profileSelectors.selectEditable);
+    const editable = useSelector(userSelectors.selectEditable);
 
     const handleEditBtnClick = () => {
-        dispatch(profileActions.setEditable(true));
+        dispatch(userActions.setEditable(true));
     };
     const handleCancelBtnClick = () => {
-        dispatch(profileActions.cancelEditing());
+        dispatch(userActions.cancelEditing());
     };
     const handleSaveBtnClick = () => {
         // @ts-ignore
-        dispatch(updateProfileData());
+        dispatch(updateById());
     };
 
     return (

@@ -1,5 +1,6 @@
 import { classNames } from 'shared/lib/class-names';
 import cls from './index.module.scss';
+import { userActions, userSelectors, ValidateUserErrors } from 'features/user';
 import { Countries, Country, Currencies, Currency } from 'shared/api';
 import { useAppDispatch } from 'shared/lib/hooks';
 import { Avatar } from 'shared/ui/avatar';
@@ -9,11 +10,6 @@ import { Text } from 'shared/ui/text';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import {
-    profileActions,
-    profileSelectors,
-    ValidateProfileErrors,
-} from '../../model';
 
 type ProfileCardProps = {
     className?: string;
@@ -22,67 +18,65 @@ type ProfileCardProps = {
 export const ProfileCard = memo(({ className }: ProfileCardProps) => {
     const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
-    const form = useSelector(profileSelectors.selectProfileForm);
-    const editable = useSelector(profileSelectors.selectEditable);
-    const validateErrors = useSelector(profileSelectors.selectValidateErrors);
+    const form = useSelector(userSelectors.selectUserForm);
+    const editable = useSelector(userSelectors.selectEditable);
+    const validateErrors = useSelector(userSelectors.selectValidateErrors);
     const validateErrorTranslates = {
-        [ValidateProfileErrors.invalidLocationData]: t(
+        [ValidateUserErrors.invalidLocationData]: t(
             'Некорректные город или страна',
         ),
-        [ValidateProfileErrors.invalidUserData]: t(
-            'Некорректные имя или фамилия',
-        ),
-        [ValidateProfileErrors.noData]: t('Отсутствуют данные'),
-        [ValidateProfileErrors.serverError]: t(
+        [ValidateUserErrors.invalidUserData]: t('Некорректные имя или фамилия'),
+        [ValidateUserErrors.noData]: t('Отсутствуют данные'),
+        [ValidateUserErrors.serverError]: t(
             'Ошибка при попытке сохранить данные',
         ),
     };
 
     const handleFirstnameInputChange = useCallback(
         (value?: string) => {
-            dispatch(profileActions.setForm({ firstName: value || '' }));
+            dispatch(userActions.setForm({ firstName: value || '' }));
         },
         [dispatch],
     );
 
     const handleLastnameInputChange = useCallback(
         (value?: string) => {
-            dispatch(profileActions.setForm({ lastName: value || '' }));
+            dispatch(userActions.setForm({ lastName: value || '' }));
         },
         [dispatch],
     );
 
     const handleBirthdayInputChange = useCallback(
         (value?: string) => {
-            dispatch(profileActions.setForm({ birthday: value || '' }));
+            dispatch(userActions.setForm({ birthday: value || '' }));
         },
         [dispatch],
     );
 
     const handleCountryInputChange = useCallback(
         (value?: string) => {
-            dispatch(profileActions.setForm({ country: value as Country }));
+            dispatch(userActions.setForm({ country: value as Country }));
         },
         [dispatch],
     );
 
     const handleCurrencyInputChange = useCallback(
         (value?: string) => {
-            dispatch(profileActions.setForm({ currency: value as Currency }));
+            dispatch(userActions.setForm({ currency: value as Currency }));
         },
         [dispatch],
     );
 
     const handleCityInputChange = useCallback(
         (value?: string) => {
-            dispatch(profileActions.setForm({ city: value || '' }));
+            dispatch(userActions.setForm({ city: value || '' }));
         },
         [dispatch],
     );
 
     const handleUsernameInputChange = useCallback(
         (value?: string) => {
-            dispatch(profileActions.setForm({ username: value || '' }));
+            dispatch(userActions.setForm({ username: value || '' }));
         },
         [dispatch],
     );

@@ -13,6 +13,7 @@ import {
 import { AppRouteObject, NavRoute } from './types';
 import { appRoutePaths } from './const';
 import { RouteObject } from 'react-router-dom';
+import { User } from 'pages/user';
 
 const navRouteElements: Record<string, RouteObject> = {
     [appRoutePaths.main]: {
@@ -23,7 +24,7 @@ const navRouteElements: Record<string, RouteObject> = {
     },
     [appRoutePaths.profile]: {
         element: <Profile />,
-        path: appRoutePaths.profile + ':id',
+        path: appRoutePaths.profile,
     },
     [appRoutePaths.articles]: {
         element: <Articles />,
@@ -71,6 +72,13 @@ const routes: AppRouteObject[] = [
     {
         path: appRoutePaths.article + ':id',
         element: <Article />,
+        meta: {
+            requiresAuth: true,
+        },
+    },
+    {
+        path: appRoutePaths.user + ':id',
+        element: <User />,
         meta: {
             requiresAuth: true,
         },

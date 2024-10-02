@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ProfileCard } from '.';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 import {
-    mockProfile,
-    mockProfileState,
-    profileReducer,
-    ValidateProfileErrors,
-} from '../../model';
+    mockUsers,
+    mockUserState,
+    userReducer,
+    ValidateUserErrors,
+} from 'features/user';
 
 const meta = {
     title: 'pages/Profile/ProfileCard',
@@ -27,12 +27,12 @@ export const WithInputsFilled: Story = {
     decorators: [
         StoreDecorator({
             preloadedReducer: {
-                profile: profileReducer,
+                user: userReducer,
             },
             preloadedState: {
-                profile: {
-                    ...mockProfileState,
-                    form: mockProfile,
+                user: {
+                    ...mockUserState,
+                    form: mockUsers[0],
                 },
             },
         }),
@@ -43,12 +43,12 @@ export const Editable: Story = {
     decorators: [
         StoreDecorator({
             preloadedReducer: {
-                profile: profileReducer,
+                user: userReducer,
             },
             preloadedState: {
-                profile: {
-                    ...mockProfileState,
-                    form: mockProfile,
+                user: {
+                    ...mockUserState,
+                    form: mockUsers[0],
                     editable: true,
                 },
             },
@@ -60,20 +60,20 @@ export const WithValidateError: Story = {
     decorators: [
         StoreDecorator({
             preloadedReducer: {
-                profile: profileReducer,
+                user: userReducer,
             },
             preloadedState: {
-                profile: {
-                    ...mockProfileState,
+                user: {
+                    ...mockUserState,
                     form: {
-                        ...mockProfile,
+                        ...mockUsers[0],
                         lastName: '',
                         city: '',
                     },
                     loading: false,
                     validateErrors: [
-                        ValidateProfileErrors.invalidUserData,
-                        ValidateProfileErrors.invalidLocationData,
+                        ValidateUserErrors.invalidUserData,
+                        ValidateUserErrors.invalidLocationData,
                     ],
                 },
             },

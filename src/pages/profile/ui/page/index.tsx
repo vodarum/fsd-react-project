@@ -1,27 +1,28 @@
 import cls from './index.module.scss';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import {
     useAppDispatch,
     useAsyncStore,
     useInitialEffect,
 } from 'shared/lib/hooks';
-import { fetchProfileData, profileReducer } from '../../model';
 import { Title } from 'shared/ui/title';
 import { ProfilePageContent } from '../content';
+import { sessionSelectors } from 'entities/session';
+import { fetchById, userReducer } from 'features/user';
 
 const Profile = () => {
     const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
-    const { id } = useParams<{ id: string }>();
+    const session = useSelector(sessionSelectors.selectSessionData);
 
     useAsyncStore({
-        profile: profileReducer,
+        user: userReducer,
     });
 
     useInitialEffect(() => {
         // @ts-ignore
-        if (id) dispatch(fetchProfileData(+id));
+        if (session?.userId) dispatch(fetchById(session.userId));
     }, [dispatch]);
 
     return (

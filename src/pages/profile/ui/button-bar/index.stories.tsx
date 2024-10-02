@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ProfileButtonBar } from '.';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
-import { mockProfileState, profileReducer } from '../../model';
+import { mockUserState, userReducer } from 'features/user';
 
 const meta = {
     title: 'pages/Profile/ProfileButtonBar',
@@ -22,10 +22,10 @@ export const NotEditable: Story = {
     decorators: [
         StoreDecorator({
             preloadedReducer: {
-                profile: profileReducer,
+                user: userReducer,
             },
             preloadedState: {
-                profile: mockProfileState,
+                user: mockUserState,
             },
         }),
     ],
@@ -35,11 +35,11 @@ export const Editable: Story = {
     decorators: [
         StoreDecorator({
             preloadedReducer: {
-                profile: profileReducer,
+                user: userReducer,
             },
             preloadedState: {
-                profile: {
-                    ...mockProfileState,
+                user: {
+                    ...mockUserState,
                     editable: true,
                 },
             },

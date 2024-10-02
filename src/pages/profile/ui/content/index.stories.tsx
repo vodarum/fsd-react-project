@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ProfilePageContent } from '.';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
-import { mockProfileState, profileReducer } from '../../model';
+import { mockSession } from 'entities/session';
+import { mockUsers, mockUserState, userReducer } from 'features/user';
 
 const meta = {
     title: 'pages/Profile/ProfilePageContent',
@@ -22,12 +23,15 @@ export const WithLoading: Story = {
     decorators: [
         StoreDecorator({
             preloadedReducer: {
-                profile: profileReducer,
+                user: userReducer,
             },
             preloadedState: {
-                profile: {
-                    ...mockProfileState,
+                user: {
+                    ...mockUserState,
                     loading: true,
+                },
+                session: {
+                    data: mockSession,
                 },
             },
         }),
@@ -38,12 +42,35 @@ export const WithError: Story = {
     decorators: [
         StoreDecorator({
             preloadedReducer: {
-                profile: profileReducer,
+                user: userReducer,
             },
             preloadedState: {
-                profile: {
-                    ...mockProfileState,
+                user: {
+                    ...mockUserState,
                     error: 'Неизвестная ошибка',
+                },
+                session: {
+                    data: mockSession,
+                },
+            },
+        }),
+    ],
+};
+
+export const WithEditableForm: Story = {
+    decorators: [
+        StoreDecorator({
+            preloadedReducer: {
+                user: userReducer,
+            },
+            preloadedState: {
+                user: {
+                    ...mockUserState,
+                    data: mockUsers[0],
+                    form: mockUsers[0],
+                },
+                session: {
+                    data: mockSession,
                 },
             },
         }),
