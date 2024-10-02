@@ -11,6 +11,7 @@ import { AxiosInstance } from 'axios';
 import { ArticleState } from 'entities/article';
 import { SessionState } from 'entities/session';
 import { ArticleCommentsState } from 'features/article';
+import { AddCommentState } from 'features/comment';
 
 type State = {
     session: SessionState;
@@ -18,6 +19,7 @@ type State = {
     login?: LoginState;
     article?: ArticleState;
     articleComments?: ArticleCommentsState;
+    addComment?: AddCommentState;
 };
 
 type StateKey = keyof State;

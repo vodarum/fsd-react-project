@@ -13,7 +13,12 @@ export const fetchByArticleId = createAsyncThunk<
         if (!articleId) return rejectWithValue('Empty articleId');
 
         const response = await extra.api.get<Comment[]>(
-            `/article/${articleId}/comments`,
+            `/articles/${articleId}/comments`,
+            {
+                params: {
+                    _expand: 'user',
+                },
+            },
         );
 
         if (!response.data) throw new Error();

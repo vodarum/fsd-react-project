@@ -41,10 +41,10 @@ const CommentCard = memo(({ className, data }: CommentCardProps) => {
         <div className={classNames(cls.card, {}, [className])}>
             <AppLink
                 className={cls.header}
-                to={`${appRoutePaths.profile}${data.author.id}`}
+                to={`${appRoutePaths.user}${data.user.id}`}
             >
-                <Avatar src={data.author.avatar} size={avatarSize} />
-                <Text>{data.author.name}</Text>
+                <Avatar src={data.user.avatar} size={avatarSize} />
+                <Text>{data.user.username}</Text>
             </AppLink>
 
             <Text className={cls.text}>{data.text}</Text>

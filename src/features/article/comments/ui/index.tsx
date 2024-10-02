@@ -2,11 +2,7 @@ import { memo } from 'react';
 import { CommentList } from 'entities/comment';
 import { fetchByArticleId } from '../model/services';
 import { useSelector } from 'react-redux';
-import {
-    articleCommentsReducer,
-    articleCommentsSelectors,
-    selectLoading,
-} from '../model';
+import { articleCommentsReducer, articleCommentsSelectors } from '../model';
 import {
     useAppDispatch,
     useAsyncStore,
@@ -22,7 +18,7 @@ export const ArticleComments = memo(
     ({ className, articleId }: ArticleCommentsProps) => {
         const dispatch = useAppDispatch();
         const comments = useSelector(articleCommentsSelectors.selectAll);
-        const loading = useSelector(selectLoading);
+        const loading = useSelector(articleCommentsSelectors.selectLoading);
 
         useAsyncStore({
             articleComments: articleCommentsReducer,

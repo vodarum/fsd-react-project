@@ -1,13 +1,10 @@
-type CommentAuthor = {
-    id: number;
-    name: string;
-    avatar?: string;
-};
+import { User } from 'features/user'; // TODO: исправить импорт features -> entities
 
 type Comment = {
     id: number;
     text: string;
-    author: CommentAuthor;
+    userId: number;
+    user: User;
 };
 
 export { Comment };
