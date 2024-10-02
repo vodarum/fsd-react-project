@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { Session, userActions } from 'entities/user';
+import { Session, sessionActions } from 'entities/session';
 import { LoginState } from '../../types';
 import { ThunkAPI } from 'app/providers/store-provider';
 
@@ -17,7 +17,7 @@ export const loginByUsername = createAsyncThunk<
 
         if (!response.data) throw new Error();
 
-        dispatch(userActions.setSession(response.data));
+        dispatch(sessionActions.setData(response.data));
 
         return response.data;
     } catch (e) {

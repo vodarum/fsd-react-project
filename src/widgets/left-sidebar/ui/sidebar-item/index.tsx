@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { userSelectors } from 'entities/user';
+import { sessionSelectors } from 'entities/session';
 
 type SidebarItemProps = NavRoute & {
     collapsed?: boolean;
@@ -15,7 +15,7 @@ type SidebarItemProps = NavRoute & {
 export const SidebarItem = memo((props: SidebarItemProps) => {
     const { path, name, meta, collapsed } = props;
     const { t } = useTranslation('navigation');
-    const isAuth = useSelector(userSelectors.selectIsAuth);
+    const isAuth = useSelector(sessionSelectors.selectIsAuth);
 
     if (meta?.requiresAuth && !isAuth) return null;
 

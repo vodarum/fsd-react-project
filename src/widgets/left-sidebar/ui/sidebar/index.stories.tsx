@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { LeftSidebar } from '.';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
-import { mockSession } from 'entities/user';
+import { mockSession } from 'entities/session';
 
 const meta = {
     title: 'widgets/LeftSidebar/Sidebar',
@@ -39,8 +39,8 @@ export const ForLoggedUser: Story = {
     decorators: [
         StoreDecorator({
             preloadedState: {
-                user: {
-                    session: mockSession,
+                session: {
+                    data: mockSession,
                 },
             },
         }),

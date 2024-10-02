@@ -4,12 +4,12 @@ import {
     isAnyOf,
     UnknownAction,
 } from '@reduxjs/toolkit';
-import { userActions } from 'entities/user';
+import { sessionActions } from 'entities/session';
 import { loginByUsername } from 'features/login';
 import { APP_SESSION_LS_KEY } from 'shared/api';
 
 const isLogin = isFulfilled(loginByUsername);
-const isLogout = isAnyOf(userActions.resetSession);
+const isLogout = isAnyOf(sessionActions.resetData);
 
 export const sessionMiddleware =
     () => (next: Dispatch) => (action: UnknownAction) => {

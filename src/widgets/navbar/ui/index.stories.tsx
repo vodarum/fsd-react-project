@@ -3,7 +3,7 @@ import { Navbar } from '.';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 import { MenuButton } from 'shared/ui/menu-button';
 import { SettingsButton } from 'shared/ui/settings-button';
-import { mockSession } from 'entities/user';
+import { mockSession } from 'entities/session';
 
 const meta = {
     title: 'widgets/Navbar',
@@ -45,8 +45,8 @@ export const ForLoggedUser: Story = {
     decorators: [
         StoreDecorator({
             preloadedState: {
-                user: {
-                    session: mockSession,
+                session: {
+                    data: mockSession,
                 },
             },
         }),

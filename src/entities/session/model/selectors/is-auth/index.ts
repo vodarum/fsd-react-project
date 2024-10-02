@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 import type { Session } from '../../types';
-import { selectSession } from '../session';
+import { selectSessionData } from '../data';
 
 export const selectIsAuth = createSelector(
-    [selectSession],
+    [selectSessionData],
     (state?: Session) => !!state?.token || false,
 );

@@ -1,6 +1,6 @@
 import './styles/index.scss';
 import { AppRouter } from './providers/router';
-import { userActions } from 'entities/user';
+import { sessionActions } from 'entities/session';
 import { Suspense, useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { APP_SESSION_LS_KEY } from 'shared/api';
@@ -32,10 +32,10 @@ export const App = () => {
     }, []);
 
     useEffect(() => {
-        const sessionUser = localStorage.getItem(APP_SESSION_LS_KEY);
+        const userSession = localStorage.getItem(APP_SESSION_LS_KEY);
 
-        if (sessionUser) {
-            dispatch(userActions.setSession(JSON.parse(sessionUser)));
+        if (userSession) {
+            dispatch(sessionActions.setData(JSON.parse(userSession)));
         }
     }, [dispatch]);
 

@@ -4,16 +4,16 @@ import {
     ReducersMapObject,
     UnknownAction,
 } from '@reduxjs/toolkit';
-import { ProfileState } from 'pages/profile';
-import { UserState } from 'entities/user';
 import { LoginState } from 'features/login';
 import { configureAppStore } from './store';
 import { AxiosInstance } from 'axios';
 import { ArticleState } from 'entities/article';
+import { SessionState } from 'entities/session';
 import { ArticleCommentsState } from 'features/article';
+import { ProfileState } from 'pages/profile';
 
 type State = {
-    user: UserState;
+    session: SessionState;
     login?: LoginState;
     profile?: ProfileState;
     article?: ArticleState;

@@ -1,17 +1,17 @@
 import { mockInitialAppState, mockSession } from '../../__mocks__';
-import { selectSession } from '.';
+import { selectSessionData } from '.';
 
-describe('selectSession', () => {
+describe('selectSessionData', () => {
     test('returns undefined for initial state', () => {
-        expect(selectSession(mockInitialAppState)).toBeUndefined();
+        expect(selectSessionData(mockInitialAppState)).toBeUndefined();
     });
 
     test('returns session', () => {
         expect(
-            selectSession({
+            selectSessionData({
                 ...mockInitialAppState,
                 ...{
-                    user: { session: mockSession },
+                    session: { data: mockSession },
                 },
             }),
         ).toEqual(mockSession);

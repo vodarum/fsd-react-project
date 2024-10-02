@@ -1,5 +1,5 @@
 import { loginByUsername } from '.';
-import { userActions } from 'entities/user';
+import { sessionActions } from 'entities/session';
 import { testAsyncThunk } from 'shared/lib/tests/test-async-thunk';
 
 const url = '/login';
@@ -20,7 +20,7 @@ describe('loginByUsername', () => {
         expect(api.post).toHaveBeenCalledWith(url, credentialData);
         expect(result.meta.requestStatus).toBe('fulfilled');
         expect(dispatch).toHaveBeenCalledWith(
-            userActions.setSession(mockResponseData),
+            sessionActions.setData(mockResponseData),
         );
         expect(result.payload).toEqual(mockResponseData);
     });

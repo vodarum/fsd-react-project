@@ -11,7 +11,7 @@ describe('selectIsAuth', () => {
             selectIsAuth({
                 ...mockInitialAppState,
                 ...{
-                    user: { session: mockSession },
+                    session: { data: mockSession },
                 },
             }),
         ).toBeTruthy();

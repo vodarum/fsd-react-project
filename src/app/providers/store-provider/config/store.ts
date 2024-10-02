@@ -1,6 +1,6 @@
 import { configureStore, Reducer } from '@reduxjs/toolkit';
 import { ConfigureAppStoreOptions, State } from './types';
-import { userReducer } from 'entities/user';
+import { sessionReducer } from 'entities/session';
 import { sessionMiddleware } from './session-middleware';
 import { createReducerManager } from './reducer-manager';
 import { $api } from 'shared/api';
@@ -11,7 +11,7 @@ export const configureAppStore = ({
 }: ConfigureAppStoreOptions) => {
     const reducerManager = createReducerManager({
         ...preloadedReducer,
-        user: userReducer,
+        session: sessionReducer,
     });
     const store = configureStore({
         reducer: reducerManager.reduce as Reducer<State>,
