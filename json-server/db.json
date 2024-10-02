@@ -1,33 +1,35 @@
 {
+    "sessions": [
+        {
+            "token": "f39d6798-19c5-40f5-8200-a31e910ca6a9",
+            "userId": 1
+        },
+        {
+            "token": "e1415b26-5b1a-4b52-a608-af486fccc6e8",
+            "userId": 2
+        },
+        {
+            "token": "f0839a30-e22e-4668-b467-cd66e74dbe63",
+            "userId": 3
+        }
+    ],
     "users": [
         {
             "id": 1,
             "username": "vodarum",
             "password": "qwerty123",
-            "token": "f39d6798-19c5-40f5-8200-a31e910ca6a9"
-        },
-        {
-            "id": 2,
-            "username": "nirvam",
-            "password": "qwerty321",
-            "token": "e1415b26-5b1a-4b52-a608-af486fccc6e8"
-        }
-    ],
-    "profile": [
-        {
-            "id": 1,
-            "username": "vodarum",
             "firstName": "Nashvar",
             "lastName": "Vodarum",
             "birthday": "1993-08-13",
             "currency": "RUB",
             "country": "Russia",
             "city": "Волгоград",
-            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BpA9GG9FEL4I_S-SeTtzjzVCH6ghbj2MGO5Yr4qyHZwNE9O4SZm7EbpBrQ0htTqYecA&usqp=CAU"
+            "avatar": "https://us.123rf.com/450wm/whitecity/whitecity2403/whitecity240301752/227835211-lion-in-sunglasses-vector-illustration-of-a-lion-with-sunglasses.jpg?ver=6"
         },
         {
             "id": 2,
             "username": "nirvam",
+            "password": "qwerty321",
             "firstName": "Sats",
             "lastName": "Nirvam",
             "birthday": "1992-07-10",
@@ -35,6 +37,18 @@
             "country": "Russia",
             "city": "Волгоград",
             "avatar": "https://img.freepik.com/premium-photo/3d-style-avatar-profile-picture-featuring-male-character-generative-ai_739548-13626.jpg"
+        },
+        {
+            "id": 3,
+            "username": "leo",
+            "password": "leo123",
+            "firstName": "Leo",
+            "lastName": "Leo",
+            "birthday": "1993-08-13",
+            "currency": "RUB",
+            "country": "Russia",
+            "city": "Волгоград",
+            "avatar": "https://thumbs.dreamstime.com/b/cartoon-lion-glasses-poses-confidently-casual-clothing-character-wearing-attire-long-hair-329908583.jpg"
         }
     ],
     "articles": [
@@ -112,29 +126,20 @@
         {
             "id": 1,
             "text": "Some comment 1",
-            "author": {
-                "id": 1,
-                "name": "Автор 1",
-                "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwnsl37CexuUYALyGM7V0V4aaEVA4NPmjP3w&s"
-            }
+            "articleId": 1,
+            "userId": 1
         },
         {
             "id": 2,
             "text": "Some comment 2",
-            "author": {
-                "id": 2,
-                "name": "Автор 2",
-                "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwnsl37CexuUYALyGM7V0V4aaEVA4NPmjP3w&s"
-            }
+            "articleId": 1,
+            "userId": 2
         },
         {
             "id": 3,
             "text": "Some comment 3",
-            "author": {
-                "id": 1,
-                "name": "Автор 1",
-                "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwnsl37CexuUYALyGM7V0V4aaEVA4NPmjP3w&s"
-            }
+            "articleId": 1,
+            "userId": 3
         }
     ]
 }

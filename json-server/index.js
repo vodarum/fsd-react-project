@@ -25,16 +25,14 @@ server.post('/login', (req, res) => {
         const db = JSON.parse(
             fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'),
         );
-        const { users = [] } = db;
+        const { sessions = [], users = [] } = db;
 
-        const userFromBd = users.find(
-            (user) => user.username === username && user.password === password,
+        const user = users.find(
+            (u) => u.username === username && u.password === password,
         );
+        const session = sessions.find((s) => s.userId === user?.id);
 
-        if (userFromBd) {
-            const { id, token } = userFromBd;
-            return res.json({ userId: id, token });
-        }
+        if (session) return res.json(session);
 
         return res.status(403).json({ message: 'User not found' });
     } catch (e) {
