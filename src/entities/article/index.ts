@@ -1,4 +1,5 @@
 export {
+    articleReducer,
     articleSelectors,
     mockArticle,
     mockArticleState,

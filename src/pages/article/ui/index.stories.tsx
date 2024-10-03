@@ -1,5 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Article from '.';
+import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import {
+    articleCommentsReducer,
+    mockArticleCommentsState,
+    mockArticleId,
+    mockCommentsEntityState,
+} from 'features/article';
+import {
+    articleReducer,
+    mockArticle,
+    mockArticleState,
+} from 'entities/article';
 
 const meta = {
     title: 'pages/Article',
@@ -13,10 +25,36 @@ const meta = {
                 </main>
             </div>
         ),
+        StoreDecorator({
+            preloadedReducer: {
+                article: articleReducer,
+                articleComments: articleCommentsReducer,
+            },
+            preloadedState: {
+                article: {
+                    ...mockArticleState,
+                    data: mockArticle,
+                },
+                articleComments: {
+                    ...mockArticleCommentsState,
+                    entities: mockCommentsEntityState.entities,
+                    ids: mockCommentsEntityState.ids,
+                },
+            },
+        }),
     ],
 } satisfies Meta<typeof Article>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+    parameters: {
+        router: {
+            path: '/articles/:id',
+            route: `/articles/${mockArticleId}`,
+        },
+    },
+};
+
+export const NotFound: Story = {};
