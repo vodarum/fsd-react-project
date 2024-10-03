@@ -4,7 +4,8 @@ import { ValidateUserError } from '../../types';
 
 const containsNumber = (value: string): boolean => /\d/.test(value);
 
-const validateTextField = (value?: string): boolean => !!value && !containsNumber(value);
+const validateTextField = (value?: string): boolean =>
+    !!value && !containsNumber(value);
 
 export const validate = (data?: User): ValidateUserError[] => {
     if (!data) return [ValidateUserErrors.noData];

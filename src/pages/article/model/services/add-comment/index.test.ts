@@ -41,7 +41,7 @@ describe('addComment', () => {
 
         const result = await callThunk(mockComment.text);
 
-        expect(dispatch).toHaveBeenCalledTimes(2);
+        expect(dispatch).toHaveBeenCalledTimes(3);
         expect(api.post).toHaveBeenCalledWith(url, mockRequestBody);
         expect(result.meta.requestStatus).toBe('fulfilled');
         expect(result.payload).toEqual(mockResponseData);

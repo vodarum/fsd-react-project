@@ -78,10 +78,7 @@ describe('userSlice', () => {
 
     test('update user fulfilled', () => {
         expect(
-            userReducer(
-                mockUserState,
-                update.fulfilled(mockUser, ''),
-            ),
+            userReducer(mockUserState, update.fulfilled(mockUser, '')),
         ).toEqual({
             ...mockUserState,
             data: mockUser,

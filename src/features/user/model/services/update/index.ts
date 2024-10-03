@@ -21,7 +21,10 @@ export const update = createAsyncThunk<
             return rejectWithValue(errors);
         }
 
-        const response = await extra.api.put<User>(`/users/${formData?.id}`, formData);
+        const response = await extra.api.put<User>(
+            `/users/${formData?.id}`,
+            formData,
+        );
         if (!response.data) throw new Error();
         return response.data;
     } catch (e) {
