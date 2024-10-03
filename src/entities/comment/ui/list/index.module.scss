@@ -1,6 +1,7 @@
 .title {
     margin-top: calc(var(--font-size) * 2);
-    font-size: var(--font-size);
+    margin-bottom: var(--font-size);
+    font-size: calc(var(--font-size) * 1.25);
 }
 
 .items {

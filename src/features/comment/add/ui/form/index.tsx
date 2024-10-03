@@ -1,4 +1,3 @@
-import { classNames } from 'shared/lib/class-names';
 import cls from './index.module.scss';
 import { Input } from 'shared/ui/input';
 import { Button } from 'shared/ui/button';
@@ -39,7 +38,7 @@ export const CommentForm = memo(({ className, onSubmit }: CommentFormProps) => {
     });
 
     return (
-        <div className={classNames(cls.form, {}, [className])}>
+        <div className={className}>
             <Input value={text} onChange={handleChange} />
             <Button className={cls.btn} onClick={handleClick}>
                 {t('Отправить')}

@@ -1,2 +1,6 @@
-export { type ArticleCommentsState } from './model';
-export { ArticleComments } from './ui';
+export {
+    articleCommentsReducer,
+    articleCommentsSelectors,
+    fetchByArticleId,
+    type ArticleCommentsState,
+} from './model';

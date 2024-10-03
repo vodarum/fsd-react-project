@@ -39,11 +39,6 @@ const articleCommentsSlice = createSlice({
     },
 });
 
-const { actions: articleCommentsActions, reducer: articleCommentsReducer } =
-    articleCommentsSlice;
+const { reducer: articleCommentsReducer } = articleCommentsSlice;
 
-export {
-    articleCommentsActions,
-    articleCommentsReducer,
-    articleCommentsSelectors,
-};
+export { articleCommentsReducer, articleCommentsSelectors };

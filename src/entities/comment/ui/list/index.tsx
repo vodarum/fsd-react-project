@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/text';
 import cls from './index.module.scss';
@@ -7,12 +7,13 @@ import { Comment } from '../../model';
 
 type CommentListProps = {
     className?: string;
+    form?: ReactNode;
     items?: Comment[];
     loading?: boolean;
 };
 
 export const CommentList = memo(
-    ({ className, items, loading }: CommentListProps) => {
+    ({ className, form, items, loading }: CommentListProps) => {
         const { t } = useTranslation();
 
         if (loading) {
@@ -31,6 +32,7 @@ export const CommentList = memo(
         return (
             <div className={className}>
                 <Text className={cls.title}>{t('Комментарии')}</Text>
+                {form}
                 <div className={cls.items}>
                     {items?.length ? (
                         items.map((i) => (
