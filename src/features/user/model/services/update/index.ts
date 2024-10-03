@@ -6,11 +6,11 @@ import { validate } from '../validate';
 import { ValidateUserErrors } from '../../const';
 import { User } from '../../types';
 
-export const updateById = createAsyncThunk<
+export const update = createAsyncThunk<
     User,
-    number,
+    void,
     ThunkAPI<ValidateUserError[]>
->('user/updateById', async (id, thunkAPI) => {
+>('user/update', async (_, thunkAPI) => {
     const { extra, rejectWithValue, getState } = thunkAPI;
 
     try {
@@ -21,7 +21,7 @@ export const updateById = createAsyncThunk<
             return rejectWithValue(errors);
         }
 
-        const response = await extra.api.put<User>(`/users/${id}`, formData);
+        const response = await extra.api.put<User>(`/users/${formData?.id}`, formData);
         if (!response.data) throw new Error();
         return response.data;
     } catch (e) {

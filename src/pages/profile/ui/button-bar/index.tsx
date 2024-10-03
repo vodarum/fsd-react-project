@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch';
 import { Button } from 'shared/ui/button';
 import cls from './index.module.scss';
-import { userActions, userSelectors, updateById } from 'features/user';
+import { userActions, userSelectors, update } from 'features/user';
 
 export const ProfileButtonBar = memo(() => {
     const { t } = useTranslation();
@@ -19,7 +19,7 @@ export const ProfileButtonBar = memo(() => {
     };
     const handleSaveBtnClick = () => {
         // @ts-ignore
-        dispatch(updateById());
+        dispatch(update());
     };
 
     return (

@@ -2,7 +2,7 @@ export {
     mockUsers,
     mockUserState,
     fetchById,
-    updateById,
+    update,
     userActions,
     userReducer,
     userSelectors,

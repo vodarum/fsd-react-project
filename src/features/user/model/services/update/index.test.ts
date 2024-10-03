@@ -1,4 +1,4 @@
-import { updateById } from '.';
+import { update } from '.';
 import { testAsyncThunk } from 'shared/lib/tests/test-async-thunk';
 import { mockUsers, mockUserState } from '../../__mocks__';
 import { ValidateUserErrors } from '../../const';
@@ -7,9 +7,9 @@ const mockUser = mockUsers[0];
 const userId = mockUser.id as number;
 const url = `/users/${userId}`;
 
-describe('updateById', () => {
+describe('update', () => {
     test('with fulfilled', async () => {
-        const { callThunk, dispatch, api } = testAsyncThunk(updateById, {
+        const { callThunk, dispatch, api } = testAsyncThunk(update, {
             user: {
                 ...mockUserState,
                 form: mockUser,
@@ -18,7 +18,7 @@ describe('updateById', () => {
 
         api.put.mockReturnValueOnce(Promise.resolve({ data: mockUser }));
 
-        const result = await callThunk(userId);
+        const result = await callThunk();
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(api.put).toHaveBeenCalledWith(url, mockUser);
@@ -28,7 +28,7 @@ describe('updateById', () => {
 
     test('with rejected', async () => {
         const spyConsoleError = jest.spyOn(global.console, 'error');
-        const { callThunk, dispatch, api } = testAsyncThunk(updateById, {
+        const { callThunk, dispatch, api } = testAsyncThunk(update, {
             user: {
                 ...mockUserState,
                 form: mockUser,
@@ -37,7 +37,7 @@ describe('updateById', () => {
 
         api.put.mockReturnValueOnce(Promise.resolve({ status: 403 }));
 
-        const result = await callThunk(userId);
+        const result = await callThunk();
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(spyConsoleError).toHaveBeenCalledTimes(1);
@@ -51,13 +51,13 @@ describe('updateById', () => {
 
     test('with rejected by validation error', async () => {
         const spyConsoleError = jest.spyOn(global.console, 'error');
-        const { callThunk, dispatch } = testAsyncThunk(updateById, {
+        const { callThunk, dispatch } = testAsyncThunk(update, {
             user: {
                 form: { lastName: '' },
             },
         });
 
-        const result = await callThunk(userId);
+        const result = await callThunk();
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(spyConsoleError).toHaveBeenCalledTimes(0);

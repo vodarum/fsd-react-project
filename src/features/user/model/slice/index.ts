@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { User, UserState } from '../types';
-import { fetchById, updateById } from '../services';
+import { fetchById, update } from '../services';
 
 const initialState: UserState = {
     data: undefined,
@@ -46,17 +46,17 @@ const userSlice = createSlice({
                 state.error = action.payload;
                 state.loading = false;
             })
-            .addCase(updateById.pending, (state) => {
+            .addCase(update.pending, (state) => {
                 state.validateErrors = undefined;
                 state.loading = true;
             })
-            .addCase(updateById.fulfilled, (state, action) => {
+            .addCase(update.fulfilled, (state, action) => {
                 state.data = action.payload;
                 state.form = action.payload;
                 state.editable = false;
                 state.loading = false;
             })
-            .addCase(updateById.rejected, (state, action) => {
+            .addCase(update.rejected, (state, action) => {
                 state.validateErrors = action.payload;
                 state.loading = false;
             });

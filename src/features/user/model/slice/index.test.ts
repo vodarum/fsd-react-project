@@ -1,11 +1,10 @@
 import { userActions, userReducer } from '.';
 import { mockUsers, mockUserState } from '../__mocks__';
 import { ValidateUserErrors } from '../const';
-import { updateById } from '../services';
+import { update } from '../services';
 import { User } from '../types';
 
 const mockUser = mockUsers[0];
-const userId = mockUser.id as number;
 
 describe('userSlice', () => {
     test('setForm', () => {
@@ -61,14 +60,14 @@ describe('userSlice', () => {
         });
     });
 
-    test('updateById pending', () => {
+    test('update user pending', () => {
         expect(
             userReducer(
                 {
                     ...mockUserState,
                     validateErrors: [ValidateUserErrors.serverError],
                 },
-                updateById.pending('', userId),
+                update.pending(''),
             ),
         ).toEqual({
             ...mockUserState,
@@ -77,11 +76,11 @@ describe('userSlice', () => {
         });
     });
 
-    test('updateById fulfilled', () => {
+    test('update user fulfilled', () => {
         expect(
             userReducer(
                 mockUserState,
-                updateById.fulfilled(mockUser, '', userId),
+                update.fulfilled(mockUser, ''),
             ),
         ).toEqual({
             ...mockUserState,
