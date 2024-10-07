@@ -9,7 +9,7 @@ import {
 } from 'features/article';
 import {
     articleReducer,
-    mockArticle,
+    mockArticles,
     mockArticleState,
 } from 'entities/article';
 
@@ -33,7 +33,7 @@ const meta = {
             preloadedState: {
                 article: {
                     ...mockArticleState,
-                    data: mockArticle,
+                    data: mockArticles[0],
                 },
                 articleComments: {
                     ...mockArticleCommentsState,
