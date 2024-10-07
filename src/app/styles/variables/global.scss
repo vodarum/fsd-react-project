@@ -6,7 +6,8 @@
     --line-height-l: 32px;
     --font-size: var(--font-size-m);
     --line-height: var(--line-height-m);
-    --font-interval: calc(var(--font-size) / 2);
+    --font-interval: calc(var(--font-size) * 0.5);
+    --font-interval-expand: calc(var(--font-size) * 0.875);
     --font: var(--font-size) / var(--line-height) var(--font-family-main);
     --padding: 20px;
     --modal-z-index: 999;
