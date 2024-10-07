@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    justify-content: end;
+    gap: var(--font-interval);
+}
+
+.btn {
+    padding: var(--font-interval);
+    border-radius: calc(var(--font-interval) / 2);
+}
+
+.active {
+    color: var(--secondary-color);
+}
