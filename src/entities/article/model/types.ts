@@ -56,6 +56,9 @@ type ArticleListState = EntityState<Article, Article['id']> & {
     loading: boolean;
     error?: string;
     view: ArticleViewType;
+    page: number;
+    limit?: number;
+    hasMore: boolean;
 };
 
 export {

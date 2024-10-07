@@ -234,6 +234,8 @@ const mockArticleListEntityState: Pick<ArticleListState, 'entities' | 'ids'> = {
 const mockArticleListState: ArticleListState = {
     loading: false,
     view: ArticleViewTypes.grid,
+    page: 1,
+    hasMore: true,
     ids: [],
     entities: {},
 };

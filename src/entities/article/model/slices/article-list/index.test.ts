@@ -4,7 +4,7 @@ import {
     mockArticleListEntityState,
     mockArticleListState,
 } from '../../__mocks__';
-import { ArticleViewTypes } from '../../const';
+import { ArticlesNumberPerPage, ArticleViewTypes } from '../../const';
 import { fetchList } from '../../services';
 
 describe('articleListSlice', () => {
@@ -22,6 +22,7 @@ describe('articleListSlice', () => {
         ).toEqual({
             ...mockArticleListState,
             view: ArticleViewTypes.list,
+            limit: ArticlesNumberPerPage[ArticleViewTypes.list],
         });
     });
 

@@ -3,10 +3,10 @@ import {
     createSlice,
     PayloadAction,
 } from '@reduxjs/toolkit';
+import { State } from 'app/providers/store-provider';
+import { ArticleViewTypes, ArticlesNumberPerPage } from '../../const';
 import { Article, ArticleListState, ArticleViewType } from '../../types';
 import { fetchList } from '../../services';
-import { State } from 'app/providers/store-provider';
-import { ArticleViewTypes } from '../../const';
 
 const articleListAdapter = createEntityAdapter<Article>();
 
@@ -16,6 +16,8 @@ const initialState = articleListAdapter.getInitialState<ArticleListState>({
     loading: false,
     error: undefined,
     view: ArticleViewTypes.grid,
+    page: 1,
+    hasMore: true,
 });
 
 const articleListSelectors = articleListAdapter.getSelectors<State>(
@@ -31,6 +33,10 @@ const articleListSlice = createSlice({
             action: PayloadAction<ArticleViewType>,
         ) => {
             state.view = action.payload;
+            state.limit = ArticlesNumberPerPage[state.view];
+        },
+        setPage: (state: ArticleListState, action: PayloadAction<number>) => {
+            state.page = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -40,8 +46,9 @@ const articleListSlice = createSlice({
                 state.loading = true;
             })
             .addCase(fetchList.fulfilled, (state, action) => {
-                articleListAdapter.setAll(state, action.payload);
+                articleListAdapter.addMany(state, action.payload);
                 state.loading = false;
+                state.hasMore = !!action.payload.length;
             })
             .addCase(fetchList.rejected, (state, action) => {
                 state.error = action.payload;

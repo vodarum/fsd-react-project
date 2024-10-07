@@ -17,7 +17,7 @@ const meta = {
         ),
     ],
     args: {
-        items: mockArticles,
+        items: [],
     },
 } satisfies Meta<typeof ArticleList>;
 
@@ -26,12 +26,14 @@ type Story = StoryObj<typeof meta>;
 
 export const GridView: Story = {
     args: {
+        items: mockArticles,
         view: ArticleViewTypes.grid,
     },
 };
 
 export const ListView: Story = {
     args: {
+        items: mockArticles,
         view: ArticleViewTypes.list,
     },
 };

@@ -6,6 +6,8 @@ const url = '/articles';
 const requestOptions = {
     params: {
         _expand: 'user',
+        _limit: 9,
+        _page: 1,
     },
 };
 

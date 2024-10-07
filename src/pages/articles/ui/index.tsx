@@ -5,6 +5,7 @@ import {
     articleListSelectors,
     ArticleViewType,
     fetchList,
+    fetchListPart,
 } from 'entities/article';
 import { ArticleViewSwitcher } from 'features/article';
 import { memo, useCallback } from 'react';
@@ -15,6 +16,7 @@ import {
     useAsyncStore,
     useInitialEffect,
 } from 'shared/lib/hooks';
+import { Section } from 'shared/ui/section';
 import cls from './index.module.scss';
 
 const Articles = () => {
@@ -30,6 +32,13 @@ const Articles = () => {
         [dispatch],
     );
 
+    const handlePageScrollEnd = useCallback(() => {
+        if (__PROJECT__ !== 'storybook') {
+            // @ts-ignore
+            dispatch(fetchListPart());
+        }
+    }, [dispatch]);
+
     useAsyncStore({
         articleList: articleListReducer,
     });
@@ -40,7 +49,7 @@ const Articles = () => {
     }, []);
 
     return (
-        <>
+        <Section onScrollEnd={handlePageScrollEnd}>
             <h1 className={cls.title}>{t('Статьи')}</h1>
 
             <ArticleViewSwitcher
@@ -54,7 +63,7 @@ const Articles = () => {
                 loading={loading}
                 view={view}
             />
-        </>
+        </Section>
     );
 };
 

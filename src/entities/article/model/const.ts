@@ -15,4 +15,14 @@ const ArticleViewTypes = {
     list: 'list',
 } as const;
 
-export { ArticleTypes, ArticleBlockTypes, ArticleViewTypes };
+const ArticlesNumberPerPage = {
+    grid: 9,
+    list: 3,
+} as const;
+
+export {
+    ArticleTypes,
+    ArticleBlockTypes,
+    ArticleViewTypes,
+    ArticlesNumberPerPage,
+};
