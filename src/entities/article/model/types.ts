@@ -1,6 +1,10 @@
-import { ArticleBlockTypes, ArticleTypes } from './const';
+import { User } from 'features/user'; // TODO: исправить импорт features -> entities
+import { ArticleBlockTypes, ArticleTypes, ArticleViewTypes } from './const';
+import { EntityState } from '@reduxjs/toolkit';
 
 type ArticleType = (typeof ArticleTypes)[keyof typeof ArticleTypes];
+
+type ArticleViewType = (typeof ArticleViewTypes)[keyof typeof ArticleViewTypes];
 
 type ArticleBlockType =
     (typeof ArticleBlockTypes)[keyof typeof ArticleBlockTypes];
@@ -38,6 +42,8 @@ type Article = {
     createdAt: string;
     type: ArticleType[];
     blocks: (ArticleBlockCode | ArticleBlockImage | ArticleBlockText)[];
+    userId: number;
+    user: User;
 };
 
 type ArticleState = {
@@ -46,11 +52,19 @@ type ArticleState = {
     error?: string;
 };
 
+type ArticleListState = EntityState<Article, Article['id']> & {
+    loading: boolean;
+    error?: string;
+    view: ArticleViewType;
+};
+
 export {
     Article,
     ArticleBlock,
     ArticleBlockCode,
     ArticleBlockImage,
     ArticleBlockText,
+    ArticleListState,
     ArticleState,
+    ArticleViewType,
 };

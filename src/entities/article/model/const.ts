@@ -10,4 +10,9 @@ const ArticleBlockTypes = {
     text: 'text',
 } as const;
 
-export { ArticleTypes, ArticleBlockTypes };
+const ArticleViewTypes = {
+    grid: 'grid',
+    list: 'list',
+} as const;
+
+export { ArticleTypes, ArticleBlockTypes, ArticleViewTypes };

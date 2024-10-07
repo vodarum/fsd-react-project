@@ -8,7 +8,7 @@ import { UserState } from 'features/user';
 import { LoginState } from 'features/login';
 import { configureAppStore } from './store';
 import { AxiosInstance } from 'axios';
-import { ArticleState } from 'entities/article';
+import { ArticleListState, ArticleState } from 'entities/article';
 import { SessionState } from 'entities/session';
 import { ArticleCommentsState } from 'features/article';
 import { AddCommentState } from 'features/comment';
@@ -20,6 +20,7 @@ type State = {
     article?: ArticleState;
     articleComments?: ArticleCommentsState;
     addComment?: AddCommentState;
+    articleList?: ArticleListState;
 };
 
 type StateKey = keyof State;

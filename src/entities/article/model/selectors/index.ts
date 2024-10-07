@@ -1,4 +1,2 @@
-export * from './data';
-export * from './error';
-export * from './loading';
-export * from './state';
+export * as articleSelectors from './article';
+export * as articleListSelectors from './article-list';

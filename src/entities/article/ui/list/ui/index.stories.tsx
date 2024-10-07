@@ -1,0 +1,51 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleList } from '.';
+import { ArticleViewTypes, mockArticles } from '../../../model';
+
+const meta = {
+    title: 'entities/Article/ArticleList',
+    component: ArticleList,
+    tags: ['autodocs'],
+    parameters: {
+        layout: 'centered',
+    },
+    decorators: [
+        (Story) => (
+            <div style={{ width: '992px' }}>
+                <Story />
+            </div>
+        ),
+    ],
+    args: {
+        items: mockArticles,
+    },
+} satisfies Meta<typeof ArticleList>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const GridView: Story = {
+    args: {
+        view: ArticleViewTypes.grid,
+    },
+};
+
+export const ListView: Story = {
+    args: {
+        view: ArticleViewTypes.list,
+    },
+};
+
+export const GridWithLoading: Story = {
+    args: {
+        view: ArticleViewTypes.grid,
+        loading: true,
+    },
+};
+
+export const ListViewWithLoading: Story = {
+    args: {
+        view: ArticleViewTypes.list,
+        loading: true,
+    },
+};

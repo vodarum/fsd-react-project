@@ -1,0 +1,15 @@
+.list {
+    padding: var(--padding) 0;
+
+    & > *:not(:first-child) {
+        margin-top: var(--padding);
+    }
+}
+
+.grid {
+    padding: var(--padding) 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    grid-gap: var(--padding);
+    grid-auto-rows: minmax(200px, 300px);
+}

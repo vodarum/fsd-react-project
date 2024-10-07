@@ -1,9 +1,10 @@
 import { fetchById } from '.';
 import { testAsyncThunk } from 'shared/lib/tests/test-async-thunk';
-import { mockArticle } from '../../__mocks__';
+import { mockArticles } from '../../__mocks__';
 
 const articleId = 1;
 const url = `/articles/${articleId}`;
+const mockArticle = mockArticles[0];
 
 describe('fetchById', () => {
     test('with fulfilled', async () => {

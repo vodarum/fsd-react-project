@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ArticleState } from '../types';
-import { fetchById } from '../services';
+import { ArticleState } from '../../types';
+import { fetchById } from '../../services';
 
 const initialState: ArticleState = {
     loading: false,
@@ -27,5 +27,4 @@ const articleSlice = createSlice({
     },
 });
 
-export const { actions: articleActions, reducer: articleReducer } =
-    articleSlice;
+export const { reducer: articleReducer } = articleSlice;

@@ -1,0 +1,138 @@
+.views {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: var(--font-interval);
+}
+
+.title {
+    font-weight: 700;
+}
+
+.img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card {
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--font-interval);
+}
+
+.list {
+    padding: var(--font-interval-expand);
+
+    .author {
+        display: flex;
+        align-items: center;
+        gap: var(--font-interval);
+    }
+
+    .title {
+        font-size: calc(var(--font-size) * 1.5);
+        margin-bottom: var(--font-interval-expand);
+    }
+
+    .img {
+        height: 350px;
+        margin: var(--font-interval-expand) 0;
+    }
+
+    .block {
+        max-height: 200px;
+        overflow-y: hidden;
+    }
+
+    .header {
+        margin-bottom: var(--padding);
+    }
+
+    .footer {
+        margin-top: var(--padding);
+    }
+
+    .header,
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .readMoreBtn {
+        padding: var(--font-interval);
+        border-radius: calc(var(--font-interval) / 2);
+    }
+}
+
+.grid {
+    max-width: 500px;
+    max-height: 300px;
+    padding: var(--font-interval);
+    display: flex;
+    flex-direction: column;
+    gap: var(--font-interval);
+    position: relative;
+
+    .date {
+        position: absolute;
+        right: var(--font-interval);
+        top: var(--font-interval);
+        opacity: 0;
+        padding: var(--font-interval);
+        border-radius: var(--font-interval);
+        background-color: var(--overlay-color);
+        color: #fff;
+        transition: 0.2s;
+    }
+
+    .imageWrapper {
+        position: relative;
+        overflow: hidden;
+        flex-grow: 1;
+    }
+
+    .img {
+        height: 100%;
+        transition: 0.2s;
+    }
+
+    .textWrapper {
+        flex: 0 0 40px;
+
+        & > * {
+            line-height: var(--font-size);
+        }
+    }
+
+    .infoWrapper {
+        margin-bottom: var(--font-interval);
+        display: flex;
+        justify-content: space-between;
+        gap: var(--font-interval);
+    }
+
+    .types {
+        flex: 0 1 80%;
+    }
+
+    .views {
+        flex: 0 1 20%;
+    }
+
+    .types,
+    .title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &:hover {
+        .date {
+            opacity: 1;
+        }
+
+        .img {
+            transform: scale(1.01);
+        }
+    }
+}

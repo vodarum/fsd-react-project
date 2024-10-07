@@ -1,8 +1,17 @@
 export {
     articleReducer,
     articleSelectors,
-    mockArticle,
+    articleListActions,
+    articleListReducer,
+    articleListSelectors,
+    ArticleViewTypes,
+    fetchList,
+    mockArticles,
+    mockArticleListState,
+    mockArticleListEntityState,
     mockArticleState,
+    type ArticleListState,
     type ArticleState,
+    type ArticleViewType,
 } from './model';
-export { Article } from './ui/article';
+export { Article, ArticleList } from './ui';

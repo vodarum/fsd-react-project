@@ -1,11 +1,13 @@
 import {
     mockInitialAppState,
-    mockArticle,
+    mockArticles,
     mockArticleState,
-} from '../../__mocks__';
+} from '../../../__mocks__';
 import { selectArticleData } from '.';
 
-describe('selectProfileData', () => {
+const mockArticle = mockArticles[0];
+
+describe('selectArticleData', () => {
     test('returns undefined for initial app state', () => {
         expect(selectArticleData(mockInitialAppState)).toBeUndefined();
     });

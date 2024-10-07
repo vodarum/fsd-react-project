@@ -1,6 +1,8 @@
 import { articleReducer } from '.';
-import { mockArticle, mockArticleState } from '../__mocks__';
-import { fetchById } from '../services';
+import { mockArticles, mockArticleState } from '../../__mocks__';
+import { fetchById } from '../../services';
+
+const mockArticle = mockArticles[0];
 
 describe('articleSlice', () => {
     test('fetchById pending', () => {
