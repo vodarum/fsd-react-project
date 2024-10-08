@@ -4,17 +4,19 @@ import {
     ReducersMapObject,
     UnknownAction,
 } from '@reduxjs/toolkit';
-import { UserState } from 'features/user';
-import { LoginState } from 'features/login';
-import { configureAppStore } from './store';
 import { AxiosInstance } from 'axios';
 import { ArticleListState, ArticleState } from 'entities/article';
 import { SessionState } from 'entities/session';
 import { ArticleCommentsState } from 'features/article';
 import { AddCommentState } from 'features/comment';
+import { LoginState } from 'features/login';
+import { UserState } from 'features/user';
+import { ScrollPositionState } from 'widgets/section';
+import { configureAppStore } from './store';
 
 type State = {
     session: SessionState;
+    scrollPosition: ScrollPositionState;
     user?: UserState;
     login?: LoginState;
     article?: ArticleState;
