@@ -7,6 +7,7 @@ export {
     ArticleViewTypes,
     fetchList,
     fetchListPart,
+    mockAppState,
     mockArticles,
     mockArticleListState,
     mockArticleListEntityState,

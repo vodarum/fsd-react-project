@@ -4,7 +4,6 @@ import {
     articleListReducer,
     articleListSelectors,
     ArticleViewType,
-    fetchList,
     fetchListPart,
 } from 'entities/article';
 import { ArticleViewSwitcher } from 'features/article';
@@ -18,6 +17,7 @@ import {
 } from 'shared/lib/hooks';
 import { Section } from 'shared/ui/section';
 import cls from './index.module.scss';
+import { init } from '../model';
 
 const Articles = () => {
     const { t } = useTranslation();
@@ -39,13 +39,16 @@ const Articles = () => {
         }
     }, [dispatch]);
 
-    useAsyncStore({
-        articleList: articleListReducer,
-    });
+    useAsyncStore(
+        {
+            articleList: articleListReducer,
+        },
+        false,
+    );
 
     useInitialEffect(() => {
         // @ts-ignore
-        dispatch(fetchList());
+        dispatch(init());
     }, []);
 
     return (

@@ -59,6 +59,7 @@ type ArticleListState = EntityState<Article, Article['id']> & {
     page: number;
     limit?: number;
     hasMore: boolean;
+    _inited: boolean;
 };
 
 export {

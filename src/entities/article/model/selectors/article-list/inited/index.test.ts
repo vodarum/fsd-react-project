@@ -1,29 +1,29 @@
 import { mockInitialAppState, mockArticleListState } from '../../../__mocks__';
-import { selectHasMore } from '.';
+import { selectInited } from '.';
 
-describe('selectHasMore', () => {
+describe('selectInited', () => {
     test(`returns undefined for initial state`, () => {
-        expect(selectHasMore(mockInitialAppState)).toBeUndefined();
+        expect(selectInited(mockInitialAppState)).toBeUndefined();
     });
 
-    test(`returns true for initial articleList state`, () => {
+    test(`returns false for initial articleList state`, () => {
         expect(
-            selectHasMore({
+            selectInited({
                 ...mockInitialAppState,
                 articleList: mockArticleListState,
             }),
-        ).toBeTruthy();
+        ).toBeFalsy();
     });
 
-    test(`returns false`, () => {
+    test(`returns true`, () => {
         expect(
-            selectHasMore({
+            selectInited({
                 ...mockInitialAppState,
                 articleList: {
                     ...mockArticleListState,
-                    hasMore: false,
+                    _inited: true,
                 },
             }),
-        ).toBeFalsy();
+        ).toBeTruthy();
     });
 });

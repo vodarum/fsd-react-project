@@ -238,6 +238,7 @@ const mockArticleListState: ArticleListState = {
     hasMore: true,
     ids: [],
     entities: {},
+    _inited: false,
 };
 
 const mockAppState: State = {
