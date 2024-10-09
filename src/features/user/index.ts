@@ -1,5 +1,4 @@
 export {
-    mockUsers,
     mockUserState,
     fetchById,
     update,
@@ -7,7 +6,5 @@ export {
     userReducer,
     userSelectors,
     ValidateUserErrors,
-    type User,
     type UserState,
 } from './model';
-export * from './ui';

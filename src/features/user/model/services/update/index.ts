@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ValidateUserError } from '../../types';
 import { ThunkAPI } from 'app/providers/store-provider';
-import { selectUserForm } from '../../selectors';
+import { User } from 'entities/user';
 import { validate } from '../validate';
 import { ValidateUserErrors } from '../../const';
-import { User } from '../../types';
+import { selectUserForm } from '../../selectors';
+import { ValidateUserError } from '../../types';
 
 export const update = createAsyncThunk<
     User,

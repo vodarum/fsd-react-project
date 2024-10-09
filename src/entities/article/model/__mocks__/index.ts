@@ -1,7 +1,7 @@
 import type { State } from 'app/providers/store-provider';
-import type { Article, ArticleListState, ArticleState } from '../types';
-import { mockUsers } from 'features/user'; // TODO: исправить импорт features -> entities
+import { mockUsers } from 'entities/user/@x/article';
 import { ArticleViewTypes } from '../const';
+import type { Article, ArticleListState, ArticleState } from '../types';
 
 const mockArticles: Article[] = [
     {

@@ -1,6 +1,6 @@
-import { User } from 'features/user'; // TODO: исправить импорт features -> entities
-import { ArticleBlockTypes, ArticleTypes, ArticleViewTypes } from './const';
 import { EntityState } from '@reduxjs/toolkit';
+import { User } from 'entities/user/@x/article';
+import { ArticleBlockTypes, ArticleTypes, ArticleViewTypes } from './const';
 
 type ArticleType = (typeof ArticleTypes)[keyof typeof ArticleTypes];
 

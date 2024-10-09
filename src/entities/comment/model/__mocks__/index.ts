@@ -1,4 +1,4 @@
-import { mockUsers } from 'features/user'; // TODO: исправить импорт features -> entities
+import { mockUsers } from "entities/user/@x/comment";
 
 export const mockComments = [
     {

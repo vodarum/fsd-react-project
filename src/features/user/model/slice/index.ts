@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { User, UserState } from '../types';
+import { User } from 'entities/user';
+import { UserState } from '../types';
 import { fetchById, update } from '../services';
 
 const initialState: UserState = {

@@ -1,4 +1,4 @@
-import { User } from '../../types';
+import { User } from 'entities/user';
 import { ValidateUserErrors } from '../../const';
 import { ValidateUserError } from '../../types';
 

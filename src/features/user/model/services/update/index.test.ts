@@ -1,7 +1,7 @@
-import { update } from '.';
+import { mockUsers } from 'entities/user';
 import { testAsyncThunk } from 'shared/lib/tests/test-async-thunk';
-import { mockUsers, mockUserState } from '../../__mocks__';
-import { ValidateUserErrors } from '../../const';
+import { update } from '.';
+import { mockUserState, ValidateUserErrors } from '../..';
 
 const mockUser = mockUsers[0];
 const userId = mockUser.id as number;

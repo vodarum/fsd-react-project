@@ -1,8 +1,8 @@
 import { userActions, userReducer } from '.';
-import { mockUsers, mockUserState } from '../__mocks__';
+import { mockUserState } from '../__mocks__';
 import { ValidateUserErrors } from '../const';
 import { update } from '../services';
-import { User } from '../types';
+import { mockUsers, User } from 'entities/user';
 
 const mockUser = mockUsers[0];
 

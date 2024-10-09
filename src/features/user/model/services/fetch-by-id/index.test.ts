@@ -1,5 +1,5 @@
-import { mockUsers } from '../../__mocks__';
 import { fetchById } from '.';
+import { mockUsers } from 'entities/user';
 import { testAsyncThunk } from 'shared/lib/tests/test-async-thunk';
 
 const mockUser = mockUsers[0];

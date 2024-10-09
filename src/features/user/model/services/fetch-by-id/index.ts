@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkAPI } from 'app/providers/store-provider';
-import { User } from '../../types';
+import { User } from 'entities/user';
 
 export const fetchById = createAsyncThunk<User, number, ThunkAPI<string>>(
     'user/fetchById',

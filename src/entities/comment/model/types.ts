@@ -1,4 +1,4 @@
-import { User } from 'features/user'; // TODO: исправить импорт features -> entities
+import { User } from "entities/user/@x/comment";
 
 type Comment = {
     id: number;

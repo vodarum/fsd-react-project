@@ -1,0 +1,1 @@
+export { mockUsers, User } from '../model';
