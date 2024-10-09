@@ -15,7 +15,7 @@ import {
     useAsyncStore,
     useInitialEffect,
 } from 'shared/lib/hooks';
-import { Section } from 'shared/ui/section';
+import { Section } from 'widgets/section';
 import cls from './index.module.scss';
 import { init } from '../model';
 
