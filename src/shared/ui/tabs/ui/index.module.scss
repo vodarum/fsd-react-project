@@ -1,0 +1,9 @@
+.wrapper {
+    display: flex;
+    gap: var(--font-interval);
+}
+
+.tab {
+    padding: var(--font-interval);
+    border-radius: calc(var(--font-interval) / 2);
+}
