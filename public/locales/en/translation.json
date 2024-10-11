@@ -17,6 +17,20 @@
     "Отменить": "Cancel",
     "Сохранить": "Save",
     "Редактировать": "Edit",
+    "Отправить": "Submit",
     "Комментарии": "Comments",
-    "Комментарии отсутствуют": "There are no comments yet"
+    "Комментарии отсутствуют": "There are no comments yet",
+    "Неизвестная ошибка": "Unknown error",
+    "Поиск": "Search",
+    "Сортировать по": "Sort by",
+    "дате создания": "created at",
+    "названию": "title",
+    "просмотрам": "views",
+    "по": "Order",
+    "возрастанию": "ascending",
+    "убыванию": "descending",
+    "All": "All",
+    "IT": "IT",
+    "Science": "Science",
+    "Economics": "Economics"
 }
