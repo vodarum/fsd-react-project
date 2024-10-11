@@ -54,15 +54,15 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
     );
 
     const handleCountryInputChange = useCallback(
-        (value?: string) => {
-            dispatch(userActions.setForm({ country: value as Country }));
+        (value?: Country) => {
+            dispatch(userActions.setForm({ country: value }));
         },
         [dispatch],
     );
 
     const handleCurrencyInputChange = useCallback(
-        (value?: string) => {
-            dispatch(userActions.setForm({ currency: value as Currency }));
+        (value?: Currency) => {
+            dispatch(userActions.setForm({ currency: value }));
         },
         [dispatch],
     );
@@ -119,7 +119,7 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
                 label={t('Страна')}
                 value={form?.country}
                 options={Object.entries(Countries).map(([k, v]) => ({
-                    value: k,
+                    value: k as Country,
                     text: v,
                 }))}
                 onChange={handleCountryInputChange}
@@ -129,7 +129,7 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
                 label={t('Валюта')}
                 value={form?.currency}
                 options={Object.entries(Currencies).map(([k, v]) => ({
-                    value: k,
+                    value: k as Currency,
                     text: v,
                 }))}
                 onChange={handleCurrencyInputChange}
