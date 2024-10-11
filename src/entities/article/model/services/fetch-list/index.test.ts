@@ -7,7 +7,9 @@ const requestOptions = {
     params: {
         _expand: 'user',
         _limit: 9,
+        _order: 'asc',
         _page: 1,
+        _sort: 'createdAt',
     },
 };
 
@@ -17,7 +19,7 @@ describe('fetchList', () => {
 
         api.get.mockReturnValueOnce(Promise.resolve({ data: mockArticles }));
 
-        const result = await callThunk();
+        const result = await callThunk({});
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(api.get).toHaveBeenCalledWith(url, requestOptions);
@@ -30,7 +32,7 @@ describe('fetchList', () => {
 
         api.get.mockReturnValueOnce(Promise.resolve({ status: 403 }));
 
-        const result = await callThunk();
+        const result = await callThunk({});
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(api.get).toHaveBeenCalledWith(url, requestOptions);

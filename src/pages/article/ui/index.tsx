@@ -17,6 +17,7 @@ import { Text } from 'shared/ui/text';
 import { addComment } from '../model';
 import { useSelector } from 'react-redux';
 import { CommentList } from 'entities/comment';
+import { Section } from 'widgets/section';
 
 const Article = () => {
     const { t } = useTranslation('article');
@@ -47,14 +48,14 @@ const Article = () => {
     }, [id]);
 
     return (
-        <>
+        <Section>
             <ArticleDetails id={+id} />
             <CommentList
                 items={comments}
                 loading={loading}
                 form={<CommentForm onSubmit={handleCommentSubmit} />}
             />
-        </>
+        </Section>
     );
 };
 

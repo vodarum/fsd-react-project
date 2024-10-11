@@ -1,4 +1,5 @@
 const ArticleTypes = {
+    all: 'All',
     it: 'IT',
     science: 'Science',
     economics: 'Economics',
@@ -20,9 +21,16 @@ const ArticlesNumberPerPage = {
     list: 3,
 } as const;
 
+const ArticleSortFields = {
+    title: 'title',
+    views: 'views',
+    createdAt: 'createdAt',
+} as const;
+
 export {
     ArticleTypes,
     ArticleBlockTypes,
+    ArticleSortFields,
     ArticleViewTypes,
     ArticlesNumberPerPage,
 };

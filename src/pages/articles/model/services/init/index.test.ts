@@ -12,9 +12,9 @@ describe('init', () => {
     test('fetchList called', async () => {
         const { callThunk, dispatch } = testAsyncThunk(init, mockAppState);
 
-        await callThunk();
+        await callThunk(new URLSearchParams());
 
-        expect(dispatch).toHaveBeenCalledTimes(4);
+        expect(dispatch).toHaveBeenCalledTimes(9);
         expect(fetchList).toHaveBeenCalledTimes(1);
     });
 
@@ -26,7 +26,7 @@ describe('init', () => {
             },
         });
 
-        await callThunk();
+        await callThunk(new URLSearchParams());
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(fetchList).not.toHaveBeenCalled();

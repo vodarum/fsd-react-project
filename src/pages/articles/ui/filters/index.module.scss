@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--font-interval-expand);
+}
+
+.switchers {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--font-interval);
+}
+
+.tabs {
+    overflow-x: auto;
+}

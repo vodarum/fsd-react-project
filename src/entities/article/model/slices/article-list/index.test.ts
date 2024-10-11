@@ -22,7 +22,6 @@ describe('articleListSlice', () => {
         ).toEqual({
             ...mockArticleListState,
             view: ArticleViewTypes.list,
-            limit: ArticlesNumberPerPage[ArticleViewTypes.list],
         });
     });
 
@@ -33,7 +32,7 @@ describe('articleListSlice', () => {
                     ...mockArticleListState,
                     error: 'Some error',
                 },
-                fetchList.pending(''),
+                fetchList.pending('', {}),
             ),
         ).toEqual({
             ...mockArticleListState,
@@ -46,12 +45,13 @@ describe('articleListSlice', () => {
         expect(
             articleListReducer(
                 mockArticleListState,
-                fetchList.fulfilled(mockArticles, ''),
+                fetchList.fulfilled(mockArticles, '', {}),
             ),
         ).toEqual({
             ...mockArticleListState,
             entities: mockArticleListEntityState.entities,
             ids: mockArticleListEntityState.ids,
+            hasMore: mockArticleListEntityState.ids.length >= ArticlesNumberPerPage[mockArticleListState.view],
         });
     });
 });

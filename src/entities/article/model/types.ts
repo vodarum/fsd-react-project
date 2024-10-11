@@ -1,8 +1,17 @@
 import { EntityState } from '@reduxjs/toolkit';
 import { User } from 'entities/user/@x/article';
-import { ArticleBlockTypes, ArticleTypes, ArticleViewTypes } from './const';
+import {
+    ArticleBlockTypes,
+    ArticleTypes,
+    ArticleSortFields,
+    ArticleViewTypes,
+} from './const';
+import { SortOrder } from 'shared/api';
 
 type ArticleType = (typeof ArticleTypes)[keyof typeof ArticleTypes];
+
+type ArticleSortField =
+    (typeof ArticleSortFields)[keyof typeof ArticleSortFields];
 
 type ArticleViewType = (typeof ArticleViewTypes)[keyof typeof ArticleViewTypes];
 
@@ -52,15 +61,26 @@ type ArticleState = {
     error?: string;
 };
 
+type ArticleListFilters = {
+    view: ArticleViewType; // TODO: вынести в ArticleListFilters
+    page: number;
+    search?: string; // TODO: сделать обязательными
+    type?: ArticleType; // TODO: сделать обязательными
+    sortBy?: ArticleSortField; // TODO: сделать обязательными
+    sortOrder?: SortOrder; // TODO: сделать обязательными
+};
+
 type ArticleListState = EntityState<Article, Article['id']> & {
     loading: boolean;
     error?: string;
-    view: ArticleViewType;
-    page: number;
-    limit?: number;
     hasMore: boolean;
+    // page: number;
+    // search?: string;
+    // type?: ArticleType;
+    // sortBy?: ArticleSortField;
+    // sortOrder?: SortOrder;
     _inited: boolean;
-};
+} & ArticleListFilters;
 
 export {
     Article,
@@ -68,7 +88,10 @@ export {
     ArticleBlockCode,
     ArticleBlockImage,
     ArticleBlockText,
+    ArticleListFilters,
     ArticleListState,
+    ArticleSortField,
     ArticleState,
+    ArticleType,
     ArticleViewType,
 };

@@ -14,4 +14,9 @@ const Currencies = {
     usd: 'USD',
 } as const;
 
-export { APP_SESSION_LS_KEY, Countries, Currencies };
+const SortOrders = {
+    asc: 'asc',
+    desc: 'desc',
+} as const;
+
+export { APP_SESSION_LS_KEY, Countries, Currencies, SortOrders };

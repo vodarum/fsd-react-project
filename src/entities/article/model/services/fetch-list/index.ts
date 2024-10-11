@@ -1,30 +1,42 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkAPI } from 'app/providers/store-provider';
+import { ArticlesNumberPerPage } from '../../const';
+import { parseFiltersToURLSearchParams } from '../../../lib';
 import { articleListSelectors } from '../../selectors';
 import { Article } from '../../types';
 
-export const fetchList = createAsyncThunk<Article[], void, ThunkAPI<string>>(
-    'article/fetchList',
-    async (_, thunkAPI) => {
-        const { extra, getState, rejectWithValue } = thunkAPI;
+type FetchListOptions = {
+    replace?: boolean;
+} | undefined;
 
-        const page = articleListSelectors.selectPage(getState());
-        const limit = articleListSelectors.selectLimit(getState());
+export const fetchList = createAsyncThunk<
+    Article[],
+    FetchListOptions,
+    ThunkAPI<string>
+>('article/fetchList', async (_, thunkAPI) => {
+    const { extra, getState, rejectWithValue } = thunkAPI;
+    const filters = articleListSelectors.selectFilters(getState());
+    const urlSearchParams = parseFiltersToURLSearchParams(filters);
 
-        try {
-            const response = await extra.api.get<Article[]>('/articles', {
-                params: {
-                    _expand: 'user',
-                    _limit: limit,
-                    _page: page,
-                },
-            });
+    window.history.pushState(null, '', `?${urlSearchParams.toString()}`);
 
-            if (!response.data) throw new Error();
+    try {
+        const response = await extra.api.get<Article[]>('/articles', {
+            params: {
+                _expand: 'user',
+                _limit: ArticlesNumberPerPage[filters.view],
+                _page: filters.page,
+                _sort: filters.sortBy,
+                _order: filters.sortOrder,
+                ...(urlSearchParams.get('q') ? { q: urlSearchParams.get('q') } : {}),
+                ...(urlSearchParams.get('type') ? { type: urlSearchParams.get('type') } : {}),
+            },
+        });
 
-            return response.data;
-        } catch (e) {
-            return rejectWithValue(`Error: ${e}`);
-        }
-    },
-);
+        if (!response.data) throw new Error();
+
+        return response.data;
+    } catch (e) {
+        return rejectWithValue(`Error: ${e}`);
+    }
+});
