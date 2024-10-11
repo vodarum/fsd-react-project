@@ -1,4 +1,4 @@
-import { User } from "entities/user/@x/comment";
+import { User } from 'entities/user/@x/comment';
 
 type Comment = {
     id: number;

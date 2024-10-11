@@ -1,2 +1,2 @@
-export { mockUsers, User } from './model';
+export { mockUsers, type User } from './model';
 export * from './ui';

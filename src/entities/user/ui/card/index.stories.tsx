@@ -3,7 +3,7 @@ import { UserCard } from '.';
 import { mockUsers } from '../../model';
 
 const meta = {
-    title: 'entities//User/UserCard',
+    title: 'entities/User/UserCard',
     component: UserCard,
     parameters: {
         layout: 'centered',

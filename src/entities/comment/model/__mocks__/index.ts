@@ -1,4 +1,4 @@
-import { mockUsers } from "entities/user/@x/comment";
+import { mockUsers } from 'entities/user/@x/comment';
 
 export const mockComments = [
     {

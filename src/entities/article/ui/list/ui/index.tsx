@@ -28,7 +28,9 @@ export const ArticleList = memo(
         const { t } = useTranslation();
 
         if (error) {
-            return <Text className='text-error'>{t('Статья не найдена')}</Text>;
+            return (
+                <Text className='text-error'>{t('Неизвестная ошибка')}</Text>
+            );
         }
 
         return (
