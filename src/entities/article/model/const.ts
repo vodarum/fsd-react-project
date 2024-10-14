@@ -14,11 +14,13 @@ const ArticleBlockTypes = {
 const ArticleViewTypes = {
     grid: 'grid',
     list: 'list',
+    slider: 'slider',
 } as const;
 
 const ArticlesNumberPerPage = {
     grid: 9,
     list: 3,
+    slider: 4,
 } as const;
 
 const ArticleSortFields = {

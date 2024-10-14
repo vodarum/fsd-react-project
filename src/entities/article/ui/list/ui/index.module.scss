@@ -6,10 +6,20 @@
     }
 }
 
-.grid {
+.grid,
+.slider {
     padding: var(--padding) 0;
+}
+
+.grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(280px, 1fr));
     grid-gap: var(--padding);
     grid-auto-rows: minmax(200px, 300px);
+}
+
+.slider {
+    display: flex;
+    gap: var(--padding);
+    overflow-x: auto;
 }

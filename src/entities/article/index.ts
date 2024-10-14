@@ -5,6 +5,7 @@ export {
     articleListActions,
     articleListReducer,
     articleListSelectors,
+    ArticlesNumberPerPage,
     ArticleSortFields,
     ArticleTypes,
     ArticleViewTypes,
@@ -15,10 +16,11 @@ export {
     mockArticleListState,
     mockArticleListEntityState,
     mockArticleState,
+    type Article,
     type ArticleListState,
     type ArticleState,
     type ArticleSortField,
     type ArticleType,
     type ArticleViewType,
 } from './model';
-export { Article, ArticleList } from './ui';
+export { Article as ArticleDetails, ArticleList } from './ui';

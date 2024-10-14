@@ -13,6 +13,7 @@ import { LoginState } from 'features/login';
 import { UserState } from 'features/user';
 import { ScrollPositionState } from 'widgets/section';
 import { configureAppStore } from './store';
+import { ArticleRecommendationsState } from 'features/article';
 
 type State = {
     session: SessionState;
@@ -21,6 +22,7 @@ type State = {
     login?: LoginState;
     article?: ArticleState;
     articleComments?: ArticleCommentsState;
+    articleRecommendations?: ArticleRecommendationsState;
     addComment?: AddCommentState;
     articleList?: ArticleListState;
 };

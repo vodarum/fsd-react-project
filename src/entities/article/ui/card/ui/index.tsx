@@ -20,6 +20,7 @@ import { BlockText } from '../../block-text';
 type ArticleCardBaseProps = {
     className?: string;
     view: ArticleViewType;
+    openInNewTab?: boolean;
 };
 
 type ArticleCardProps = ArticleCardBaseProps & {
@@ -132,77 +133,91 @@ const ArticleCardSkeleton = memo(
     },
 );
 
-const ArticleCard = memo(({ className, data, view }: ArticleCardProps) => {
-    const { t } = useTranslation();
+const ArticleCard = memo(
+    ({ className, data, view, openInNewTab }: ArticleCardProps) => {
+        const { t } = useTranslation();
 
-    const articleTypes = data?.type.length ? (
-        <Text className={cls.types}>{data.type.join(', ')}</Text>
-    ) : null;
-    const articleViews = (
-        <div className={cls.views}>
-            <Text>{data?.views}</Text>
-            <FontAwesomeIcon icon={faEye} />
-        </div>
-    );
-
-    if (view === ArticleViewTypes.list) {
-        const blockTextData = data?.blocks.find(
-            (block) => block.type === ArticleBlockTypes.text,
-        ) as ArticleBlockText;
-
-        return (
-            <div className={classNames(cls.card, {}, [className, cls[view]])}>
-                <div className={cls.header}>
-                    <div className={cls.author}>
-                        <Avatar src={data?.user?.avatar} size={30} />
-                        <Text>{data?.user?.username}</Text>
-                    </div>
-
-                    <Text className={cls.date}>{data?.createdAt}</Text>
-                </div>
-
-                <Text className={cls.title}>{data?.title}</Text>
-
-                {articleTypes}
-
-                <img className={cls.img} src={data?.img} alt={data?.title} />
-
-                {blockTextData && (
-                    <BlockText className={cls.block} data={blockTextData} />
-                )}
-
-                <div className={cls.footer}>
-                    <AppLink
-                        className={cls.readMoreBtn}
-                        variant={AppLinkVariants.bordered}
-                        to={`/articles/${data.id}`}
-                    >
-                        {t('Читать далее')}
-                    </AppLink>
-                    {articleViews}
-                </div>
+        const articleTypes = data?.type.length ? (
+            <Text className={cls.types}>{data.type.join(', ')}</Text>
+        ) : null;
+        const articleViews = (
+            <div className={cls.views}>
+                <Text>{data?.views}</Text>
+                <FontAwesomeIcon icon={faEye} />
             </div>
         );
-    }
 
-    return (
-        <AppLink
-            className={classNames(cls.card, {}, [className, cls[view]])}
-            to={`/articles/${data.id}`}
-        >
-            <div className={cls.imageWrapper}>
-                <img className={cls.img} src={data?.img} alt={data?.title} />
-                <Text className={cls.date}>{data?.createdAt}</Text>
-            </div>
-            <div className={cls.textWrapper}>
-                <div className={cls.infoWrapper}>
+        if (view === ArticleViewTypes.list) {
+            const blockTextData = data?.blocks.find(
+                (block) => block.type === ArticleBlockTypes.text,
+            ) as ArticleBlockText;
+
+            return (
+                <div
+                    className={classNames(cls.card, {}, [className, cls[view]])}
+                >
+                    <div className={cls.header}>
+                        <div className={cls.author}>
+                            <Avatar src={data?.user?.avatar} size={30} />
+                            <Text>{data?.user?.username}</Text>
+                        </div>
+
+                        <Text className={cls.date}>{data?.createdAt}</Text>
+                    </div>
+
+                    <Text className={cls.title}>{data?.title}</Text>
+
                     {articleTypes}
-                    {articleViews}
+
+                    <img
+                        className={cls.img}
+                        src={data?.img}
+                        alt={data?.title}
+                    />
+
+                    {blockTextData && (
+                        <BlockText className={cls.block} data={blockTextData} />
+                    )}
+
+                    <div className={cls.footer}>
+                        <AppLink
+                            className={cls.readMoreBtn}
+                            variant={AppLinkVariants.bordered}
+                            to={`/articles/${data.id}`}
+                            target={openInNewTab ? '_blank' : '_self'}
+                        >
+                            {t('Читать далее')}
+                        </AppLink>
+                        {articleViews}
+                    </div>
                 </div>
-                <Text className={cls.title}>{data?.title}</Text>
-            </div>
-        </AppLink>
-    );
-});
+            );
+        }
+
+        return (
+            <AppLink
+                className={classNames(cls.card, {}, [className, cls[view]])}
+                to={`/articles/${data.id}`}
+                target={openInNewTab ? '_blank' : '_self'}
+            >
+                <div className={cls.imageWrapper}>
+                    <img
+                        className={cls.img}
+                        src={data?.img}
+                        alt={data?.title}
+                    />
+                    <Text className={cls.date}>{data?.createdAt}</Text>
+                </div>
+                <div className={cls.textWrapper}>
+                    <div className={cls.infoWrapper}>
+                        {articleTypes}
+                        {articleViews}
+                    </div>
+                    <Text className={cls.title}>{data?.title}</Text>
+                </div>
+            </AppLink>
+        );
+    },
+);
 
 export { ArticleCard, ArticleCardSkeleton };
