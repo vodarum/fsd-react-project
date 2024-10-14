@@ -7,14 +7,14 @@ import { Title, TitleLevels } from 'shared/ui/title';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
+import { withAsyncStore } from 'shared/lib/with-async-store';
+import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch';
 import {
     loginActions,
     loginByUsername,
     loginReducer,
     loginSelectors,
-} from 'features/login/model';
-import { withAsyncStore } from 'shared/lib/with-async-store';
-import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch';
+} from '../../model';
 
 type indexProps = {
     className?: string;
