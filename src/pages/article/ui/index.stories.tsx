@@ -3,9 +3,12 @@ import Article from '.';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 import {
     articleCommentsReducer,
+    articleRecommendationsReducer,
     mockArticleCommentsState,
     mockArticleId,
+    mockArticleRecommendationsState,
     mockCommentsEntityState,
+    mockRecommendationsEntityState,
 } from 'features/article';
 import {
     articleReducer,
@@ -29,6 +32,7 @@ const meta = {
             preloadedReducer: {
                 article: articleReducer,
                 articleComments: articleCommentsReducer,
+                articleRecommendations: articleRecommendationsReducer,
             },
             preloadedState: {
                 article: {
@@ -39,6 +43,11 @@ const meta = {
                     ...mockArticleCommentsState,
                     entities: mockCommentsEntityState.entities,
                     ids: mockCommentsEntityState.ids,
+                },
+                articleRecommendations: {
+                    ...mockArticleRecommendationsState,
+                    entities: mockRecommendationsEntityState.entities,
+                    ids: mockRecommendationsEntityState.ids,
                 },
             },
         }),
