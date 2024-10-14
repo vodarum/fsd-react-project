@@ -51,7 +51,9 @@ describe('articleListSlice', () => {
             ...mockArticleListState,
             entities: mockArticleListEntityState.entities,
             ids: mockArticleListEntityState.ids,
-            hasMore: mockArticleListEntityState.ids.length >= ArticlesNumberPerPage[mockArticleListState.view],
+            hasMore:
+                mockArticleListEntityState.ids.length >=
+                ArticlesNumberPerPage[mockArticleListState.view],
         });
     });
 });

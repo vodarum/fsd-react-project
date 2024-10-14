@@ -1,6 +1,12 @@
-import { createSearchParams } from "react-router-dom";
-import { ArticleListFilters, ArticleSortField, ArticleSortFields, ArticleType, ArticleTypes } from "../model";
-import { SortOrder, SortOrders } from "shared/api";
+import { createSearchParams } from 'react-router-dom';
+import {
+    ArticleListFilters,
+    ArticleSortField,
+    ArticleSortFields,
+    ArticleType,
+    ArticleTypes,
+} from '../model';
+import { SortOrder, SortOrders } from 'shared/api';
 
 const parseArticleType = (v: string | null): ArticleType => {
     switch (v) {
@@ -54,4 +60,9 @@ const parseFiltersToURLSearchParams = (
     });
 };
 
-export { parseArticleType, parseFiltersToURLSearchParams, parseSortBy, parseSortOrder };
+export {
+    parseArticleType,
+    parseFiltersToURLSearchParams,
+    parseSortBy,
+    parseSortOrder,
+};

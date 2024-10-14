@@ -5,9 +5,11 @@ import { parseFiltersToURLSearchParams } from '../../../lib';
 import { articleListSelectors } from '../../selectors';
 import { Article } from '../../types';
 
-type FetchListOptions = {
-    replace?: boolean;
-} | undefined;
+type FetchListOptions =
+    | {
+          replace?: boolean;
+      }
+    | undefined;
 
 export const fetchList = createAsyncThunk<
     Article[],
@@ -28,8 +30,12 @@ export const fetchList = createAsyncThunk<
                 _page: filters.page,
                 _sort: filters.sortBy,
                 _order: filters.sortOrder,
-                ...(urlSearchParams.get('q') ? { q: urlSearchParams.get('q') } : {}),
-                ...(urlSearchParams.get('type') ? { type: urlSearchParams.get('type') } : {}),
+                ...(urlSearchParams.get('q')
+                    ? { q: urlSearchParams.get('q') }
+                    : {}),
+                ...(urlSearchParams.get('type')
+                    ? { type_like: urlSearchParams.get('type') }
+                    : {}),
             },
         });
 
