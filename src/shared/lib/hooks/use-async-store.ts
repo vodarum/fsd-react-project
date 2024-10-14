@@ -1,12 +1,15 @@
 import { Reducer } from '@reduxjs/toolkit';
 import {
+    State,
     StateKey,
     StoreWithReducerManager,
 } from 'app/providers/store-provider';
 import { useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
-type Reducers = Partial<Record<StateKey, Reducer>>;
+type Reducers = {
+    [name in StateKey]?: Reducer<NonNullable<State[name]>>;
+};
 
 export const useAsyncStore = (
     reducers: Reducers,
