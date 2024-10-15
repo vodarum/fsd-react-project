@@ -1,4 +1,5 @@
 import { Text } from 'shared/ui/text';
+import { VStack } from 'shared/ui/stack';
 import cls from './index.module.scss';
 import { ArticleBlockImage } from '../../../model';
 
@@ -9,9 +10,9 @@ type BlockImageProps = {
 
 export const BlockImage = ({ className, data }: BlockImageProps) => {
     return (
-        <div className={className}>
+        <VStack className={className} gap={8}>
             <img className={cls.image} src={data.src} alt={data.title} />
-            {data.title && <Text className={cls.title}>{data.title}</Text>}
-        </div>
+            {data.title && <Text>{data.title}</Text>}
+        </VStack>
     );
 };

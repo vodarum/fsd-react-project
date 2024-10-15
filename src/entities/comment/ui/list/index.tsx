@@ -4,6 +4,7 @@ import { Text } from 'shared/ui/text';
 import cls from './index.module.scss';
 import { CommentCard, CommentCardSkeleton } from '../card';
 import { Comment } from '../../model';
+import { VStack } from 'shared/ui/stack';
 
 type CommentListProps = {
     className?: string;
@@ -18,35 +19,29 @@ export const CommentList = memo(
 
         if (loading) {
             return (
-                <div className={className}>
+                <VStack className={className} align='stretch' gap={16}>
                     <Text className={cls.title}>{t('Комментарии')}</Text>
-                    <div className={cls.items}>
-                        <CommentCardSkeleton className={cls.item} />
-                        <CommentCardSkeleton className={cls.item} />
-                        <CommentCardSkeleton className={cls.item} />
-                    </div>
-                </div>
+                    <VStack align='stretch' gap={8}>
+                        <CommentCardSkeleton />
+                        <CommentCardSkeleton />
+                        <CommentCardSkeleton />
+                    </VStack>
+                </VStack>
             );
         }
 
         return (
-            <div className={className}>
+            <VStack className={className} align='stretch' gap={16}>
                 <Text className={cls.title}>{t('Комментарии')}</Text>
                 {form}
-                <div className={cls.items}>
+                <VStack align='stretch' gap={8}>
                     {items?.length ? (
-                        items.map((i) => (
-                            <CommentCard
-                                key={i.id}
-                                data={i}
-                                className={cls.item}
-                            />
-                        ))
+                        items.map((i) => <CommentCard key={i.id} data={i} />)
                     ) : (
                         <Text>{t('Комментарии отсутствуют')}</Text>
                     )}
-                </div>
-            </div>
+                </VStack>
+            </VStack>
         );
     },
 );

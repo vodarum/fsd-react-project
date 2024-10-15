@@ -26,6 +26,7 @@ import { addComment } from '../model';
 import { useSelector } from 'react-redux';
 import { CommentList } from 'entities/comment';
 import { Section } from 'widgets/section';
+import { VStack } from 'shared/ui/stack';
 
 const Article = () => {
     const { t } = useTranslation('article');
@@ -67,22 +68,28 @@ const Article = () => {
 
     return (
         <Section>
-            <ArticleDetails id={+id} />
+            <VStack align='stretch' gap={32}>
+                <ArticleDetails id={+id} />
 
-            <Text className={cls.recommendationsTitle}>{t('Рекомендуем')}</Text>
-            <ArticleList
-                className={cls.recommendationsList}
-                items={recommendations}
-                loading={recommendationsLoading}
-                openInNewTab={true}
-                view={ArticleViewTypes.slider}
-            />
+                <VStack align='stretch' gap={16}>
+                    <Text className={cls.recommendationsTitle}>
+                        {t('Рекомендуем')}
+                    </Text>
+                    <ArticleList
+                        className={cls.recommendationsList}
+                        items={recommendations}
+                        loading={recommendationsLoading}
+                        openInNewTab={true}
+                        view={ArticleViewTypes.slider}
+                    />
+                </VStack>
 
-            <CommentList
-                items={comments}
-                loading={commentsLoading}
-                form={<CommentForm onSubmit={handleCommentSubmit} />}
-            />
+                <CommentList
+                    items={comments}
+                    loading={commentsLoading}
+                    form={<CommentForm onSubmit={handleCommentSubmit} />}
+                />
+            </VStack>
         </Section>
     );
 };
