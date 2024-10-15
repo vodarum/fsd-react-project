@@ -34,7 +34,7 @@ export const RightSidebar = memo(
                 data-testid='rightSidebar'
                 onClick={handleClick}
             >
-                <aside className={cls.sidebar}>
+                <section className={cls.sidebar}>
                     <div className={cls.header}>
                         <Title level={TitleLevels.H3}>{t('Настройки')}</Title>
                         <FontAwesomeIcon icon={faXmark} onClick={onClose} />
@@ -42,7 +42,7 @@ export const RightSidebar = memo(
                     <div className={cls.content}>
                         <ThemeSwitcher />
                     </div>
-                </aside>
+                </section>
             </div>
         );
     },

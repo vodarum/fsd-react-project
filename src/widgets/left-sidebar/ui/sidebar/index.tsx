@@ -12,21 +12,21 @@ type LeftSidebarProps = {
 
 export const LeftSidebar = memo(({ className, open }: LeftSidebarProps) => {
     return (
-        <div
+        <section
             className={classNames(cls.sidebar, { [cls.open]: open }, [
                 className,
             ])}
             data-testid='leftSidebar'
         >
-            <div className={cls.links}>
+            <nav className={cls.links}>
                 {navRoutes.map((r) => (
                     <SidebarItem key={r.path} {...r} collapsed={!open} />
                 ))}
-            </div>
+            </nav>
 
             <div className={cls.switchers}>
                 <LangSwitcher short={!open} />
             </div>
-        </div>
+        </section>
     );
 });

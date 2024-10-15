@@ -34,7 +34,7 @@ export const Navbar = memo((props: NavbarProps) => {
     }, [isAuth, isLoginModal]);
 
     return (
-        <div className={classNames(cls.navbar, {}, [className])}>
+        <header className={classNames(cls.navbar, {}, [className])}>
             {prepend && <div className={cls.prepend}>{prepend}</div>}
 
             {append && <div className={cls.append}>{append}</div>}
@@ -53,6 +53,6 @@ export const Navbar = memo((props: NavbarProps) => {
                     />
                 </>
             )}
-        </div>
+        </header>
     );
 });
