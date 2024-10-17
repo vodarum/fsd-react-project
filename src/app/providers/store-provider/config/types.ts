@@ -14,8 +14,10 @@ import { UserState } from 'features/user';
 import { ScrollPositionState } from 'widgets/section';
 import { configureAppStore } from './store';
 import { ArticleRecommendationsState } from 'features/article';
+import { $rtkApi } from 'shared/api';
 
 type State = {
+    [$rtkApi.reducerPath]: ReturnType<typeof $rtkApi.reducer>,
     session: SessionState;
     scrollPosition: ScrollPositionState;
     user?: UserState;

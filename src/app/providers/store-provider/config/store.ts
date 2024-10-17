@@ -1,6 +1,6 @@
 import { configureStore, Reducer } from '@reduxjs/toolkit';
 import { sessionReducer } from 'entities/session';
-import { $api } from 'shared/api';
+import { $api, $rtkApi } from 'shared/api';
 import { scrollPositionReducer } from 'widgets/section';
 import { createReducerManager } from './reducer-manager';
 import { sessionMiddleware } from './session-middleware';
@@ -14,7 +14,9 @@ export const configureAppStore = ({
         ...preloadedReducer,
         session: sessionReducer,
         scrollPosition: scrollPositionReducer,
+        [$rtkApi.reducerPath]: $rtkApi.reducer,
     });
+
     const store = configureStore({
         reducer: reducerManager.reduce as Reducer<State>,
         devTools: __IS_DEV__,
@@ -27,7 +29,10 @@ export const configureAppStore = ({
                         api: $api,
                     },
                 },
-            }).concat(sessionMiddleware),
+            }).concat(
+                sessionMiddleware,
+                $rtkApi.middleware,
+            ),
     });
 
     // @ts-ignore
