@@ -1,4 +1,18 @@
 .section {
     height: 100%;
+    padding: var(--padding);
     overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: var(--font-interval);
+        
+        &-track {
+            background-color: transparent;
+        }
+        
+        &-thumb {
+            background-color: var(--secondary-color);
+            border-radius: 100px;
+        }
+    }
 }

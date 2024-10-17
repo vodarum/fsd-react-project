@@ -22,4 +22,17 @@
     display: flex;
     gap: var(--padding);
     overflow-x: auto;
+    
+    &::-webkit-scrollbar {
+        height: var(--font-interval);
+        
+        &-track {
+            background-color: transparent;
+        }
+        
+        &-thumb {
+            background-color: var(--secondary-color);
+            border-radius: 100px;
+        }
+    }
 }

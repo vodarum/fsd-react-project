@@ -1,4 +1,3 @@
-import { classNames } from 'shared/lib/class-names';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faEye } from '@fortawesome/free-solid-svg-icons';
 import { memo } from 'react';
@@ -33,7 +32,7 @@ type ArticleProps = {
 
 const ArticleLoading = memo(() => {
     return (
-        <VStack className={cls.article} gap={8}>
+        <VStack gap={8}>
             <Skeleton
                 className={cls.avatar}
                 active
@@ -91,7 +90,7 @@ export const Article = memo(({ className, id }: ArticleProps) => {
     }
 
     return (
-        <VStack className={classNames(cls.article, {}, [className])} gap={16}>
+        <VStack className={className} gap={16}>
             <Avatar size={150} src={data?.img} className={cls.avatar} />
 
             <VStack gap={8}>
