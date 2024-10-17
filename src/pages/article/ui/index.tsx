@@ -1,18 +1,12 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import {
-    ArticleDetails,
-    ArticleList,
-    ArticleViewTypes,
-} from 'entities/article';
+import { ArticleDetails } from 'entities/article';
 import {
     articleCommentsReducer,
     articleCommentsSelectors,
-    articleRecommendationsReducer,
-    articleRecommendationsSelectors,
+    ArticleRecommendations,
     fetchByArticleId,
-    fetchRecommendations,
 } from 'features/article';
 import { CommentForm } from 'features/comment';
 import {
@@ -21,7 +15,6 @@ import {
     useInitialEffect,
 } from 'shared/lib/hooks';
 import { Text } from 'shared/ui/text';
-import cls from './index.module.scss';
 import { addComment } from '../model';
 import { useSelector } from 'react-redux';
 import { CommentList } from 'entities/comment';
@@ -39,13 +32,6 @@ const Article = () => {
     const comments = useSelector(articleCommentsSelectors.selectAll);
     const commentsLoading = useSelector(articleCommentsSelectors.selectLoading);
 
-    const recommendations = useSelector(
-        articleRecommendationsSelectors.selectAll,
-    );
-    const recommendationsLoading = useSelector(
-        articleRecommendationsSelectors.selectLoading,
-    );
-
     const handleCommentSubmit = useCallback(
         (comment: string) => {
             // @ts-ignore
@@ -56,34 +42,18 @@ const Article = () => {
 
     useAsyncStore({
         articleComments: articleCommentsReducer,
-        articleRecommendations: articleRecommendationsReducer,
     });
 
     useInitialEffect(() => {
         // @ts-ignore
         dispatch(fetchByArticleId(+id));
-        // @ts-ignore
-        dispatch(fetchRecommendations());
     }, [id]);
 
     return (
         <Section>
             <VStack align='stretch' gap={32}>
                 <ArticleDetails id={+id} />
-
-                <VStack align='stretch' gap={16}>
-                    <Text className={cls.recommendationsTitle}>
-                        {t('Рекомендуем')}
-                    </Text>
-                    <ArticleList
-                        className={cls.recommendationsList}
-                        items={recommendations}
-                        loading={recommendationsLoading}
-                        openInNewTab={true}
-                        view={ArticleViewTypes.slider}
-                    />
-                </VStack>
-
+                <ArticleRecommendations />
                 <CommentList
                     items={comments}
                     loading={commentsLoading}
