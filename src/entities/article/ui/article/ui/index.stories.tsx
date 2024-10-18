@@ -4,18 +4,12 @@ import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 import { articleReducer, mockArticles, mockArticleState } from '../../../model';
 
 const meta = {
-    title: 'entities/Article',
+    title: 'entities/Article/ArticleDetails',
     component: Article,
     tags: ['autodocs'],
-    decorators: [
-        (Story) => (
-            <div className='layout' style={{ height: '100vh' }}>
-                <main className='layout-main'>
-                    <Story />
-                </main>
-            </div>
-        ),
-    ],
+    parameters: {
+        layout: 'padded',
+    },
     args: {
         id: 1,
     },
