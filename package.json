@@ -74,6 +74,8 @@
         "json-server": "^0.17.4",
         "loki": "^0.35.0",
         "mini-css-extract-plugin": "^2.9.0",
+        "msw": "^2.4.11",
+        "msw-storybook-addon": "^2.0.3",
         "prettier": "3.3.3",
         "reg-cli": "^0.18.7",
         "sass": "^1.77.8",
@@ -133,5 +135,10 @@
                 "preset": "iPhone 7"
             }
         }
+    },
+    "msw": {
+        "workerDirectory": [
+            "public"
+        ]
     }
 }

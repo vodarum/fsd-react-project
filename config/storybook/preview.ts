@@ -1,7 +1,10 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
+import { initialize, mswLoader } from 'msw-storybook-addon';
 import { StyleDecorator } from '../../src/shared/config/storybook/style-decorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/router-decorator';
+
+initialize({ onUnhandledRequest: 'bypass' });
 
 const preview: Preview = {
     parameters: {
@@ -27,6 +30,7 @@ const preview: Preview = {
         StyleDecorator,
         RouterDecorator,
     ],
+    loaders: [mswLoader],
 };
 
 export default preview;
