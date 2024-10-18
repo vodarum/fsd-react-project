@@ -86,6 +86,7 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
             className={classNames(cls.card, { [cls.editable]: editable }, [
                 className,
             ])}
+            data-testid='ProfileCard.wrapper'
         >
             {validateErrors?.length &&
                 validateErrors.map((e) => (
@@ -101,12 +102,14 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
                 value={form?.firstName}
                 onChange={handleFirstnameInputChange}
                 disabled={!editable}
+                data-testid='ProfileCard.firstname'
             />
             <Input
                 label={t('Фамилия')}
                 value={form?.lastName}
                 onChange={handleLastnameInputChange}
                 disabled={!editable}
+                data-testid='ProfileCard.lastname'
             />
             <Input
                 label={t('Дата рождения')}
@@ -114,6 +117,7 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
                 type='date'
                 onChange={handleBirthdayInputChange}
                 disabled={!editable}
+                data-testid='ProfileCard.birthday'
             />
             <Select
                 label={t('Страна')}
@@ -124,6 +128,7 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
                 }))}
                 onChange={handleCountryInputChange}
                 disabled={!editable}
+                data-testid='ProfileCard.country'
             />
             <Select
                 label={t('Валюта')}
@@ -134,18 +139,21 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
                 }))}
                 onChange={handleCurrencyInputChange}
                 disabled={!editable}
+                data-testid='ProfileCard.currency'
             />
             <Input
                 label={t('Город')}
                 value={form?.city}
                 onChange={handleCityInputChange}
                 disabled={!editable}
+                data-testid='ProfileCard.city'
             />
             <Input
                 label={t('Имя пользователя')}
                 value={form?.username}
                 onChange={handleUsernameInputChange}
                 disabled={!editable}
+                data-testid='ProfileCard.username'
             />
         </div>
     );

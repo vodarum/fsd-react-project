@@ -23,24 +23,30 @@ export const ProfileButtonBar = memo(() => {
     };
 
     return (
-        <div className={cls.wrapper}>
+        <div className={cls.wrapper} data-testid='ProfileButtonBar.wrapper'>
             {editable ? (
                 <>
                     <Button
                         className={cls.cancelBtn}
                         onClick={handleCancelBtnClick}
+                        data-testid='ProfileButtonBar.cancel'
                     >
                         {t('Отменить')}
                     </Button>
                     <Button
                         className={cls.saveBtn}
                         onClick={handleSaveBtnClick}
+                        data-testid='ProfileButtonBar.save'
                     >
                         {t('Сохранить')}
                     </Button>
                 </>
             ) : (
-                <Button className={cls.editBtn} onClick={handleEditBtnClick}>
+                <Button
+                    className={cls.editBtn}
+                    onClick={handleEditBtnClick}
+                    data-testid='ProfileButtonBar.edit'
+                >
                     {t('Редактировать')}
                 </Button>
             )}
