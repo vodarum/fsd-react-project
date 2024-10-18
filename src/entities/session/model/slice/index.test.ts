@@ -1,5 +1,5 @@
 import { mockSession, mockSessionState } from '../__mocks__';
-import { SessionState } from '../types';
+import type { SessionState } from '../types';
 import { sessionReducer, sessionActions } from '.';
 
 describe('sessionSlice', () => {

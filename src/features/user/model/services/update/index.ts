@@ -4,7 +4,7 @@ import { User } from 'entities/user';
 import { validate } from '../validate';
 import { ValidateUserErrors } from '../../const';
 import { selectUserForm } from '../../selectors';
-import { ValidateUserError } from '../../types';
+import type { ValidateUserError } from '../../types';
 
 export const update = createAsyncThunk<
     User,

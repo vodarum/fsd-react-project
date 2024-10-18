@@ -19,4 +19,4 @@ type BuildOptions = BuildEnv & {
     project: 'frontend' | 'storybook' | 'jest';
 };
 
-export { BuildEnv, BuildMode, BuildPaths, BuildOptions };
+export type { BuildEnv, BuildMode, BuildPaths, BuildOptions };

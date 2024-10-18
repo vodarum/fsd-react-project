@@ -12,4 +12,4 @@ const articleRecommendationsSelectors = {
 export { articleRecommendationsReducer, articleRecommendationsSelectors };
 export * from './__mocks__';
 export * from './services';
-export * from './types';
+export type * from './types';

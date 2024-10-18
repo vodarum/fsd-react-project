@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ScrollPositionObject, ScrollPositionState } from '../../types';
+import type { ScrollPositionObject, ScrollPositionState } from '../../types';
 
 const initialState: ScrollPositionState = {
     data: {},

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Session, sessionActions } from 'entities/session';
-import { LoginState } from '../../types';
+import type { LoginState } from '../../types';
 import { ThunkAPI } from 'app/providers/store-provider';
 
 type LoginData = Pick<LoginState, 'username' | 'password'>;

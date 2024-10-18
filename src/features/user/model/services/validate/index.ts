@@ -1,6 +1,6 @@
 import { User } from 'entities/user';
 import { ValidateUserErrors } from '../../const';
-import { ValidateUserError } from '../../types';
+import type { ValidateUserError } from '../../types';
 
 const containsNumber = (value: string): boolean => /\d/.test(value);
 

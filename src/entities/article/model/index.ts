@@ -17,7 +17,7 @@ const articleListSelectors = {
 export * from './__mocks__';
 export * from './const';
 export * from './services';
-export * from './types';
+export type * from './types';
 export {
     articleListActions,
     articleListReducer,

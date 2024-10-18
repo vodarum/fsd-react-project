@@ -13,4 +13,4 @@ type User = Partial<{
     avatar: string;
 }>;
 
-export { User };
+export type { User };

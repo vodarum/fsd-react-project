@@ -10,7 +10,7 @@ import {
     faHome,
     faNewspaper,
 } from '@fortawesome/free-solid-svg-icons';
-import { AppRouteObject, NavRoute } from './types';
+import type { AppRouteObject, NavRoute } from './types';
 import { appRoutePaths } from './const';
 import { RouteObject } from 'react-router-dom';
 import { User } from 'pages/user';

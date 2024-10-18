@@ -11,7 +11,7 @@ module.exports = (sliceName) => {
 } from '@reduxjs/toolkit';
 import { State } from 'app/providers/store-provider';
 // import { fetchData } from '../services';
-import { ${pascalSliceName}, ${pascalSliceName}State } from '../types';
+import type { ${pascalSliceName}, ${pascalSliceName}State } from '../types';
 
 const ${camelSliceName}Adapter = createEntityAdapter<${pascalSliceName}>();
 

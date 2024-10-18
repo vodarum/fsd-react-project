@@ -4,7 +4,7 @@ import {
     ReducersMapObject,
     UnknownAction,
 } from '@reduxjs/toolkit';
-import { ReducerManager, State, StateKey } from './types';
+import type { ReducerManager, State, StateKey } from './types';
 
 export const createReducerManager = (
     initialReducers: ReducersMapObject<State>,

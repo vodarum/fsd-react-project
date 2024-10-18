@@ -7,4 +7,4 @@ type SessionState = {
     data?: Session;
 };
 
-export { Session, SessionState };
+export type { Session, SessionState };

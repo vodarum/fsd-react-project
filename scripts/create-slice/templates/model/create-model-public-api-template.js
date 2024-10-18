@@ -20,7 +20,7 @@ const ${camelSliceName}Selectors = {
 
 export * from './__mocks__';
 export * from './services';
-export * from './types';
+export type * from './types';
 export {
     ${camelSliceName}Actions,
     ${camelSliceName}Reducer,

@@ -6,4 +6,4 @@ type ArticleRecommendationsState = EntityState<Article, Article['id']> & {
     error?: string;
 };
 
-export { ArticleRecommendationsState };
+export type { ArticleRecommendationsState };

@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { ArticleListFilters } from '../../../types';
+import type { ArticleListFilters } from '../../../types';
 import { selectPage } from '../page';
 import { selectSearch } from '../search';
 import { selectSortBy } from '../sort-by';

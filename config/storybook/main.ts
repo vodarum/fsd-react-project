@@ -1,6 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 import path from 'path';
-import { BuildPaths } from '../build/types';
+import type { BuildPaths } from '../build/types';
 import { buildCssLoader } from '../build/loaders/build-css-loader';
 import { DefinePlugin } from 'webpack';
 

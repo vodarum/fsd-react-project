@@ -5,7 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 import { State } from 'app/providers/store-provider';
 import { ArticleViewTypes, ArticlesNumberPerPage } from '../../const';
-import {
+import type {
     Article,
     ArticleListState,
     ArticleSortField,

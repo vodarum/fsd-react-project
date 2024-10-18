@@ -6,4 +6,4 @@ type ArticleCommentsState = EntityState<Comment, Comment['id']> & {
     error?: string;
 };
 
-export { ArticleCommentsState };
+export type { ArticleCommentsState };

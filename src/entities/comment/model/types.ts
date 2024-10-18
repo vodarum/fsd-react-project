@@ -7,4 +7,4 @@ type Comment = {
     user: User;
 };
 
-export { Comment };
+export type { Comment };

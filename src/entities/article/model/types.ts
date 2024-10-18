@@ -82,7 +82,7 @@ type ArticleListState = EntityState<Article, Article['id']> & {
     _inited: boolean;
 } & ArticleListFilters;
 
-export {
+export type {
     Article,
     ArticleBlock,
     ArticleBlockCode,

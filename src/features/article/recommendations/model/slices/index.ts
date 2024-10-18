@@ -1,5 +1,5 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
-import { ArticleRecommendationsState } from '../types';
+import type { ArticleRecommendationsState } from '../types';
 import { State } from 'app/providers/store-provider';
 import { fetchRecommendations } from '../services';
 import { Article } from 'entities/article';

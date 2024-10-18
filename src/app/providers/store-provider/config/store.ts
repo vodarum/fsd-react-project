@@ -4,7 +4,7 @@ import { $api, $rtkApi } from 'shared/api';
 import { scrollPositionReducer } from 'widgets/section';
 import { createReducerManager } from './reducer-manager';
 import { sessionMiddleware } from './session-middleware';
-import { ConfigureAppStoreOptions, State } from './types';
+import type { ConfigureAppStoreOptions, State } from './types';
 
 export const configureAppStore = ({
     preloadedReducer,

@@ -4,4 +4,4 @@ type ScrollPositionState = {
     data: ScrollPositionObject;
 };
 
-export { ScrollPositionObject, ScrollPositionState };
+export type { ScrollPositionObject, ScrollPositionState };

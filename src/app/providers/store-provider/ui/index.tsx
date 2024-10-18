@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
 import { configureAppStore } from '../config/store';
-import { ConfigureAppStoreOptions } from '../config/types';
+import type { ConfigureAppStoreOptions } from '../config/types';
 
 type StoreProviderProps = PropsWithChildren & ConfigureAppStoreOptions;
 

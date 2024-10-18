@@ -5,4 +5,4 @@ type LoginState = {
     error?: string;
 };
 
-export { LoginState };
+export type { LoginState };

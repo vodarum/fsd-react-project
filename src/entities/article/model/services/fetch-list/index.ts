@@ -3,7 +3,7 @@ import { ThunkAPI } from 'app/providers/store-provider';
 import { ArticlesNumberPerPage } from '../../const';
 import { parseFiltersToURLSearchParams } from '../../../lib';
 import { articleListSelectors } from '../../selectors';
-import { Article } from '../../types';
+import type { Article } from '../../types';
 
 type FetchListOptions =
     | {

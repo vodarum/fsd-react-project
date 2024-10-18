@@ -12,4 +12,4 @@ const articleCommentsSelectors = {
 export { articleCommentsReducer, articleCommentsSelectors };
 export * from './__mocks__';
 export * from './services';
-export * from './types';
+export type * from './types';

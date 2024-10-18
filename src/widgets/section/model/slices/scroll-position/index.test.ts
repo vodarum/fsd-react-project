@@ -2,7 +2,7 @@ import {
     mockScrollPositionData,
     mockScrollPositionState,
 } from '../../__mocks__';
-import { ScrollPositionObject } from '../../types';
+import type { ScrollPositionObject } from '../../types';
 import { scrollPositionReducer, scrollPositionActions } from '.';
 
 describe('scrollPositionSlice', () => {

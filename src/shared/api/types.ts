@@ -6,4 +6,4 @@ type Currency = (typeof Currencies)[keyof typeof Currencies];
 
 type SortOrder = (typeof SortOrders)[keyof typeof SortOrders];
 
-export { Country, Currency, SortOrder };
+export type { Country, Currency, SortOrder };

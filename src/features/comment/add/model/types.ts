@@ -3,4 +3,4 @@ type AddCommentState = {
     error?: string;
 };
 
-export { AddCommentState };
+export type { AddCommentState };

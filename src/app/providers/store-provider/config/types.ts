@@ -59,7 +59,7 @@ type ThunkAPI<T> = {
     state: State;
 };
 
-export {
+export type {
     AppDispatch,
     ConfigureAppStoreOptions,
     ReducerManager,

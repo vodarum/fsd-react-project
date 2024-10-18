@@ -13,4 +13,4 @@ type UserState = {
     validateErrors?: ValidateUserError[];
 };
 
-export { UserState, ValidateUserError };
+export type { UserState, ValidateUserError };

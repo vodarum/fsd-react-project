@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ArticleState } from '../../types';
+import type { ArticleState } from '../../types';
 import { fetchById } from '../../services';
 
 const initialState: ArticleState = {

@@ -1,5 +1,5 @@
 import { RuleSetRule } from 'webpack';
-import { BuildOptions } from './types';
+import type { BuildOptions } from './types';
 import { buildCssLoader } from './loaders/build-css-loader';
 import { buildTsLoader } from './loaders/build-ts-loader';
 import { buildFileLoader } from './loaders/build-file-loader';

@@ -1,2 +1,2 @@
 export * from './__mocks__';
-export * from './types';
+export type * from './types';
