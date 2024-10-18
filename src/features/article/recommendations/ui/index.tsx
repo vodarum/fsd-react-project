@@ -8,9 +8,9 @@ import { useGetRecommendationsQuery } from '../api';
 
 export const ArticleRecommendations = memo(() => {
     const { t } = useTranslation('article');
-    const { data, isLoading } = useGetRecommendationsQuery(4);
+    const { data, isLoading, error } = useGetRecommendationsQuery(4);
 
-    if (!data) return null;
+    if (isLoading || error || !data) return null;
 
     return (
         <VStack align='stretch' gap={16}>
