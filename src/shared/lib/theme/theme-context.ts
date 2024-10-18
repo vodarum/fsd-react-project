@@ -35,4 +35,4 @@ type ThemeContextProps = Partial<{
 
 const ThemeContext = createContext<ThemeContextProps>({});
 
-export { Theme, THEME_LS_KEY, ThemeContext, ThemeIcons, Themes };
+export { type Theme, THEME_LS_KEY, ThemeContext, ThemeIcons, Themes };
