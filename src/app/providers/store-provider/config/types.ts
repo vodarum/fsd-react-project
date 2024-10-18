@@ -17,7 +17,7 @@ import { ArticleRecommendationsState } from 'features/article';
 import { $rtkApi } from 'shared/api';
 
 type State = {
-    [$rtkApi.reducerPath]: ReturnType<typeof $rtkApi.reducer>,
+    [$rtkApi.reducerPath]: ReturnType<typeof $rtkApi.reducer>;
     session: SessionState;
     scrollPosition: ScrollPositionState;
     user?: UserState;

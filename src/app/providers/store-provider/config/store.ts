@@ -29,10 +29,7 @@ export const configureAppStore = ({
                         api: $api,
                     },
                 },
-            }).concat(
-                sessionMiddleware,
-                $rtkApi.middleware,
-            ),
+            }).concat(sessionMiddleware, $rtkApi.middleware),
     });
 
     // @ts-ignore

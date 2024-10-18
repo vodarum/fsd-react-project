@@ -5,11 +5,11 @@
 
     &::-webkit-scrollbar {
         width: var(--font-interval);
-        
+
         &-track {
             background-color: transparent;
         }
-        
+
         &-thumb {
             background-color: var(--secondary-color);
             border-radius: 100px;

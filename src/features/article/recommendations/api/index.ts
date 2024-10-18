@@ -14,6 +14,6 @@ const articleRecommendationsApi = $rtkApi.injectEndpoints({
         }),
     }),
     overrideExisting: false,
-})
+});
 
 export const { useGetRecommendationsQuery } = articleRecommendationsApi;
