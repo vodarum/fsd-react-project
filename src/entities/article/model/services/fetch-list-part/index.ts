@@ -1,7 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkAPI } from 'app/providers/store-provider';
-import { articleListSelectors } from '../../selectors';
-import { articleListActions } from '../../slices';
+import {
+    selectLoading,
+    selectHasMore,
+    selectPage,
+} from '../../selectors/article-list';
+import { articleListActions } from '../../slices/article-list';
 import { fetchList } from '../fetch-list';
 
 export const fetchListPart = createAsyncThunk<void, void, ThunkAPI<string>>(
@@ -9,9 +13,9 @@ export const fetchListPart = createAsyncThunk<void, void, ThunkAPI<string>>(
     async (_, thunkAPI) => {
         const { dispatch, getState } = thunkAPI;
 
-        const loading = articleListSelectors.selectLoading(getState());
-        const hasMore = articleListSelectors.selectHasMore(getState());
-        const page = articleListSelectors.selectPage(getState());
+        const loading = selectLoading(getState());
+        const hasMore = selectHasMore(getState());
+        const page = selectPage(getState());
 
         if (loading || !hasMore) return;
 

@@ -12,7 +12,7 @@ import type {
     ArticleType,
     ArticleViewType,
 } from '../../types';
-import { fetchList } from '../../services';
+import { fetchList } from '../../services/fetch-list';
 import { SortOrder } from 'shared/api';
 
 const articleListAdapter = createEntityAdapter<Article>();

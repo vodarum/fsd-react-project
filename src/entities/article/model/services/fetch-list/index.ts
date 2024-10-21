@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkAPI } from 'app/providers/store-provider';
 import { ArticlesNumberPerPage } from '../../const';
 import { parseFiltersToURLSearchParams } from '../../../lib';
-import { articleListSelectors } from '../../selectors';
+import { selectFilters } from '../../selectors/article-list';
 import type { Article } from '../../types';
 
 type FetchListOptions =
@@ -17,7 +17,7 @@ export const fetchList = createAsyncThunk<
     ThunkAPI<string>
 >('article/fetchList', async (_, thunkAPI) => {
     const { extra, getState, rejectWithValue } = thunkAPI;
-    const filters = articleListSelectors.selectFilters(getState());
+    const filters = selectFilters(getState());
     const urlSearchParams = parseFiltersToURLSearchParams(filters);
 
     window.history.pushState(null, '', `?${urlSearchParams.toString()}`);

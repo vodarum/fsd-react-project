@@ -1,11 +1,10 @@
 import { createSearchParams } from 'react-router-dom';
+import { ArticleSortFields, ArticleTypes } from '../model/const';
 import {
-    ArticleListFilters,
-    ArticleSortField,
-    ArticleSortFields,
-    ArticleType,
-    ArticleTypes,
-} from '../model';
+    type ArticleListFilters,
+    type ArticleSortField,
+    type ArticleType,
+} from '../model/types';
 import { SortOrder, SortOrders } from 'shared/api';
 
 const parseArticleType = (v: string | null): ArticleType => {
