@@ -12,18 +12,6 @@
     gap: 8px;
 }
 
-.switchers {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4px;
-}
-
 .open {
     padding-right: 200px;
-
-    .switchers {
-        flex-direction: row;
-        gap: 12px;
-    }
 }

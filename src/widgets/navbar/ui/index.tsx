@@ -1,12 +1,12 @@
 import { classNames } from 'shared/lib/class-names';
 import cls from './index.module.scss';
-import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/button';
-import { memo, ReactNode, useCallback, useEffect, useState } from 'react';
-import { LoginModal } from 'features/login';
-import { LogoutButton } from 'features/logout';
-import { sessionSelectors } from 'entities/session';
+import { memo, ReactNode } from 'react';
 import { useSelector } from 'react-redux';
+import { sessionSelectors } from 'entities/session';
+import { LoginButton } from 'features/login';
+import { NotificationsButton } from 'features/notification';
+import { LangSwitcher } from 'features/switch-lang';
+import { UserMenuButton } from 'features/user';
 
 type NavbarProps = {
     className?: string;
@@ -16,22 +16,7 @@ type NavbarProps = {
 
 export const Navbar = memo((props: NavbarProps) => {
     const { className, append, prepend } = props;
-    const { t } = useTranslation('navigation');
     const isAuth = useSelector(sessionSelectors.selectIsAuth);
-
-    const [isLoginModal, setIsLoginModal] = useState(false);
-
-    const handleLoginModalOpen = useCallback(() => {
-        setIsLoginModal(true);
-    }, []);
-
-    const handleLoginModalClose = useCallback(() => {
-        setIsLoginModal(false);
-    }, []);
-
-    useEffect(() => {
-        if (isAuth && isLoginModal) handleLoginModalClose();
-    }, [isAuth, isLoginModal]);
 
     return (
         <header className={classNames(cls.navbar, {}, [className])}>
@@ -39,19 +24,15 @@ export const Navbar = memo((props: NavbarProps) => {
 
             {append && <div className={cls.append}>{append}</div>}
 
-            {isAuth ? (
-                <LogoutButton />
-            ) : (
-                <>
-                    <Button onClick={handleLoginModalOpen}>
-                        {t('Авторизоваться')}
-                    </Button>
+            <LangSwitcher />
 
-                    <LoginModal
-                        isOpen={isLoginModal}
-                        onClose={handleLoginModalClose}
-                    />
+            {isAuth ? (
+                <>
+                    <NotificationsButton />
+                    <UserMenuButton />
                 </>
+            ) : (
+                <LoginButton />
             )}
         </header>
     );

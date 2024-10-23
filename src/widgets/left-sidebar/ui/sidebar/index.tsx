@@ -1,7 +1,6 @@
 import cls from './index.module.scss';
 import { navRoutes } from 'app/providers/router';
 import { classNames } from 'shared/lib/class-names';
-import { LangSwitcher } from 'features/switch-lang';
 import { memo } from 'react';
 import { SidebarItem } from '../sidebar-item';
 
@@ -23,10 +22,6 @@ export const LeftSidebar = memo(({ className, open }: LeftSidebarProps) => {
                     <SidebarItem key={r.path} {...r} collapsed={!open} />
                 ))}
             </nav>
-
-            <div className={cls.switchers}>
-                <LangSwitcher short={!open} />
-            </div>
         </section>
     );
 });
