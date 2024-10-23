@@ -1,3 +1,4 @@
+export * from './menu-button';
 export {
     mockUserState,
     fetchById,
@@ -7,4 +8,4 @@ export {
     userSelectors,
     ValidateUserErrors,
     type UserState,
-} from './model';
+} from './model'; // TODO: изменить структуру папок
