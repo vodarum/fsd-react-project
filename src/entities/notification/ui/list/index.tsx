@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import { useGetNotificationsQuery } from 'entities/notification/api';
 import { VStack } from 'shared/ui/stack';
 import { Skeleton } from 'shared/ui/skeleton';
 import { NotificationItem } from '../item';
+import { useGetNotificationsQuery } from '../../api';
 
 type NotificationListProps = {
     className?: string;
