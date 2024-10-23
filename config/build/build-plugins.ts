@@ -35,7 +35,8 @@ export const buildPlugins = ({
     if (isDev) {
         plugins.push(
             new BundleAnalyzerPlugin({ openAnalyzer: false }),
-            new CircularDependencyPlugin({ // В проекте есть другой инструмент (dependency-cruiser) для поиска кольцевых зависимостей
+            new CircularDependencyPlugin({
+                // В проекте есть другой инструмент (dependency-cruiser) для поиска кольцевых зависимостей
                 exclude: /a\.js|node_modules/,
                 failOnError: true,
                 allowAsyncCycles: false,

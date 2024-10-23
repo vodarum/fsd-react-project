@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { http, HttpResponse, delay } from 'msw';
+import { http, HttpResponse } from 'msw';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 import { ArticleRecommendations } from '.';
 import { mockRecommendations } from '../model';
