@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/class-names';
 import cls from './index.module.scss';
+import { ForwardedRef, forwardRef, memo, PropsWithChildren } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
-import { FC, memo, PropsWithChildren } from 'react';
 
 const AppLinkVariants = {
     bordered: 'bordered',
@@ -13,22 +13,50 @@ type AppLinkProps = PropsWithChildren &
     LinkProps & {
         className?: string;
         variant?: AppLinkVariant;
+        linkType?: 'anchor' | 'route';
     };
 
-const AppLink: FC<AppLinkProps> = memo((props: AppLinkProps) => {
-    const { children, className, variant, ...otherProps } = props;
+const AppLink = memo(
+    forwardRef((props: AppLinkProps, ref: ForwardedRef<HTMLAnchorElement>) => {
+        const {
+            children,
+            className,
+            variant,
+            linkType = 'route',
+            to,
+            ...otherProps
+        } = props;
 
-    return (
-        <Link
-            className={classNames(cls.applink, {}, [
-                className,
-                variant && cls[variant],
-            ])}
-            {...otherProps}
-        >
-            {children}
-        </Link>
-    );
-});
+        if (linkType === 'route') {
+            return (
+                <Link
+                    className={classNames(cls.applink, {}, [
+                        className,
+                        variant && cls[variant],
+                    ])}
+                    to={to}
+                    ref={ref}
+                    {...otherProps}
+                >
+                    {children}
+                </Link>
+            );
+        }
+
+        return (
+            <a
+                className={classNames(cls.applink, {}, [
+                    className,
+                    variant && cls[variant],
+                ])}
+                href={to as string}
+                ref={ref}
+                {...otherProps}
+            >
+                {children}
+            </a>
+        );
+    }),
+);
 
 export { AppLink, AppLinkVariants };
