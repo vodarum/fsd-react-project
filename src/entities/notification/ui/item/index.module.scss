@@ -1,0 +1,14 @@
+.wrapper {
+    background-color: var(--bg-color-light);
+    border-radius: 2px;
+    padding: var(--font-interval);
+}
+
+.title {
+    font-size: var(--font-size);
+}
+
+.description {
+    margin-top: 4px;
+    font-size: calc(var(--font-size) * 0.75);
+}
