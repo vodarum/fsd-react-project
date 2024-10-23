@@ -4,7 +4,7 @@ import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 import { loginReducer } from '../../model';
 
 const meta = {
-    title: 'features/LoginForm',
+    title: 'features/Login/LoginForm',
     component: LoginForm,
     parameters: {
         layout: 'centered',
