@@ -1,0 +1,22 @@
+.options {
+    padding: var(--font-interval);
+    border: 1px solid var(--primary-color);
+    border-radius: 2px;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.option {
+    padding: var(--font-interval);
+    cursor: pointer;
+
+    &:not(:first-child) {
+        margin-top: 4px;
+    }
+
+    &[data-focus],
+    &:hover,
+    &.active {
+        background-color: var(--bg-color-light);
+    }
+}

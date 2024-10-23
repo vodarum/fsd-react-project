@@ -7,37 +7,49 @@ import {
     ListboxOptions,
 } from '@headlessui/react';
 import cls from './index.module.scss';
+import { ComponentProps } from 'react';
 import { classNames } from 'shared/lib/class-names';
 import { typedMemo } from 'shared/lib/typed-memo';
-import { VStack } from 'shared/ui/stack';
 import { useTheme } from 'shared/lib/theme';
 import { Button } from 'shared/ui/button';
+import { VStack } from 'shared/ui/stack';
 
-type ListBoxOption<T extends string> = {
+type ListboxOption<T extends string> = {
     value: T;
     text: string;
 };
 
-type ListBoxProps<T extends string> = {
+type ListboxProps<T extends string> = Pick<
+    ComponentProps<typeof ListboxOptions>,
+    'anchor'
+> & {
     className?: string;
     disabled?: boolean;
     label?: string;
-    options?: ListBoxOption<T>[];
+    options?: ListboxOption<T>[];
     value?: T;
     onChange: (value: T) => void;
 };
 
-const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
+const AppListbox = typedMemo(<T extends string>(props: ListboxProps<T>) => {
     const { theme } = useTheme();
-    const { className, disabled, label, options, value, onChange } = props;
+    const {
+        className,
+        anchor = 'bottom',
+        disabled,
+        label,
+        options,
+        value,
+        onChange,
+    } = props;
 
     const content = (
         <Listbox value={value} onChange={onChange} disabled={disabled}>
             <ListboxButton as={Button} className={className}>
-                {value}
+                {options?.find((o) => o.value === value)?.text}
             </ListboxButton>
             <ListboxOptions
-                anchor='bottom'
+                anchor={anchor}
                 as='ul'
                 className={classNames(cls.options, {}, [theme])}
             >
@@ -69,4 +81,4 @@ const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
     );
 });
 
-export { ListBox, type ListBoxOption };
+export { AppListbox as Listbox, type ListboxOption };

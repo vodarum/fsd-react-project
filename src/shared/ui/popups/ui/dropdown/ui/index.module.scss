@@ -1,0 +1,20 @@
+.options {
+    padding: var(--font-interval);
+    border: 1px solid var(--primary-color);
+    border-radius: 2px;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--font-interval);
+}
+
+.option {
+    padding: var(--font-interval);
+
+    &[data-focus],
+    &:hover,
+    &.active {
+        background-color: var(--bg-color-light);
+    }
+}
