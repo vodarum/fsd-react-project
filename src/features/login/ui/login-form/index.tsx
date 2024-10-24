@@ -7,6 +7,7 @@ import { Title, TitleLevels } from 'shared/ui/title';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
+import { PropsWithClassName } from 'shared/api';
 import { withAsyncStore } from 'shared/lib/with-async-store';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch';
 import {
@@ -16,14 +17,13 @@ import {
     loginSelectors,
 } from '../../model';
 
-type indexProps = {
-    className?: string;
-    isOpen?: boolean;
+type LoginFormProps = PropsWithClassName & {
+    open?: boolean;
 };
 
 const LoginForm = withAsyncStore(
-    memo(({ className, isOpen }: indexProps) => {
-        const { t } = useTranslation();
+    memo(({ className, open }: LoginFormProps) => {
+        const { t } = useTranslation('login');
         const dispatch = useAppDispatch();
         const username = useSelector(loginSelectors.selectUsername);
         const password = useSelector(loginSelectors.selectPassword);
@@ -58,7 +58,7 @@ const LoginForm = withAsyncStore(
                 <Input
                     label={t('Имя пользователя')}
                     variant={InputVariants.outlined}
-                    autoFocus={isOpen}
+                    autoFocus={open}
                     value={username}
                     onChange={handleUsernameInputChange}
                 />

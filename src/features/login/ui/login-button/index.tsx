@@ -33,7 +33,7 @@ export const LoginButton = ({ className }: LoginButtonProps) => {
                 {t('Авторизоваться')}
             </Button>
 
-            <LoginModal isOpen={isLoginModal} onClose={handleLoginModalClose} />
+            <LoginModal open={isLoginModal} onClose={handleLoginModalClose} />
         </>
     );
 };

@@ -1,77 +1,40 @@
-import {
-    MouseEvent,
-    PropsWithChildren,
-    useCallback,
-    useEffect,
-    useState,
-} from 'react';
+import { PropsWithChildren } from 'react';
+import cls from './index.module.scss';
+import { ModalOptions, PropsWithClassName } from 'shared/api';
 import { classNames } from 'shared/lib/class-names';
+import { useModal } from 'shared/lib/hooks';
 import { useTheme } from 'shared/lib/theme';
 import { Portal } from 'shared/ui/portal';
-import cls from './index.module.scss';
 
-type ModalProps = PropsWithChildren & {
-    className?: string;
-    isOpen?: boolean;
-    keepOnClose?: boolean;
-    onClose?: () => void;
-    targetContainer?: Element;
-};
+type ModalProps = PropsWithChildren &
+    PropsWithClassName &
+    ModalOptions & {
+        keepOnClose?: boolean;
+        targetContainer?: Element;
+    };
 
 export const Modal = (props: ModalProps) => {
     const { theme } = useTheme();
-    const {
-        children,
-        className,
-        isOpen,
-        keepOnClose,
+    const { children, className, open, keepOnClose, onClose, targetContainer } =
+        props;
+    const { isMounted } = useModal({
+        open,
         onClose,
-        targetContainer,
-    } = props;
-    const [isMounted, setIsMounted] = useState(false);
-    const dataRole = `modalWrapper`;
+    });
 
-    const handleClick = useCallback(
-        (e: MouseEvent) => {
-            const parent = (e.target as HTMLElement)?.parentElement;
-            if (parent?.dataset.role === dataRole) onClose?.();
-        },
-        [onClose],
-    );
-
-    const handleKeyDown = useCallback(
-        (e: KeyboardEvent) => {
-            if (e.key === 'Escape') onClose?.();
-        },
-        [onClose],
-    );
-
-    useEffect(() => {
-        if (isOpen) {
-            addEventListener('keydown', handleKeyDown);
-            setIsMounted(true);
-        }
-
-        return () => {
-            removeEventListener('keydown', handleKeyDown);
-        };
-    }, [isOpen, handleKeyDown]);
-
-    if (!isMounted || (!keepOnClose && !isOpen)) return null;
+    if (!isMounted || (!keepOnClose && !open)) return null;
 
     return (
         <Portal container={targetContainer}>
             <div
-                className={classNames(cls.modal, { [cls.opened]: isOpen }, [
+                className={classNames(cls.modal, { [cls.open]: open }, [
                     className,
                     theme,
                 ])}
-                onClick={handleClick}
-                data-role={dataRole}
             >
-                <div className={cls.overlay}>
-                    <div className={cls.content}>{children}</div>
-                </div>
+                {open && <div className={cls.overlay} onClick={onClose} />}
+
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     );

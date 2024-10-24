@@ -24,7 +24,7 @@ export const Default: Story = {
     fugiat nulla pariatur. Excepteur sint occaecat cupidatat
     non proident, sunt in culpa qui officia deserunt mollit
     anim id est laborum.`,
-        isOpen: true,
+        open: true,
         targetContainer: document.getElementById(
             'storybook-root',
         ) as HTMLElement,
