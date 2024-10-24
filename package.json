@@ -147,5 +147,8 @@
         "workerDirectory": [
             "public"
         ]
-    }
+    },
+    "browserslist": [
+        "defaults and fully supports es6-module"
+    ]
 }
