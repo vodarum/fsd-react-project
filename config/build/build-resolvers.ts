@@ -6,5 +6,8 @@ export const buildResolvers = ({ paths }: BuildOptions): ResolveOptions => {
         extensions: ['.tsx', '.ts', '.js'],
         modules: [paths.src, 'node_modules'],
         preferAbsolute: true,
+        alias: {
+            '@': paths.src,
+        },
     };
 };
