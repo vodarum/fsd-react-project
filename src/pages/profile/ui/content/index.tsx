@@ -1,12 +1,12 @@
 import cls from './index.module.scss';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
-import { Loader } from 'shared/ui/loader';
-import { Text } from 'shared/ui/text';
+import { Loader } from '@/shared/ui/loader';
+import { Text } from '@/shared/ui/text';
 import { ProfileButtonBar } from '../button-bar';
 import { ProfileCard } from '../card';
-import { userSelectors } from 'features/user';
-import { sessionSelectors } from 'entities/session';
+import { userSelectors } from '@/features/user';
+import { sessionSelectors } from '@/entities/session';
 
 export const ProfilePageContent = memo(() => {
     const session = useSelector(sessionSelectors.selectSessionData);

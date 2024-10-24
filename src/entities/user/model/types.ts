@@ -1,4 +1,4 @@
-import { Country, Currency } from 'shared/api';
+import { Country, Currency } from '@/shared/api';
 
 type User = Partial<{
     id: number;

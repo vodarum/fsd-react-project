@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Popover } from '.';
-import { VStack } from 'shared/ui/stack';
-import { AppLink, AppLinkVariants } from 'shared/ui/app-link';
+import { VStack } from '@/shared/ui/stack';
+import { AppLink, AppLinkVariants } from '@/shared/ui/app-link';
 
 const meta = {
     title: 'shared/Popover',

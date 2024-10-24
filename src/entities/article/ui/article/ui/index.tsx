@@ -7,11 +7,11 @@ import {
     useAppDispatch,
     useAsyncStore,
     useInitialEffect,
-} from 'shared/lib/hooks';
-import { Avatar } from 'shared/ui/avatar';
-import { Skeleton } from 'shared/ui/skeleton';
-import { Text } from 'shared/ui/text';
-import { Title } from 'shared/ui/title';
+} from '@/shared/lib/hooks';
+import { Avatar } from '@/shared/ui/avatar';
+import { Skeleton } from '@/shared/ui/skeleton';
+import { Text } from '@/shared/ui/text';
+import { Title } from '@/shared/ui/title';
 import {
     ArticleBlock,
     ArticleBlockTypes,
@@ -23,7 +23,7 @@ import { BlockCode } from '../../block-code';
 import { BlockText } from '../../block-text';
 import { BlockImage } from '../../block-image';
 import cls from './index.module.scss';
-import { HStack, VStack } from 'shared/ui/stack';
+import { HStack, VStack } from '@/shared/ui/stack';
 
 type ArticleProps = {
     className?: string;

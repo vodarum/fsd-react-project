@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import cls from './index.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/button';
+import { Button } from '@/shared/ui/button';
 
 type PageErrorProps = {
     className?: string;

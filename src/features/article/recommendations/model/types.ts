@@ -1,5 +1,5 @@
 import { EntityState } from '@reduxjs/toolkit';
-import { Article } from 'entities/article';
+import { Article } from '@/entities/article';
 
 type ArticleRecommendationsState = EntityState<Article, Article['id']> & {
     loading: boolean;

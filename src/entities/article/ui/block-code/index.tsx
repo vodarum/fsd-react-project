@@ -1,4 +1,4 @@
-import { Code } from 'shared/ui/code';
+import { Code } from '@/shared/ui/code';
 import { ArticleBlockCode } from '../../model';
 
 type BlockCodeProps = {

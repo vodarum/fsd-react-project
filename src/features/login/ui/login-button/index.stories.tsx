@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { LoginButton } from '.';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 
 const meta = {
     title: 'features/Login/LoginButton',

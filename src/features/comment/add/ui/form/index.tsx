@@ -1,6 +1,6 @@
 import cls from './index.module.scss';
-import { Input } from 'shared/ui/input';
-import { Button } from 'shared/ui/button';
+import { Input } from '@/shared/ui/input';
+import { Button } from '@/shared/ui/button';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import {
     addCommentReducer,
     addCommentSelectors,
 } from '../../model';
-import { useAppDispatch, useAsyncStore } from 'shared/lib/hooks';
+import { useAppDispatch, useAsyncStore } from '@/shared/lib/hooks';
 
 type CommentFormProps = {
     className?: string;

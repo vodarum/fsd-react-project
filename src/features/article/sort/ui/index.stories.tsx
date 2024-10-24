@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { ArticleSortSwitcher } from '.';
-import { ArticleSortFields } from 'entities/article';
-import { SortOrders } from 'shared/api';
+import { ArticleSortFields } from '@/entities/article';
+import { SortOrders } from '@/shared/api';
 
 const meta = {
     title: 'features/Article/ArticleSortSwitcher',

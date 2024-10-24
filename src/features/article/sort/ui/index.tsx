@@ -1,11 +1,11 @@
 import { memo, useMemo } from 'react';
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import cls from './index.module.scss';
-import { ArticleSortField, ArticleSortFields } from 'entities/article';
-import { SortOrder, SortOrders } from 'shared/api';
-import { Select } from 'shared/ui/select';
+import { ArticleSortField, ArticleSortFields } from '@/entities/article';
+import { SortOrder, SortOrders } from '@/shared/api';
+import { Select } from '@/shared/ui/select';
 import { useTranslation } from 'react-i18next';
-import { SelectOption } from 'shared/ui/select/ui';
+import { SelectOption } from '@/shared/ui/select/ui';
 
 type ArticleSortSwitcherProps = {
     className?: string;

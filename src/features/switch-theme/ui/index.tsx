@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/class-names';
-import { Theme, ThemeIcons, Themes, useTheme } from 'shared/lib/theme';
-import { Button, ButtonVariants } from 'shared/ui/button';
-import { Text } from 'shared/ui/text';
+import { classNames } from '@/shared/lib/class-names';
+import { Theme, ThemeIcons, Themes, useTheme } from '@/shared/lib/theme';
+import { Button, ButtonVariants } from '@/shared/ui/button';
+import { Text } from '@/shared/ui/text';
 import cls from './index.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { memo } from 'react';

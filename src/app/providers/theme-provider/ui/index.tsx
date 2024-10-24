@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren, useMemo, useState } from 'react';
-import { Theme, THEME_LS_KEY, ThemeContext, Themes } from 'shared/lib/theme';
+import { Theme, THEME_LS_KEY, ThemeContext, Themes } from '@/shared/lib/theme';
 
 const defaultTheme: Theme =
     (localStorage.getItem(THEME_LS_KEY) as Theme) || Themes.light;

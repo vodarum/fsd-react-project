@@ -1,5 +1,5 @@
-import { Text } from 'shared/ui/text';
-import { VStack } from 'shared/ui/stack';
+import { Text } from '@/shared/ui/text';
+import { VStack } from '@/shared/ui/stack';
 import cls from './index.module.scss';
 import { ArticleBlockImage } from '../../../model';
 

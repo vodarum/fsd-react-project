@@ -1,11 +1,11 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { ProfilePageContent } from '.';
-import { mockSession } from 'entities/session';
-import { mockUsers } from 'entities/user';
-import { mockUserState, userReducer } from 'features/user';
-import { Countries } from 'shared/api';
-import { componentRender } from 'shared/lib/tests/component-render';
+import { mockSession } from '@/entities/session';
+import { mockUsers } from '@/entities/user';
+import { mockUserState, userReducer } from '@/features/user';
+import { Countries } from '@/shared/api';
+import { componentRender } from '@/shared/lib/tests/component-render';
 
 const mockUser = mockUsers[0];
 const options: Parameters<typeof componentRender>[1] = {

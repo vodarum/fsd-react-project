@@ -1,12 +1,12 @@
 import cls from './index.module.scss';
 import { Comment } from '../../model';
 import { memo } from 'react';
-import { classNames } from 'shared/lib/class-names';
-import { Avatar } from 'shared/ui/avatar';
-import { Skeleton } from 'shared/ui/skeleton';
-import { Text } from 'shared/ui/text';
-import { AppLink } from 'shared/ui/app-link';
-import { appRoutePaths } from 'app/providers/router';
+import { classNames } from '@/shared/lib/class-names';
+import { Avatar } from '@/shared/ui/avatar';
+import { Skeleton } from '@/shared/ui/skeleton';
+import { Text } from '@/shared/ui/text';
+import { AppLink } from '@/shared/ui/app-link';
+import { appRoutePaths } from '@/app/providers/router';
 
 type CommentCardBaseProps = {
     className?: string;

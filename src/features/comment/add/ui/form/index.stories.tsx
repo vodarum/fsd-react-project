@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CommentForm } from '.';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 import { addCommentReducer } from '../../model';
 
 const meta = {

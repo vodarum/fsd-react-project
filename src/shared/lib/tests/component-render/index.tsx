@@ -4,11 +4,11 @@ import {
     ConfigureAppStoreOptions,
     State,
     StoreProvider,
-} from 'app/providers/store-provider';
+} from '@/app/providers/store-provider';
 import { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
-import i18nForTesting from 'shared/config/i18n/i18n-for-testing';
+import i18nForTesting from '@/shared/config/i18n/i18n-for-testing';
 
 type ComponentRenderOptions = {
     route?: string;

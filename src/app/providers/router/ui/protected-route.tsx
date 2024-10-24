@@ -1,4 +1,4 @@
-import { sessionSelectors } from 'entities/session';
+import { sessionSelectors } from '@/entities/session';
 import { PropsWithChildren } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';

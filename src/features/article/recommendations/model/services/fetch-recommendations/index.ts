@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkAPI } from 'app/providers/store-provider';
+import { ThunkAPI } from '@/app/providers/store-provider';
 import {
     Article,
     ArticlesNumberPerPage,
     ArticleViewTypes,
-} from 'entities/article';
+} from '@/entities/article';
 
 export const fetchRecommendations = createAsyncThunk<
     Article[],

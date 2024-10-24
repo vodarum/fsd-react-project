@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { ThemeSwitcher } from 'features/switch-theme';
+import { ThemeSwitcher } from '@/features/switch-theme';
 import { useTranslation } from 'react-i18next';
-import { Drawer } from 'shared/ui/drawer';
+import { Drawer } from '@/shared/ui/drawer';
 
 type RightSidebarProps = {
     className?: string;

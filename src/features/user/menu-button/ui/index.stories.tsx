@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { UserMenuButton } from '.';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 
 const meta = {
     title: 'features/User/UserMenuButton',

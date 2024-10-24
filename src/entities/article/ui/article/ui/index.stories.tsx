@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Article } from '.';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 import { articleReducer, mockArticles, mockArticleState } from '../../../model';
 
 const meta = {

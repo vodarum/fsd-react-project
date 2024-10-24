@@ -1,10 +1,10 @@
 import { memo, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text } from 'shared/ui/text';
+import { Text } from '@/shared/ui/text';
 import cls from './index.module.scss';
 import { CommentCard, CommentCardSkeleton } from '../card';
 import { Comment } from '../../model';
-import { VStack } from 'shared/ui/stack';
+import { VStack } from '@/shared/ui/stack';
 
 type CommentListProps = {
     className?: string;

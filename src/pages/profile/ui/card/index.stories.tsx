@@ -1,8 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ProfileCard } from '.';
-import { mockUsers } from 'entities/user';
-import { mockUserState, userReducer, ValidateUserErrors } from 'features/user';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import { mockUsers } from '@/entities/user';
+import {
+    mockUserState,
+    userReducer,
+    ValidateUserErrors,
+} from '@/features/user';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 
 const meta = {
     title: 'pages/Profile/ProfileCard',

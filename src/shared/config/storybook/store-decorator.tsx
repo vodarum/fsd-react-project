@@ -1,10 +1,10 @@
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 import { StoryFn } from '@storybook/react';
 import {
     State,
     StoreProvider,
     type ConfigureAppStoreOptions,
-} from 'app/providers/store-provider';
+} from '@/app/providers/store-provider';
 import { ReducersMapObject } from '@reduxjs/toolkit';
 
 type StoreDecoratorOptions = DeepPartial<ConfigureAppStoreOptions>;

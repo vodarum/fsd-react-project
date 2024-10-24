@@ -6,7 +6,7 @@ import {
     ArticleViewTypes,
 } from '../../../const';
 import type { ArticleListFilters } from '../../../types';
-import { SortOrders } from 'shared/api';
+import { SortOrders } from '@/shared/api';
 
 describe('selectFilters', () => {
     const defaultFiltersObject: ArticleListFilters = {

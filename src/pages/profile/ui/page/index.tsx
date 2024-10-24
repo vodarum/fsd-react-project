@@ -5,11 +5,11 @@ import {
     useAppDispatch,
     useAsyncStore,
     useInitialEffect,
-} from 'shared/lib/hooks';
-import { Title } from 'shared/ui/title';
+} from '@/shared/lib/hooks';
+import { Title } from '@/shared/ui/title';
 import { ProfilePageContent } from '../content';
-import { sessionSelectors } from 'entities/session';
-import { fetchById, userReducer } from 'features/user';
+import { sessionSelectors } from '@/entities/session';
+import { fetchById, userReducer } from '@/features/user';
 
 const Profile = () => {
     const { t } = useTranslation('profile');

@@ -1,9 +1,9 @@
-import { About } from 'pages/about';
-import { Article } from 'pages/article';
-import { Articles } from 'pages/articles';
-import { Main } from 'pages/main';
-import { NotFound } from 'pages/not-found';
-import { Profile } from 'pages/profile';
+import { About } from '@/pages/about';
+import { Article } from '@/pages/article';
+import { Articles } from '@/pages/articles';
+import { Main } from '@/pages/main';
+import { NotFound } from '@/pages/not-found';
+import { Profile } from '@/pages/profile';
 import {
     faAddressCard,
     faClipboardList,
@@ -13,7 +13,7 @@ import {
 import type { AppRouteObject, NavRoute } from './types';
 import { appRoutePaths } from './const';
 import { RouteObject } from 'react-router-dom';
-import { User } from 'pages/user';
+import { User } from '@/pages/user';
 
 const navRouteElements: Record<string, RouteObject> = {
     [appRoutePaths.main]: {

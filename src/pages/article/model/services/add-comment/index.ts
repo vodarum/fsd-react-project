@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkAPI } from 'app/providers/store-provider';
-import { articleSelectors } from 'entities/article';
-import { Comment } from 'entities/comment';
-import { sessionSelectors } from 'entities/session';
-import { fetchByArticleId } from 'features/article';
+import { ThunkAPI } from '@/app/providers/store-provider';
+import { articleSelectors } from '@/entities/article';
+import { Comment } from '@/entities/comment';
+import { sessionSelectors } from '@/entities/session';
+import { fetchByArticleId } from '@/features/article';
 
 export const addComment = createAsyncThunk<Comment, string, ThunkAPI<string>>(
     'article/addComment',

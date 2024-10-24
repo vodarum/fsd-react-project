@@ -5,7 +5,7 @@ import {
     type ArticleSortField,
     type ArticleType,
 } from '../model/types';
-import { SortOrder, SortOrders } from 'shared/api';
+import { SortOrder, SortOrders } from '@/shared/api';
 
 const parseArticleType = (v: string | null): ArticleType => {
     switch (v) {

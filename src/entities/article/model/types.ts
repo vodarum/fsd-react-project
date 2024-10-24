@@ -1,12 +1,12 @@
 import { EntityState } from '@reduxjs/toolkit';
-import { User } from 'entities/user/@x/article';
+import { User } from '@/entities/user/@x/article';
 import {
     ArticleBlockTypes,
     ArticleTypes,
     ArticleSortFields,
     ArticleViewTypes,
 } from './const';
-import { SortOrder } from 'shared/api';
+import { SortOrder } from '@/shared/api';
 
 type ArticleType = (typeof ArticleTypes)[keyof typeof ArticleTypes];
 

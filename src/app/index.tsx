@@ -1,16 +1,16 @@
 import './styles/index.scss';
 import { AppRouter } from './providers/router';
-import { sessionActions } from 'entities/session';
+import { sessionActions } from '@/entities/session';
 import { Suspense, useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { APP_SESSION_LS_KEY } from 'shared/api';
-import { classNames } from 'shared/lib/class-names';
-import { useTheme } from 'shared/lib/theme';
-import { Navbar } from 'widgets/navbar';
-import { LeftSidebar } from 'widgets/left-sidebar';
-import { RightSidebar } from 'widgets/right-sidebar';
-import { MenuButton } from 'shared/ui/menu-button';
-import { SettingsButton } from 'shared/ui/settings-button';
+import { APP_SESSION_LS_KEY } from '@/shared/api';
+import { classNames } from '@/shared/lib/class-names';
+import { useTheme } from '@/shared/lib/theme';
+import { Navbar } from '@/widgets/navbar';
+import { LeftSidebar } from '@/widgets/left-sidebar';
+import { RightSidebar } from '@/widgets/right-sidebar';
+import { MenuButton } from '@/shared/ui/menu-button';
+import { SettingsButton } from '@/shared/ui/settings-button';
 
 export const App = () => {
     const { theme } = useTheme();

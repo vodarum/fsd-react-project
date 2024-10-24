@@ -1,4 +1,4 @@
-import { State } from 'app/providers/store-provider';
+import { State } from '@/app/providers/store-provider';
 import { ArticleTypes } from '../../../const';
 
 export const selectType = (state: State) =>

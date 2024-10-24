@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { SidebarItem } from '.';
-import { navRoutes } from 'app/providers/router';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import { navRoutes } from '@/app/providers/router';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 
 const meta = {
     title: 'widgets/LeftSidebar/SidebarItem',

@@ -1,12 +1,16 @@
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import cls from './index.module.scss';
-import { userActions, userSelectors, ValidateUserErrors } from 'features/user';
-import { Countries, Country, Currencies, Currency } from 'shared/api';
-import { useAppDispatch } from 'shared/lib/hooks';
-import { Avatar } from 'shared/ui/avatar';
-import { Input } from 'shared/ui/input';
-import { Select } from 'shared/ui/select';
-import { Text } from 'shared/ui/text';
+import {
+    userActions,
+    userSelectors,
+    ValidateUserErrors,
+} from '@/features/user';
+import { Countries, Country, Currencies, Currency } from '@/shared/api';
+import { useAppDispatch } from '@/shared/lib/hooks';
+import { Avatar } from '@/shared/ui/avatar';
+import { Input } from '@/shared/ui/input';
+import { Select } from '@/shared/ui/select';
+import { Text } from '@/shared/ui/text';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';

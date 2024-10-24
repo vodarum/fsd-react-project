@@ -1,6 +1,6 @@
 import { mockInitialAppState, mockArticleListState } from '../../../__mocks__';
 import { selectSortOrder } from '.';
-import { SortOrders } from 'shared/api';
+import { SortOrders } from '@/shared/api';
 
 describe('selectSortOrder', () => {
     test(`returns ${SortOrders.asc} for initial state`, () => {

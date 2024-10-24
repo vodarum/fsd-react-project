@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { memo } from 'react';
-import { Skeleton } from 'shared/ui/skeleton';
-import { Text } from 'shared/ui/text';
+import { Skeleton } from '@/shared/ui/skeleton';
+import { Text } from '@/shared/ui/text';
 import {
     Article,
     ArticleBlockText,
@@ -12,8 +12,8 @@ import {
     ArticleViewTypes,
 } from '../../../model';
 import cls from './index.module.scss';
-import { AppLink, AppLinkVariants } from 'shared/ui/app-link';
-import { Avatar } from 'shared/ui/avatar';
+import { AppLink, AppLinkVariants } from '@/shared/ui/app-link';
+import { Avatar } from '@/shared/ui/avatar';
 import { useTranslation } from 'react-i18next';
 import { BlockText } from '../../block-text';
 

@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { SidebarItem } from '.';
-import { navRoutes } from 'app/providers/router';
-import { componentRender } from 'shared/lib/tests/component-render';
+import { navRoutes } from '@/app/providers/router';
+import { componentRender } from '@/shared/lib/tests/component-render';
 
 describe('SidebarItem', () => {
     test('test render', () => {

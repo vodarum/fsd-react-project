@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import cls from './index.module.scss';
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from '@/shared/lib/class-names';
 
 type FlexJustify = 'start' | 'end' | 'center' | 'between' | 'around';
 type FlexAlign = 'start' | 'end' | 'center' | 'stretch';

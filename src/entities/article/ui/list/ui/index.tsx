@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text } from 'shared/ui/text';
+import { Text } from '@/shared/ui/text';
 import { ArticleCard, ArticleCardSkeleton } from '../../card';
 import {
     Article,

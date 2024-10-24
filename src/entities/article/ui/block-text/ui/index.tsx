@@ -1,7 +1,7 @@
-import { Text } from 'shared/ui/text';
+import { Text } from '@/shared/ui/text';
 import cls from './index.module.scss';
 import { ArticleBlockText } from '../../../model';
-import { VStack } from 'shared/ui/stack';
+import { VStack } from '@/shared/ui/stack';
 
 type BlockTextProps = {
     className?: string;

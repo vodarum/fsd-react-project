@@ -4,9 +4,9 @@ import {
     isAnyOf,
     UnknownAction,
 } from '@reduxjs/toolkit';
-import { sessionActions } from 'entities/session';
-import { loginByUsername } from 'features/login';
-import { APP_SESSION_LS_KEY } from 'shared/api';
+import { sessionActions } from '@/entities/session';
+import { loginByUsername } from '@/features/login';
+import { APP_SESSION_LS_KEY } from '@/shared/api';
 
 const isLogin = isFulfilled(loginByUsername);
 const isLogout = isAnyOf(sessionActions.resetData);

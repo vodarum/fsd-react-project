@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { ModalOptions } from 'shared/api';
+import { ModalOptions } from '@/shared/api';
 
 export const useModal = ({ open = false, onClose }: ModalOptions) => {
     const [isMounted, setIsMounted] = useState(false);

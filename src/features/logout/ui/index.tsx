@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import cls from './index.module.scss';
-import { Button } from 'shared/ui/button';
+import { Button } from '@/shared/ui/button';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { sessionActions } from 'entities/session';
+import { sessionActions } from '@/entities/session';
 import { memo, useCallback } from 'react';
 
 type LogoutButtonProps = {

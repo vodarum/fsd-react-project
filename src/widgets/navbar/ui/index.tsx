@@ -1,12 +1,12 @@
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import cls from './index.module.scss';
 import { memo, ReactNode } from 'react';
 import { useSelector } from 'react-redux';
-import { sessionSelectors } from 'entities/session';
-import { LoginButton } from 'features/login';
-import { NotificationsButton } from 'features/notification';
-import { LangSwitcher } from 'features/switch-lang';
-import { UserMenuButton } from 'features/user';
+import { sessionSelectors } from '@/entities/session';
+import { LoginButton } from '@/features/login';
+import { NotificationsButton } from '@/features/notification';
+import { LangSwitcher } from '@/features/switch-lang';
+import { UserMenuButton } from '@/features/user';
 
 type NavbarProps = {
     className?: string;

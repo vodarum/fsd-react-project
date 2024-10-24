@@ -3,7 +3,7 @@ import {
     articleListReducer,
     articleListSelectors,
     fetchListPart,
-} from 'entities/article';
+} from '@/entities/article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -12,8 +12,8 @@ import {
     useAppDispatch,
     useAsyncStore,
     useInitialEffect,
-} from 'shared/lib/hooks';
-import { Section } from 'widgets/section';
+} from '@/shared/lib/hooks';
+import { Section } from '@/widgets/section';
 import cls from './index.module.scss';
 import { init } from '../../model';
 import { ArticlesFilters } from '../filters';

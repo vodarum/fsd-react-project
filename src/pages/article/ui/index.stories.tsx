@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Article from '.';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 import {
     articleCommentsReducer,
     articleRecommendationsReducer,
@@ -9,12 +9,12 @@ import {
     mockArticleRecommendationsState,
     mockCommentsEntityState,
     mockRecommendationsEntityState,
-} from 'features/article';
+} from '@/features/article';
 import {
     articleReducer,
     mockArticles,
     mockArticleState,
-} from 'entities/article';
+} from '@/entities/article';
 
 const meta = {
     title: 'pages/Article',

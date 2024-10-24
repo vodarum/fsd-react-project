@@ -1,5 +1,5 @@
 import { fetchListPart } from '.';
-import { testAsyncThunk } from 'shared/lib/tests/test-async-thunk';
+import { testAsyncThunk } from '@/shared/lib/tests/test-async-thunk';
 import { fetchList } from '../fetch-list';
 import { mockAppState, mockArticleListState } from '../../__mocks__';
 

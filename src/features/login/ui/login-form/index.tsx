@@ -1,15 +1,15 @@
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import cls from './index.module.scss';
-import { Input, InputVariants } from 'shared/ui/input';
-import { Button, ButtonVariants } from 'shared/ui/button';
-import { Text } from 'shared/ui/text';
-import { Title, TitleLevels } from 'shared/ui/title';
+import { Input, InputVariants } from '@/shared/ui/input';
+import { Button, ButtonVariants } from '@/shared/ui/button';
+import { Text } from '@/shared/ui/text';
+import { Title, TitleLevels } from '@/shared/ui/title';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { PropsWithClassName } from 'shared/api';
-import { withAsyncStore } from 'shared/lib/with-async-store';
-import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch';
+import { PropsWithClassName } from '@/shared/api';
+import { withAsyncStore } from '@/shared/lib/with-async-store';
+import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch';
 import {
     loginActions,
     loginByUsername,

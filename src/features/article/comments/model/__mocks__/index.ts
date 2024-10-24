@@ -1,6 +1,6 @@
-import type { State } from 'app/providers/store-provider';
+import type { State } from '@/app/providers/store-provider';
 import type { ArticleCommentsState } from '../types';
-import { mockComments } from 'entities/comment';
+import { mockComments } from '@/entities/comment';
 
 const mockArticleId = 1;
 

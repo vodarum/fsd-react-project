@@ -1,11 +1,11 @@
 import { memo, useCallback, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
-import { NotificationList } from 'entities/notification';
-import { useDevice } from 'shared/lib/hooks';
-import { Button, ButtonVariants } from 'shared/ui/button';
-import { Drawer } from 'shared/ui/drawer';
-import { Popover } from 'shared/ui/popups';
+import { NotificationList } from '@/entities/notification';
+import { useDevice } from '@/shared/lib/hooks';
+import { Button, ButtonVariants } from '@/shared/ui/button';
+import { Drawer } from '@/shared/ui/drawer';
+import { Popover } from '@/shared/ui/popups';
 
 type NotificationsButtonProps = {
     className?: string;

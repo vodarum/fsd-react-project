@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { RightSidebar } from '.';
-import { componentRender } from 'shared/lib/tests/component-render';
+import { componentRender } from '@/shared/lib/tests/component-render';
 
 const sidebarTestId = 'rightSidebar';
 const open = 'open';

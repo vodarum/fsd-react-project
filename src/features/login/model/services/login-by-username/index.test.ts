@@ -1,6 +1,6 @@
 import { loginByUsername } from '.';
-import { sessionActions } from 'entities/session';
-import { testAsyncThunk } from 'shared/lib/tests/test-async-thunk';
+import { sessionActions } from '@/entities/session';
+import { testAsyncThunk } from '@/shared/lib/tests/test-async-thunk';
 
 const url = '/login';
 const credentialData = { username: 'admin', password: 'qwerty' };

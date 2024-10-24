@@ -1,6 +1,6 @@
-import type { State } from 'app/providers/store-provider';
+import type { State } from '@/app/providers/store-provider';
 import type { ArticleRecommendationsState } from '../types';
-import { mockArticles } from 'entities/article';
+import { mockArticles } from '@/entities/article';
 
 const mockRecommendations = mockArticles.slice(0, 3);
 

@@ -6,11 +6,11 @@ import {
     useAppDispatch,
     useAsyncStore,
     useInitialEffect,
-} from 'shared/lib/hooks';
-import { Text } from 'shared/ui/text';
-import { Title } from 'shared/ui/title';
-import { UserCard, UserCardSkeleton } from 'entities/user';
-import { fetchById, userReducer, userSelectors } from 'features/user';
+} from '@/shared/lib/hooks';
+import { Text } from '@/shared/ui/text';
+import { Title } from '@/shared/ui/title';
+import { UserCard, UserCardSkeleton } from '@/entities/user';
+import { fetchById, userReducer, userSelectors } from '@/features/user';
 
 const User = () => {
     const { t } = useTranslation('user');

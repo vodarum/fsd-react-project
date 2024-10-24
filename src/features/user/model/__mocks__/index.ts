@@ -1,4 +1,4 @@
-import type { State } from 'app/providers/store-provider';
+import type { State } from '@/app/providers/store-provider';
 import type { UserState } from '../types';
 
 const mockUserState: UserState = {

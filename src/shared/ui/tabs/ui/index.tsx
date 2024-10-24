@@ -1,7 +1,7 @@
 import cls from './index.module.scss';
-import { classNames } from 'shared/lib/class-names';
-import { typedMemo } from 'shared/lib/typed-memo';
-import { Button, ButtonVariants } from 'shared/ui/button';
+import { classNames } from '@/shared/lib/class-names';
+import { typedMemo } from '@/shared/lib/typed-memo';
+import { Button, ButtonVariants } from '@/shared/ui/button';
 
 type TabItem<T> = {
     key: T;

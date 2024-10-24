@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ProfilePageContent } from '.';
-import { mockSession } from 'entities/session';
-import { mockUsers } from 'entities/user';
-import { mockUserState, userReducer } from 'features/user';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import { mockSession } from '@/entities/session';
+import { mockUsers } from '@/entities/user';
+import { mockUserState, userReducer } from '@/features/user';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 
 const meta = {
     title: 'pages/Profile/ProfilePageContent',

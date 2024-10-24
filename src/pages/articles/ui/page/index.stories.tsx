@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Articles from '.';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 import {
     articleListReducer,
     mockArticleListEntityState,
     mockArticleListState,
-} from 'entities/article';
+} from '@/entities/article';
 
 const meta = {
     title: 'pages/Articles',

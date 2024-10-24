@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArticleList, ArticleViewTypes } from 'entities/article';
-import { VStack } from 'shared/ui/stack';
-import { Text } from 'shared/ui/text';
+import { ArticleList, ArticleViewTypes } from '@/entities/article';
+import { VStack } from '@/shared/ui/stack';
+import { Text } from '@/shared/ui/text';
 import cls from './index.module.scss';
 import { useGetRecommendationsQuery } from '../api';
 

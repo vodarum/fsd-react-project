@@ -1,9 +1,9 @@
 import { faList, faTableCells } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ArticleViewType, ArticleViewTypes } from 'entities/article';
+import { ArticleViewType, ArticleViewTypes } from '@/entities/article';
 import { memo } from 'react';
-import { classNames } from 'shared/lib/class-names';
-import { Button, ButtonVariants } from 'shared/ui/button';
+import { classNames } from '@/shared/lib/class-names';
+import { Button, ButtonVariants } from '@/shared/ui/button';
 import cls from './index.module.scss';
 
 const viewTypeIcons = [

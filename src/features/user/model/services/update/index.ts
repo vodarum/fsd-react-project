@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkAPI } from 'app/providers/store-provider';
-import { User } from 'entities/user';
+import { ThunkAPI } from '@/app/providers/store-provider';
+import { User } from '@/entities/user';
 import { validate } from '../validate';
 import { ValidateUserErrors } from '../../const';
 import { selectUserForm } from '../../selectors';

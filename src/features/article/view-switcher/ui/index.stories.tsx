@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { ArticleViewSwitcher } from '.';
-import { ArticleViewTypes } from 'entities/article';
+import { ArticleViewTypes } from '@/entities/article';
 
 const meta = {
     title: 'features/Article/ArticleViewSwitcher',

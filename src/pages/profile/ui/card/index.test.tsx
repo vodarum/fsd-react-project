@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
 import { ProfileCard } from '.';
-import { mockUsers } from 'entities/user';
-import { mockUserState, userReducer } from 'features/user';
-import { componentRender } from 'shared/lib/tests/component-render';
+import { mockUsers } from '@/entities/user';
+import { mockUserState, userReducer } from '@/features/user';
+import { componentRender } from '@/shared/lib/tests/component-render';
 
 const mockUser = mockUsers[0];
 const options: Parameters<typeof componentRender>[1] = {

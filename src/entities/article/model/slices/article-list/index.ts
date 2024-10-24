@@ -3,7 +3,7 @@ import {
     createSlice,
     PayloadAction,
 } from '@reduxjs/toolkit';
-import { State } from 'app/providers/store-provider';
+import { State } from '@/app/providers/store-provider';
 import { ArticleViewTypes, ArticlesNumberPerPage } from '../../const';
 import type {
     Article,
@@ -13,7 +13,7 @@ import type {
     ArticleViewType,
 } from '../../types';
 import { fetchList } from '../../services/fetch-list';
-import { SortOrder } from 'shared/api';
+import { SortOrder } from '@/shared/api';
 
 const articleListAdapter = createEntityAdapter<Article>();
 

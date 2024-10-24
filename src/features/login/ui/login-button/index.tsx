@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import { sessionSelectors } from 'entities/session';
+import { sessionSelectors } from '@/entities/session';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Button } from 'shared/ui/button';
+import { Button } from '@/shared/ui/button';
 import { LoginModal } from '../login-modal';
 
 type LoginButtonProps = {

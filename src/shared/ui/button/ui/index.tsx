@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import cls from './index.module.scss';
 import {
     ButtonHTMLAttributes,

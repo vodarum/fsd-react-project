@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { User } from 'entities/user';
+import { User } from '@/entities/user';
 import type { UserState } from '../types';
 import { fetchById, update } from '../services';
 

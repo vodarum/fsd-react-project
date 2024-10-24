@@ -1,9 +1,9 @@
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import cls from './index.module.scss';
 import { ComponentProps, PropsWithChildren, ReactNode } from 'react';
-import { classNames } from 'shared/lib/class-names';
-import { useTheme } from 'shared/lib/theme';
-import { Button, ButtonVariants } from 'shared/ui/button';
+import { classNames } from '@/shared/lib/class-names';
+import { useTheme } from '@/shared/lib/theme';
+import { Button, ButtonVariants } from '@/shared/ui/button';
 
 type PopoverProps = PropsWithChildren &
     Pick<ComponentProps<typeof PopoverPanel>, 'anchor'> & {

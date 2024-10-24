@@ -1,6 +1,6 @@
 import { mockInitialAppState, mockUserState } from '../../__mocks__';
 import { selectUserData } from '.';
-import { mockUsers } from 'entities/user';
+import { mockUsers } from '@/entities/user';
 
 describe('selectUserData', () => {
     test('returns undefined for initial app state', () => {

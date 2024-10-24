@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkAPI } from 'app/providers/store-provider';
+import { ThunkAPI } from '@/app/providers/store-provider';
 import {
     selectLoading,
     selectHasMore,

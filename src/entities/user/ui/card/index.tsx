@@ -1,9 +1,9 @@
 import cls from './index.module.scss';
 import { memo } from 'react';
-import { classNames } from 'shared/lib/class-names';
-import { Avatar } from 'shared/ui/avatar';
-import { Text } from 'shared/ui/text';
-import { Skeleton } from 'shared/ui/skeleton';
+import { classNames } from '@/shared/lib/class-names';
+import { Avatar } from '@/shared/ui/avatar';
+import { Text } from '@/shared/ui/text';
+import { Skeleton } from '@/shared/ui/skeleton';
 import { User } from '../../model';
 
 type UserCardBaseProps = {

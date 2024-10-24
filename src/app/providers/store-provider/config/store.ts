@@ -1,7 +1,7 @@
 import { configureStore, Reducer } from '@reduxjs/toolkit';
-import { sessionReducer } from 'entities/session';
-import { $api, $rtkApi } from 'shared/api';
-import { scrollPositionReducer } from 'widgets/section';
+import { sessionReducer } from '@/entities/session';
+import { $api, $rtkApi } from '@/shared/api';
+import { scrollPositionReducer } from '@/widgets/section';
 import { createReducerManager } from './reducer-manager';
 import { sessionMiddleware } from './session-middleware';
 import type { ConfigureAppStoreOptions, State } from './types';

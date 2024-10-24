@@ -8,11 +8,11 @@ import {
 } from '@headlessui/react';
 import cls from './index.module.scss';
 import { ComponentProps } from 'react';
-import { classNames } from 'shared/lib/class-names';
-import { typedMemo } from 'shared/lib/typed-memo';
-import { useTheme } from 'shared/lib/theme';
-import { Button } from 'shared/ui/button';
-import { VStack } from 'shared/ui/stack';
+import { classNames } from '@/shared/lib/class-names';
+import { typedMemo } from '@/shared/lib/typed-memo';
+import { useTheme } from '@/shared/lib/theme';
+import { Button } from '@/shared/ui/button';
+import { VStack } from '@/shared/ui/stack';
 
 type ListboxOption<T extends string> = {
     value: T;

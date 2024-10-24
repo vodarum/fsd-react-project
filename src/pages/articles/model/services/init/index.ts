@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkAPI } from 'app/providers/store-provider';
+import { ThunkAPI } from '@/app/providers/store-provider';
 import {
     articleListActions,
     articleListSelectors,
@@ -7,7 +7,7 @@ import {
     parseArticleType,
     parseSortBy,
     parseSortOrder,
-} from 'entities/article';
+} from '@/entities/article';
 
 export const init = createAsyncThunk<void, URLSearchParams, ThunkAPI<string>>(
     'articles/init',

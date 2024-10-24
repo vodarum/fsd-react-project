@@ -2,11 +2,11 @@ import { PropsWithChildren } from 'react';
 import cls from './index.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { ModalOptions, PropsWithClassName } from 'shared/api';
-import { classNames } from 'shared/lib/class-names';
-import { useModal } from 'shared/lib/hooks';
-import { HStack } from 'shared/ui/stack';
-import { Title, TitleLevels } from 'shared/ui/title';
+import { ModalOptions, PropsWithClassName } from '@/shared/api';
+import { classNames } from '@/shared/lib/class-names';
+import { useModal } from '@/shared/lib/hooks';
+import { HStack } from '@/shared/ui/stack';
+import { Title, TitleLevels } from '@/shared/ui/title';
 
 type DrawerProps = PropsWithChildren &
     PropsWithClassName &

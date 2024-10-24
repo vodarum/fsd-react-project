@@ -1,10 +1,10 @@
 import { init } from '.';
-import { testAsyncThunk } from 'shared/lib/tests/test-async-thunk';
+import { testAsyncThunk } from '@/shared/lib/tests/test-async-thunk';
 import {
     fetchList,
     mockAppState,
     mockArticleListState,
-} from 'entities/article';
+} from '@/entities/article';
 
 jest.mock('entities/article/model/services/fetch-list');
 

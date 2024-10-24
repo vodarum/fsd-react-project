@@ -1,7 +1,7 @@
 import cls from './index.module.scss';
 import { ChangeEvent, SelectHTMLAttributes, useMemo } from 'react';
-import { classNames } from 'shared/lib/class-names';
-import { typedMemo } from 'shared/lib/typed-memo';
+import { classNames } from '@/shared/lib/class-names';
+import { typedMemo } from '@/shared/lib/typed-memo';
 
 const SelectVariants = {
     outlined: 'outlined',

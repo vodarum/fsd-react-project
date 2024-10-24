@@ -7,15 +7,15 @@ import {
     ArticleTypes,
     ArticleViewType,
     fetchList,
-} from 'entities/article';
-import { ArticleSortSwitcher, ArticleViewSwitcher } from 'features/article';
+} from '@/entities/article';
+import { ArticleSortSwitcher, ArticleViewSwitcher } from '@/features/article';
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { SortOrder } from 'shared/api';
-import { useAppDispatch, useDebounce } from 'shared/lib/hooks';
-import { Input } from 'shared/ui/input';
-import { Tabs } from 'shared/ui/tabs';
+import { SortOrder } from '@/shared/api';
+import { useAppDispatch, useDebounce } from '@/shared/lib/hooks';
+import { Input } from '@/shared/ui/input';
+import { Tabs } from '@/shared/ui/tabs';
 
 export const ArticlesFilters = memo(() => {
     const { t } = useTranslation();

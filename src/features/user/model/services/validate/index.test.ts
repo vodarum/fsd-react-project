@@ -1,4 +1,4 @@
-import { mockUsers } from 'entities/user';
+import { mockUsers } from '@/entities/user';
 import { validate } from '.';
 import { ValidateUserErrors } from '../../const';
 

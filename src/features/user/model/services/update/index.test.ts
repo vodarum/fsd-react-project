@@ -1,5 +1,5 @@
-import { mockUsers } from 'entities/user';
-import { testAsyncThunk } from 'shared/lib/tests/test-async-thunk';
+import { mockUsers } from '@/entities/user';
+import { testAsyncThunk } from '@/shared/lib/tests/test-async-thunk';
 import { update } from '.';
 import { mockUserState, ValidateUserErrors } from '../..';
 

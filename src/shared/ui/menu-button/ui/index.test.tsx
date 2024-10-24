@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MenuButton } from '.';
-import { ButtonVariants } from 'shared/ui/button';
+import { ButtonVariants } from '@/shared/ui/button';
 
 const testId = 'menuButton';
 

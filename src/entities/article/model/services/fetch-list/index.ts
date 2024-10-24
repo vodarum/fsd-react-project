@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkAPI } from 'app/providers/store-provider';
+import { ThunkAPI } from '@/app/providers/store-provider';
 import { ArticlesNumberPerPage } from '../../const';
 import { parseFiltersToURLSearchParams } from '../../../lib';
 import { selectFilters } from '../../selectors/article-list';

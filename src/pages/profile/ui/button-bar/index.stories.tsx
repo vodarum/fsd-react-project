@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ProfileButtonBar } from '.';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator';
-import { mockUserState, userReducer } from 'features/user';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
+import { mockUserState, userReducer } from '@/features/user';
 
 const meta = {
     title: 'pages/Profile/ProfileButtonBar',

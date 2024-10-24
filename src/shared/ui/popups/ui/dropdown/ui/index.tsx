@@ -1,9 +1,9 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/react';
-import { classNames } from 'shared/lib/class-names';
-import { useTheme } from 'shared/lib/theme';
+import { classNames } from '@/shared/lib/class-names';
+import { useTheme } from '@/shared/lib/theme';
 import { ComponentProps, memo, ReactNode } from 'react';
-import { Button, ButtonVariants } from 'shared/ui/button';
-import { AppLink } from 'shared/ui/app-link';
+import { Button, ButtonVariants } from '@/shared/ui/button';
+import { AppLink } from '@/shared/ui/app-link';
 import cls from './index.module.scss';
 
 type DropdownItem = {

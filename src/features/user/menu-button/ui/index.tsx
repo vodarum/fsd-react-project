@@ -1,11 +1,11 @@
-import { sessionActions } from 'entities/session';
-import { userSelectors } from 'features/user/model';
+import { sessionActions } from '@/entities/session';
+import { userSelectors } from '@/features/user/model';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks';
-import { Avatar } from 'shared/ui/avatar';
-import { Dropdown, DropdownItem } from 'shared/ui/popups';
+import { useAppDispatch } from '@/shared/lib/hooks';
+import { Avatar } from '@/shared/ui/avatar';
+import { Dropdown, DropdownItem } from '@/shared/ui/popups';
 
 type UserMenuButtonProps = {
     className?: string;

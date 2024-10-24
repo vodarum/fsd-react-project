@@ -1,5 +1,5 @@
 import { EntityState } from '@reduxjs/toolkit';
-import { Comment } from 'entities/comment';
+import { Comment } from '@/entities/comment';
 
 type ArticleCommentsState = EntityState<Comment, Comment['id']> & {
     loading: boolean;
