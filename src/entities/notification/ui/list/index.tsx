@@ -15,7 +15,7 @@ const NotificationList = memo(({ className }: NotificationListProps) => {
 
     if (isLoading) {
         return (
-            <VStack gap={8} className={className}>
+            <VStack gap={8} className={className} align='stretch'>
                 <Skeleton active width={170} height={70} />
                 <Skeleton active width={170} height={70} />
                 <Skeleton active width={170} height={70} />
@@ -24,7 +24,7 @@ const NotificationList = memo(({ className }: NotificationListProps) => {
     }
 
     return (
-        <VStack gap={8} className={className}>
+        <VStack gap={8} className={className} align='stretch'>
             {data?.map((n) => <NotificationItem key={n.id} data={n} />)}
         </VStack>
     );
