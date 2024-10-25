@@ -10,7 +10,7 @@ const meta = {
     },
     tags: ['autodocs'],
     args: {
-        onSelect: fn(),
+        onChange: fn(),
     },
 } satisfies Meta<typeof Rating>;
 
@@ -21,6 +21,6 @@ export const Default: Story = {};
 
 export const Filled: Story = {
     args: {
-        selectedStars: 3,
+        value: 3,
     },
 };
