@@ -5,6 +5,7 @@ import { ArticleDetails } from '@/entities/article';
 import {
     articleCommentsReducer,
     articleCommentsSelectors,
+    ArticleRating,
     ArticleRecommendations,
     fetchByArticleId,
 } from '@/features/article';
@@ -54,6 +55,7 @@ const Article = () => {
             <VStack align='stretch' gap={32}>
                 <ArticleDetails id={+id} />
                 <ArticleRecommendations />
+                <ArticleRating articleId={+id} />
                 <CommentList
                     items={comments}
                     loading={commentsLoading}
