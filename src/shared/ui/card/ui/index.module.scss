@@ -1,0 +1,17 @@
+.card {
+    min-width: 300px;
+    border-radius: var(--font-interval);
+
+    &.bordered {
+        border: 1px solid var(--primary-color);
+    }
+}
+
+.header {
+    padding: var(--padding);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.body {
+    padding: var(--padding);
+}
