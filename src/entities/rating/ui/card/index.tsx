@@ -30,23 +30,25 @@ export const RatingCard = memo((props: RatingCardProps) => {
     const handleRatingChange = useCallback(
         (value: number) => {
             setRating(value);
-            onSubmit?.({ rating: value });
 
             if (feedbackTitle) {
                 setIsOpenModal(true);
+            } else {
+                onSubmit?.({ rating: value });
             }
         },
         [feedbackTitle, onSubmit],
     );
 
     const handleCloseBtnClick = useCallback(() => {
+        onSubmit?.({ rating });
         setIsOpenModal(false);
-    }, []);
+    }, [rating, onSubmit]);
 
     const handleSubmitBtnClick = useCallback(() => {
         if (!feedback) return;
         onSubmit?.({ rating, feedback });
-        handleCloseBtnClick();
+        setIsOpenModal(false);
     }, [rating, feedback, onSubmit]);
 
     return (
