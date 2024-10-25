@@ -27,14 +27,13 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal container={targetContainer}>
             <div
-                className={classNames(cls.modal, { [cls.open]: open }, [
-                    className,
-                    theme,
-                ])}
+                className={classNames(cls.modal, { [cls.open]: open }, [theme])}
             >
                 {open && <div className={cls.overlay} onClick={onClose} />}
 
-                <div className={cls.content}>{children}</div>
+                <div className={classNames(cls.content, {}, [className])}>
+                    {children}
+                </div>
             </div>
         </Portal>
     );
