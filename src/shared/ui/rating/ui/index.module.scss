@@ -1,0 +1,11 @@
+.star {
+    cursor: pointer;
+
+    &.filled {
+        fill: var(--primary-color);
+    }
+
+    &.selected {
+        cursor: inherit;
+    }
+}
