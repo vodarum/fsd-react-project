@@ -1,5 +1,5 @@
 import { sessionActions } from '@/entities/session';
-import { userSelectors } from '@/features/user/model';
+import { userSelectors } from '../../model';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
