@@ -3,7 +3,7 @@ import {
     mockArticles,
     mockArticleListEntityState,
     mockArticleListState,
-} from '../../__mocks__';
+} from '../../../__mocks__';
 import { ArticlesNumberPerPage, ArticleViewTypes } from '../../const';
 import { fetchList } from '../../services';
 

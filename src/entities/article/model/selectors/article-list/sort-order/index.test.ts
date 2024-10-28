@@ -1,4 +1,4 @@
-import { mockInitialAppState, mockArticleListState } from '../../../__mocks__';
+import { mockInitialAppState, mockArticleListState } from '../../../../__mocks__';
 import { selectSortOrder } from '.';
 import { SortOrders } from '@/shared/api';
 

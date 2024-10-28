@@ -2,7 +2,7 @@ import {
     mockInitialAppState,
     mockArticles,
     mockArticleState,
-} from '../../../__mocks__';
+} from '../../../../__mocks__';
 import { selectArticleData } from '.';
 
 const mockArticle = mockArticles[0];

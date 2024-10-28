@@ -1,5 +1,5 @@
 import { articleReducer } from '.';
-import { mockArticles, mockArticleState } from '../../__mocks__';
+import { mockArticles, mockArticleState } from '../../../__mocks__';
 import { fetchById } from '../../services';
 
 const mockArticle = mockArticles[0];

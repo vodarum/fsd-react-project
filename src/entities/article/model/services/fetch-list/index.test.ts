@@ -1,6 +1,6 @@
 import { fetchList } from '.';
 import { testAsyncThunk } from '@/shared/lib/tests/test-async-thunk';
-import { mockArticles } from '../../__mocks__';
+import { mockArticles } from '../../../__mocks__';
 
 const url = '/articles';
 const requestOptions = {

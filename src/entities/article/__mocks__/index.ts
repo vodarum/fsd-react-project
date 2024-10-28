@@ -1,7 +1,7 @@
 import type { State } from '@/app/providers/store-provider';
 import { mockUsers } from '@/entities/user/@x/article';
-import { ArticleViewTypes } from '../const';
-import type { Article, ArticleListState, ArticleState } from '../types';
+import { ArticleViewTypes } from '../model/const';
+import type { Article, ArticleListState, ArticleState } from '../model/types';
 
 const mockArticles: Article[] = [
     {

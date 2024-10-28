@@ -14,7 +14,6 @@ const articleListSelectors = {
     ...customArticleListSelectors,
 };
 
-export * from './__mocks__';
 export * from './const';
 export * from './services';
 export type * from './types';

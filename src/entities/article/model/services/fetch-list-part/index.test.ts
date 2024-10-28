@@ -1,7 +1,7 @@
 import { fetchListPart } from '.';
 import { testAsyncThunk } from '@/shared/lib/tests/test-async-thunk';
 import { fetchList } from '../fetch-list';
-import { mockAppState, mockArticleListState } from '../../__mocks__';
+import { mockAppState, mockArticleListState } from '../../../__mocks__';
 
 jest.mock('../fetch-list');
 
