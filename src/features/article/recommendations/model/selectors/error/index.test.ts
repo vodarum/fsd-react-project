@@ -1,7 +1,7 @@
 import {
     mockInitialAppState,
     mockArticleRecommendationsState,
-} from '../../__mocks__';
+} from '../../../__mocks__';
 import { selectError } from '.';
 
 describe('selectError', () => {

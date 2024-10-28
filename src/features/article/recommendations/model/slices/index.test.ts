@@ -3,7 +3,7 @@ import {
     mockRecommendations,
     mockRecommendationsEntityState,
     mockArticleRecommendationsState,
-} from '../__mocks__';
+} from '../../__mocks__';
 import { fetchRecommendations } from '../services';
 
 describe('articleRecommendationsSlice', () => {

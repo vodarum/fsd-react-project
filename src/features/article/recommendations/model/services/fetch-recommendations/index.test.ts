@@ -1,6 +1,6 @@
 import { fetchRecommendations } from '.';
 import { testAsyncThunk } from '@/shared/lib/tests/test-async-thunk';
-import { mockRecommendations } from '../../__mocks__';
+import { mockRecommendations } from '../../../__mocks__';
 import { ArticlesNumberPerPage, ArticleViewTypes } from '@/entities/article';
 
 const url = `/articles`;
