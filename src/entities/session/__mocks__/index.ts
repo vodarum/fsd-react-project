@@ -1,5 +1,5 @@
 import type { State } from '@/app/providers/store-provider';
-import type { Session, SessionState } from '../types';
+import type { Session, SessionState } from '../model';
 
 const mockSession: Session = {
     token: 'qwerty123',
