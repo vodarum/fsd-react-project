@@ -1,4 +1,4 @@
-import { mockSession, mockSessionState } from '../__mocks__';
+import { mockSession, mockSessionState } from '../../__mocks__';
 import type { SessionState } from '../types';
 import { sessionReducer, sessionActions } from '.';
 

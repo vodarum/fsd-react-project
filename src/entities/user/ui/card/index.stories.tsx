@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { UserCard } from '.';
-import { mockUsers } from '../../model';
+import { mockUsers } from '../../__mocks__';
 
 const meta = {
     title: 'entities/User/UserCard',

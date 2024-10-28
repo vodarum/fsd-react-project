@@ -1,4 +1,4 @@
-import { mockInitialAppState, mockSessionState } from '../../__mocks__';
+import { mockInitialAppState, mockSessionState } from '../../../__mocks__';
 import { selectSessionState } from '.';
 
 describe('selectSessionState', () => {

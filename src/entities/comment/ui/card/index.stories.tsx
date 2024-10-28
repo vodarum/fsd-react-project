@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CommentCard } from '.';
-import { mockComments } from '../../model';
+import { mockComments } from '../../__mocks__';
 
 const meta = {
     title: 'entities/Comment/CommentCard',
