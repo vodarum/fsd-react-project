@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { http, HttpResponse } from 'msw';
 import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 import { NotificationList } from '.';
-import { mockNotifications } from '../../model/__mocks__';
+import { mockNotifications } from '../../__mocks__';
 
 const meta = {
     title: 'entities/Notification/NotificationList',
