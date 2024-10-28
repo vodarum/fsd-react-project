@@ -4,7 +4,7 @@ import {
     mockComments,
     mockCommentsEntityState,
     mockArticleCommentsState,
-} from '../__mocks__';
+} from '../../__mocks__';
 import { fetchByArticleId } from '../services';
 
 describe('articleCommentsSlice', () => {

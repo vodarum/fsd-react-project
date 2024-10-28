@@ -1,6 +1,6 @@
 import { fetchByArticleId } from '.';
 import { testAsyncThunk } from '@/shared/lib/tests/test-async-thunk';
-import { mockArticleId, mockComments } from '../../__mocks__';
+import { mockArticleId, mockComments } from '../../../__mocks__';
 
 const url = `/articles/${mockArticleId}/comments`;
 const requestOptions = {
