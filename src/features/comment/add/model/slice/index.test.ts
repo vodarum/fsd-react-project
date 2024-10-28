@@ -1,4 +1,4 @@
-import { mockAddCommentState } from '../__mocks__';
+import { mockAddCommentState } from '../../__mocks__';
 import { addCommentActions, addCommentReducer } from '.';
 
 describe('addCommentSlice', () => {

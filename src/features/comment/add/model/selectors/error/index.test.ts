@@ -1,4 +1,4 @@
-import { mockInitialAppState, mockAppState } from '../../__mocks__';
+import { mockInitialAppState, mockAppState } from '../../../__mocks__';
 import { selectError } from '.';
 
 describe('selectError', () => {

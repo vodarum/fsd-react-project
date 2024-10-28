@@ -1,4 +1,4 @@
-import { mockAppState, mockInitialAppState } from '../../__mocks__';
+import { mockAppState, mockInitialAppState } from '../../../__mocks__';
 import { selectText } from '.';
 
 describe('selectProfileData', () => {

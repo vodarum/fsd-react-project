@@ -1,5 +1,5 @@
 import type { State } from '@/app/providers/store-provider';
-import type { AddCommentState } from '../types';
+import type { AddCommentState } from '../model/types';
 
 const mockAddCommentState: AddCommentState = {};
 

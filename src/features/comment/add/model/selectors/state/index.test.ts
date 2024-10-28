@@ -2,7 +2,7 @@ import {
     mockInitialAppState,
     mockAppState,
     mockAddCommentState,
-} from '../../__mocks__';
+} from '../../../__mocks__';
 import { selectAddCommentState } from '.';
 
 describe('selectAddCommentState', () => {
