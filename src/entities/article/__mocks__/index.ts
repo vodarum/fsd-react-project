@@ -1,5 +1,5 @@
 import type { State } from '@/app/providers/store-provider';
-import { mockUsers } from '@/entities/user/@x/article';
+import { mockUsers } from '@/entities/user/testing';
 import { ArticleViewTypes } from '../model/const';
 import type { Article, ArticleListState, ArticleState } from '../model/types';
 
