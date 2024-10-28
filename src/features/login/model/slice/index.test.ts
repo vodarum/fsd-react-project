@@ -1,4 +1,4 @@
-import { mockLoginState } from '../__mocks__';
+import { mockLoginState } from '../../__mocks__';
 import { loginReducer, loginActions } from '.';
 
 describe('loginSlice', () => {

@@ -1,5 +1,5 @@
 import type { State } from '@/app/providers/store-provider';
-import type { LoginState } from '../types';
+import type { LoginState } from '../model/types';
 
 const mockLoginState: LoginState = {
     username: 'ivan123',

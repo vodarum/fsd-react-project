@@ -2,7 +2,7 @@ import {
     mockInitialAppState,
     mockAppState,
     mockLoginState,
-} from '../../__mocks__';
+} from '../../../__mocks__';
 import { selectError } from '.';
 import { State } from '@/app/providers/store-provider';
 

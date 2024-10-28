@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import LoginForm from '.';
 import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 import { loginReducer } from '../../model';
+import { mockLoginState } from '../../__mocks__';
 
 const meta = {
     title: 'features/Login/LoginForm',
@@ -29,11 +30,7 @@ export const WithInputsFilled: Story = {
                 login: loginReducer,
             },
             preloadedState: {
-                login: {
-                    username: 'ivan123',
-                    password: 'qwerty123',
-                    loading: false,
-                },
+                login: mockLoginState,
             },
         }),
     ],
@@ -47,8 +44,7 @@ export const WithLoading: Story = {
             },
             preloadedState: {
                 login: {
-                    username: 'ivan123',
-                    password: 'qwerty123',
+                    ...mockLoginState,
                     loading: true,
                 },
             },
@@ -64,9 +60,7 @@ export const WithError: Story = {
             },
             preloadedState: {
                 login: {
-                    username: 'ivan123',
-                    password: 'qwerty123',
-                    loading: false,
+                    ...mockLoginState,
                     error: 'Some error',
                 },
             },

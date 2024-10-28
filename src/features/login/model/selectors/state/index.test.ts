@@ -2,7 +2,7 @@ import {
     mockInitialAppState,
     mockAppState,
     mockLoginState,
-} from '../../__mocks__';
+} from '../../../__mocks__';
 import { selectLoginState } from '.';
 
 describe('selectLoginState', () => {
