@@ -2,7 +2,7 @@ import {
     mockInitialAppState,
     mockScrollPositionData,
     mockScrollPositionState,
-} from '../../../__mocks__';
+} from '../../../../__mocks__';
 import { selectValueByPath } from '.';
 
 describe('selectValueByPath', () => {

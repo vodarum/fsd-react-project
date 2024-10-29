@@ -1,7 +1,7 @@
 import {
     mockScrollPositionData,
     mockScrollPositionState,
-} from '../../__mocks__';
+} from '../../../__mocks__';
 import type { ScrollPositionObject } from '../../types';
 import { scrollPositionReducer, scrollPositionActions } from '.';
 

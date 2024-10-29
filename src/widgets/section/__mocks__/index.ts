@@ -1,5 +1,5 @@
 import type { State } from '@/app/providers/store-provider';
-import type { ScrollPositionObject, ScrollPositionState } from '../types';
+import type { ScrollPositionObject, ScrollPositionState } from '../model/types';
 
 const mockScrollPositionData: ScrollPositionObject = {
     key1: 200,

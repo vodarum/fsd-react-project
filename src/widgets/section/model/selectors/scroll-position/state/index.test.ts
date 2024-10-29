@@ -1,7 +1,7 @@
 import {
     mockInitialAppState,
     mockScrollPositionState,
-} from '../../../__mocks__';
+} from '../../../../__mocks__';
 import { selectState } from '.';
 
 describe('selectState', () => {
