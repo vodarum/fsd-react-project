@@ -1,4 +1,7 @@
 import type { User } from '../model';
+import ImageMan from './man.jpg';
+import ImageSunnyLion from './sunny-lion.jpg';
+import ImageGloomyLion from './gloomy-lion.webp';
 
 const mockUsers: User[] = [
     {
@@ -11,7 +14,8 @@ const mockUsers: User[] = [
         currency: 'RUB',
         country: 'Russia',
         city: 'Волгоград',
-        avatar: 'https://us.123rf.com/450wm/whitecity/whitecity2403/whitecity240301752/227835211-lion-in-sunglasses-vector-illustration-of-a-lion-with-sunglasses.jpg?ver=6',
+        avatar: ImageSunnyLion,
+        // avatar: 'https://us.123rf.com/450wm/whitecity/whitecity2403/whitecity240301752/227835211-lion-in-sunglasses-vector-illustration-of-a-lion-with-sunglasses.jpg?ver=6',
         // avatar: 'https://png.pngtree.com/png-clipart/20230916/original/pngtree-cartoon-sticker-cute-lion-with-glasses-clipart-vector-png-image_12252135.png',
     },
     {
@@ -24,7 +28,8 @@ const mockUsers: User[] = [
         currency: 'RUB',
         country: 'Russia',
         city: 'Волгоград',
-        avatar: 'https://img.freepik.com/premium-photo/3d-style-avatar-profile-picture-featuring-male-character-generative-ai_739548-13626.jpg',
+        avatar: ImageMan,
+        // avatar: 'https://img.freepik.com/premium-photo/3d-style-avatar-profile-picture-featuring-male-character-generative-ai_739548-13626.jpg',
     },
     {
         id: 3,
@@ -36,7 +41,8 @@ const mockUsers: User[] = [
         currency: 'RUB',
         country: 'Russia',
         city: 'Волгоград',
-        avatar: 'https://thumbs.dreamstime.com/b/cartoon-lion-glasses-poses-confidently-casual-clothing-character-wearing-attire-long-hair-329908583.jpg',
+        avatar: ImageGloomyLion,
+        // avatar: 'https://thumbs.dreamstime.com/b/cartoon-lion-glasses-poses-confidently-casual-clothing-character-wearing-attire-long-hair-329908583.jpg',
     },
 ];
 
