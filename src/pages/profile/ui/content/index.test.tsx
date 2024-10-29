@@ -1,9 +1,9 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { ProfilePageContent } from '.';
-import { mockSession } from '@/entities/session';
-import { mockUsers } from '@/entities/user';
-import { mockUserState, userReducer } from '@/features/user';
+import { mockSession } from '@/entities/session/testing';
+import { mockUsers } from '@/entities/user/testing';
+import { mockUserState, userReducer } from '@/features/user/testing';
 import { Countries } from '@/shared/api';
 import { componentRender } from '@/shared/lib/tests/component-render';
 
