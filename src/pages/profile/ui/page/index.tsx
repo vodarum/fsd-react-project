@@ -10,6 +10,7 @@ import { Title } from '@/shared/ui/title';
 import { ProfilePageContent } from '../content';
 import { sessionSelectors } from '@/entities/session';
 import { fetchById, userReducer } from '@/features/user';
+import { Section } from '@/widgets/section';
 
 const Profile = () => {
     const { t } = useTranslation('profile');
@@ -26,10 +27,10 @@ const Profile = () => {
     }, [dispatch]);
 
     return (
-        <>
+        <Section>
             <Title className={cls.title}>{t('Профиль')}</Title>
             <ProfilePageContent />
-        </>
+        </Section>
     );
 };
 

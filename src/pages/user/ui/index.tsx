@@ -11,6 +11,7 @@ import { Text } from '@/shared/ui/text';
 import { Title } from '@/shared/ui/title';
 import { UserCard, UserCardSkeleton } from '@/entities/user';
 import { fetchById, userReducer, userSelectors } from '@/features/user';
+import { Section } from '@/widgets/section';
 
 const User = () => {
     const { t } = useTranslation('user');
@@ -38,7 +39,7 @@ const User = () => {
     }
 
     return (
-        <>
+        <Section>
             <Title className={cls.title}>{t('Пользователь')}</Title>
             {user ? (
                 <UserCard data={user} />
@@ -47,7 +48,7 @@ const User = () => {
                     {t('Пользователь не найден')}
                 </Text>
             )}
-        </>
+        </Section>
     );
 };
 

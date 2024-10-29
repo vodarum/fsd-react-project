@@ -1,8 +1,14 @@
+import { Title } from '@/shared/ui/title';
+import { Section } from '@/widgets/section';
 import { useTranslation } from 'react-i18next';
 
 const About = () => {
     const { t } = useTranslation('about');
-    return <h1>{t('O сайте')}</h1>;
+    return (
+        <Section>
+            <Title>{t('O сайте')}</Title>
+        </Section>
+    );
 };
 
 export default About;
