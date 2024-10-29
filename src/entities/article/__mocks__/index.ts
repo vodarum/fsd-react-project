@@ -2,13 +2,18 @@ import type { State } from '@/app/providers/store-provider';
 import { mockUsers } from '@/entities/user/testing';
 import { ArticleViewTypes } from '../model/const';
 import type { Article, ArticleListState, ArticleState } from '../model/types';
+import ImageJava from './java.jpg';
+import ImageJS from './js.png';
+import ImageJSCode from './js-code.png';
+import ImagePHP from './php.png';
+import ImageLoremIpsum from './lorem-ipsum.jpg';
 
 const mockArticles: Article[] = [
     {
         id: 1,
         title: 'JS news',
         subtitle: 'Что нового в JS за 2024 год?',
-        img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+        img: ImageJS,
         views: 1022,
         createdAt: '2024-09-24',
         userId: 1,
@@ -42,7 +47,7 @@ const mockArticles: Article[] = [
             {
                 id: 2,
                 type: 'image',
-                src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+                src: ImageJSCode,
                 title: 'Рисунок 1 - скриншот сайта',
             },
             {
@@ -62,7 +67,7 @@ const mockArticles: Article[] = [
             {
                 id: 8,
                 type: 'image',
-                src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+                src: ImageJSCode,
                 title: 'Рисунок 1 - скриншот сайта',
             },
             {
@@ -79,7 +84,7 @@ const mockArticles: Article[] = [
         id: 2,
         title: 'Java news',
         subtitle: 'Что нового в Java за 2024 год?',
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIyYYAhEoXWOcyx0sjHiaK2TrmUNxxMJdE6g&s',
+        img: ImageJava,
         views: 1022,
         createdAt: '2024-09-24',
         userId: 2,
@@ -101,7 +106,7 @@ const mockArticles: Article[] = [
         id: 3,
         title: 'PHP news',
         subtitle: 'Что нового в PHP за 2024 год?',
-        img: 'https://site-728876.mozfiles.com/files/728876/How-To-Update-Your-PHP-Version.png',
+        img: ImagePHP,
         views: 1022,
         createdAt: '2024-09-24',
         userId: 3,
@@ -123,7 +128,7 @@ const mockArticles: Article[] = [
         id: 4,
         title: 'Lorem Ipsum',
         subtitle: 'Lorem ipsum dolor sit amet',
-        img: 'https://img.freepik.com/premium-vector/lorem-ipsum-logo-design-colorful-gradient_779267-18.jpg',
+        img: ImageLoremIpsum,
         views: 1954,
         createdAt: '2024-09-27',
         userId: 3,
@@ -145,7 +150,7 @@ const mockArticles: Article[] = [
         id: 5,
         title: 'Lorem Ipsum',
         subtitle: 'Lorem ipsum dolor sit amet',
-        img: 'https://img.freepik.com/premium-vector/lorem-ipsum-logo-design-colorful-gradient_779267-18.jpg',
+        img: ImageLoremIpsum,
         views: 1952,
         createdAt: '2024-09-27',
         userId: 3,
@@ -167,7 +172,7 @@ const mockArticles: Article[] = [
         id: 6,
         title: 'Lorem Ipsum',
         subtitle: 'Lorem ipsum dolor sit amet',
-        img: 'https://img.freepik.com/premium-vector/lorem-ipsum-logo-design-colorful-gradient_779267-18.jpg',
+        img: ImageLoremIpsum,
         views: 1987,
         createdAt: '2024-09-28',
         userId: 3,
