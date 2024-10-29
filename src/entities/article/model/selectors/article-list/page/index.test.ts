@@ -1,4 +1,7 @@
-import { mockInitialAppState, mockArticleListState } from '../../../../__mocks__';
+import {
+    mockInitialAppState,
+    mockArticleListState,
+} from '../../../../__mocks__';
 import { selectPage } from '.';
 
 const defaultPage = 1;

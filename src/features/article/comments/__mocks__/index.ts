@@ -5,13 +5,13 @@ import { mockComments } from '@/entities/comment/testing';
 const mockArticleId = 1;
 
 const mockCommentsEntityState: Pick<ArticleCommentsState, 'entities' | 'ids'> =
-{
-    ids: mockComments.map((c) => c.id),
-    entities: mockComments.reduce(
-        (accumulator, c) => ({ ...accumulator, [c.id]: c }),
-        {},
-    ),
-};
+    {
+        ids: mockComments.map((c) => c.id),
+        entities: mockComments.reduce(
+            (accumulator, c) => ({ ...accumulator, [c.id]: c }),
+            {},
+        ),
+    };
 
 const mockArticleCommentsState: ArticleCommentsState = {
     loading: false,

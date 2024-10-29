@@ -5,8 +5,4 @@ export {
     mockArticleListEntityState,
     mockArticleState,
 } from './__mocks__';
-export {
-    articleReducer,
-    articleListReducer,
-    fetchList,
-} from './model';
+export { articleReducer, articleListReducer, fetchList } from './model';

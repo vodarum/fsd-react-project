@@ -1,4 +1,7 @@
-import { mockInitialAppState, mockArticleCommentsState } from '../../../__mocks__';
+import {
+    mockInitialAppState,
+    mockArticleCommentsState,
+} from '../../../__mocks__';
 import { selectLoading } from '.';
 
 describe('selectLoading', () => {

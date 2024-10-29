@@ -1,4 +1,7 @@
-import { mockInitialAppState, mockArticleListState } from '../../../../__mocks__';
+import {
+    mockInitialAppState,
+    mockArticleListState,
+} from '../../../../__mocks__';
 import { selectType } from '.';
 import { ArticleTypes } from '../../../const';
 
