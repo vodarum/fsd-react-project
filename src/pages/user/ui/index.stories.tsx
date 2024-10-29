@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import User from '.';
-import { mockUsers } from '@/entities/user';
-import { mockUserState, userReducer } from '@/features/user';
+import { mockUsers } from '@/entities/user/testing';
+import { mockUserState, userReducer } from '@/features/user/testing';
 import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 
 const meta = {

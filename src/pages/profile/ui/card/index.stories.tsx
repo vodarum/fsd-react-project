@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ProfileCard } from '.';
-import { mockUsers } from '@/entities/user';
+import { mockUsers } from '@/entities/user/testing';
 import {
     mockUserState,
     userReducer,
     ValidateUserErrors,
-} from '@/features/user';
+} from '@/features/user/testing';
 import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 
 const meta = {

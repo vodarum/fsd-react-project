@@ -5,7 +5,7 @@ import {
     articleListReducer,
     mockArticleListEntityState,
     mockArticleListState,
-} from '@/entities/article';
+} from '@/entities/article/testing';
 
 const meta = {
     title: 'pages/Articles',

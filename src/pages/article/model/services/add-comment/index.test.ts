@@ -1,8 +1,8 @@
-import { mockComments } from '@/entities/comment';
-import { addComment } from '.';
+import { mockArticles, mockArticleState } from '@/entities/article/testing';
+import { mockComments } from '@/entities/comment/testing';
+import { mockSession, mockSessionState } from '@/entities/session/testing';
 import { testAsyncThunk } from '@/shared/lib/tests/test-async-thunk';
-import { mockSession, mockSessionState } from '@/entities/session';
-import { mockArticles, mockArticleState } from '@/entities/article';
+import { addComment } from '.';
 
 const mockArticle = mockArticles[0];
 const mockState = {

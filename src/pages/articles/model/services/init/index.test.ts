@@ -4,7 +4,7 @@ import {
     fetchList,
     mockAppState,
     mockArticleListState,
-} from '@/entities/article';
+} from '@/entities/article/testing';
 
 jest.mock('entities/article/model/services/fetch-list');
 

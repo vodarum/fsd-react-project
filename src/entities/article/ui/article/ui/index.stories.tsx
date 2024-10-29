@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Article } from '.';
 import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
-import { articleReducer, mockArticles, mockArticleState } from '../../../model';
+import { articleReducer } from '../../../model';
+import { mockArticles, mockArticleState } from '../../../__mocks__';
 
 const meta = {
     title: 'entities/Article/ArticleDetails',

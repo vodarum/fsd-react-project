@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleCard } from '.';
-import { ArticleViewTypes, mockArticles } from '../../../model';
+import { ArticleViewTypes } from '../../../model';
+import { mockArticles } from '../../../__mocks__';
 
 const meta = {
     title: 'entities/Article/ArticleCard',

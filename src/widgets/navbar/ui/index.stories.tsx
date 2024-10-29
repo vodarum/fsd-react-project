@@ -3,7 +3,7 @@ import { Navbar } from '.';
 import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 import { MenuButton } from '@/shared/ui/menu-button';
 import { SettingsButton } from '@/shared/ui/settings-button';
-import { mockSession } from '@/entities/session';
+import { mockSession } from '@/entities/session/testing';
 
 const meta = {
     title: 'widgets/Navbar',
