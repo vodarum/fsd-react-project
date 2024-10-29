@@ -22,11 +22,20 @@ import { CommentList } from '@/entities/comment';
 import { Section } from '@/widgets/section';
 import { VStack } from '@/shared/ui/stack';
 
-const Article = () => {
+const ArticleNotFound = () => {
     const { t } = useTranslation('article');
+
+    return (
+        <Section>
+            <Text>{t('Статья не найдена')}</Text>
+        </Section>
+    );
+};
+
+const Article = () => {
     const { id } = useParams<{ id: string }>();
 
-    if (!id) return <Text>{t('Статья не найдена')}</Text>;
+    if (!id) return <ArticleNotFound />;
 
     const dispatch = useAppDispatch();
 
