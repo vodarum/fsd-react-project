@@ -20,6 +20,6 @@ export const mockComments = [
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
         articleId: 1,
         userId: 1,
-        user: mockUsers[2],
+        user: mockUsers[0],
     },
 ];
