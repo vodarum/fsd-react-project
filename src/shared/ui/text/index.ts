@@ -1,1 +1,1 @@
-export { Text } from './ui';
+export * from './ui';

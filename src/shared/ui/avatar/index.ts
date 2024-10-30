@@ -1,1 +1,1 @@
-export { Avatar, AvatarShapes } from './ui';
+export * from './ui';

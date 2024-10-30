@@ -1,1 +1,1 @@
-export { Skeleton } from './ui';
+export * from './ui';

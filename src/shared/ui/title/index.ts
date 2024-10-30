@@ -1,1 +1,1 @@
-export { Title, TitleLevels } from './ui';
+export * from './ui';
