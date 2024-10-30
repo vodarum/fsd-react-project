@@ -22,4 +22,5 @@ export const buildCssLoader = (isDev: BuildOptions['isDev']): RuleSetRule => ({
         },
         'sass-loader',
     ],
+    exclude: /node_modules/,
 });

@@ -21,10 +21,6 @@ export const buildPlugins = ({
             template: paths.html,
         }),
         new ProgressPlugin(),
-        new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:5].css',
-            chunkFilename: 'css/[name].[contenthash:5].css',
-        }),
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __BASE_URL__: JSON.stringify(baseURL),
@@ -43,6 +39,13 @@ export const buildPlugins = ({
                 cwd: process.cwd(),
             }),
             new ForkTsCheckerWebpackPlugin(),
+        );
+    } else {
+        plugins.push(
+            new MiniCssExtractPlugin({
+                filename: 'css/[name].[contenthash:5].css',
+                chunkFilename: 'css/[name].[contenthash:5].css',
+            }),
         );
     }
 

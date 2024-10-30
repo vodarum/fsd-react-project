@@ -27,7 +27,7 @@ export const buildWebpackConfig = (options: BuildOptions): Configuration => {
         ? {
             ...baseConfig,
             devServer: buildDevServer(options),
-            devtool: 'inline-source-map',
+            devtool: 'eval-cheap-module-source-map',
         }
         : baseConfig;
 };

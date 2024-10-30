@@ -23,7 +23,8 @@
         "storybook": "storybook dev -p 6006 -c ./config/storybook",
         "storybook:build": "storybook build -c ./config/storybook",
         "prepare": "husky",
-        "create:slice": "node scripts/create-slice/index.js"
+        "create:slice": "node scripts/create-slice/index.js",
+        "postinstall": "rimraf ./node_modules/.cache"
     },
     "keywords": [],
     "author": "",
@@ -149,7 +150,14 @@
             "public"
         ]
     },
-    "browserslist": [
-        "defaults and fully supports es6-module"
-    ]
+    "browserslist": {
+        "production": [
+            "defaults and fully supports es6-module"
+        ],
+        "development": [
+            "last 2 Chrome versions",
+            "last 2 Firefox versions",
+            "last 2 Safari versions"
+        ]
+    }
 }

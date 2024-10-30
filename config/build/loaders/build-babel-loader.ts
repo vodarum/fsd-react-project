@@ -1,18 +1,20 @@
-import { RuleSetRule } from 'webpack';
+import { type RuleSetRule } from 'webpack';
 import { babelAttributeExtractPlugin } from '../../babel/babel-attribute-extract-plugin';
+import { type BuildOptions } from '../types';
 
-type BabelLoaderBuildOptions = {
+type BabelLoaderBuildOptions = Pick<BuildOptions, 'isDev'> & {
     isTSX: boolean;
 };
 
 export const buildBabelLoader = ({
+    isDev,
     isTSX,
 }: BabelLoaderBuildOptions): RuleSetRule => ({
     test: isTSX ? /\.(j|t)sx$/ : /\.(j|t)s$/,
-    exclude: /node_modules/,
     use: {
         loader: 'babel-loader',
         options: {
+            cacheDirectory: true,
             targets: 'defaults',
             presets: [
                 ['@babel/preset-env'],
@@ -26,7 +28,8 @@ export const buildBabelLoader = ({
             ],
             plugins: [
                 '@babel/plugin-transform-runtime',
-                isTSX && [
+                isTSX &&
+                    !isDev && [
                     babelAttributeExtractPlugin,
                     {
                         attrs: ['data-testid'],
@@ -35,4 +38,5 @@ export const buildBabelLoader = ({
             ].filter(Boolean),
         },
     },
+    exclude: /node_modules/,
 });
