@@ -1,12 +1,12 @@
 import cls from './index.module.scss';
 import { Comment } from '../../model';
 import { memo } from 'react';
+import { AppRoutes } from '@/shared/api';
 import { classNames } from '@/shared/lib/class-names';
 import { Avatar } from '@/shared/ui/avatar';
 import { Skeleton } from '@/shared/ui/skeleton';
 import { Text } from '@/shared/ui/text';
 import { AppLink } from '@/shared/ui/app-link';
-import { appRoutePaths } from '@/app/providers/router';
 
 type CommentCardBaseProps = {
     className?: string;
@@ -41,7 +41,7 @@ const CommentCard = memo(({ className, data }: CommentCardProps) => {
         <div className={classNames(cls.card, {}, [className])}>
             <AppLink
                 className={cls.header}
-                to={`${appRoutePaths.user}${data.user.id}`}
+                to={`${AppRoutes.user}${data.user.id}`}
             >
                 <Avatar src={data.user.avatar} size={avatarSize} />
                 <Text>{data.user.username}</Text>

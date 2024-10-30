@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { APP_SESSION_LS_KEY } from './const';
+import { APP_SESSION_LS_KEY } from './consts';
 
 const getToken = (): string => {
     const session = localStorage.getItem(APP_SESSION_LS_KEY);

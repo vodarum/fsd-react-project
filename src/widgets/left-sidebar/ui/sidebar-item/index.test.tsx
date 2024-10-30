@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { SidebarItem } from '.';
-import { navRoutes } from '@/app/providers/router';
+import { navRoutes } from '@/shared/api';
 import { componentRender } from '@/shared/lib/tests/component-render';
 
 describe('SidebarItem', () => {

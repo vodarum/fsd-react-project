@@ -1,5 +1,5 @@
 import cls from './index.module.scss';
-import { navRoutes } from '@/app/providers/router';
+import { navRoutes } from '@/shared//api';
 import { classNames } from '@/shared/lib/class-names';
 import { memo } from 'react';
 import { SidebarItem } from '../sidebar-item';

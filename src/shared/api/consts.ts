@@ -1,5 +1,15 @@
 const APP_SESSION_LS_KEY = 'session';
 
+const AppRoutes = {
+    main: '/',
+    about: '/about',
+    profile: '/profile',
+    articles: '/articles',
+    article: '/articles/',
+    user: '/users/',
+    notFound: '*',
+} as const;
+
 const Countries = {
     Russia: 'Russia',
     Belarus: 'Belarus',
@@ -19,4 +29,4 @@ const SortOrders = {
     desc: 'desc',
 } as const;
 
-export { APP_SESSION_LS_KEY, Countries, Currencies, SortOrders };
+export { APP_SESSION_LS_KEY, AppRoutes, Countries, Currencies, SortOrders };

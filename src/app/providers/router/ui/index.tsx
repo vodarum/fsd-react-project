@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { useRoutes } from 'react-router-dom';
 import { PageLoader } from '@/widgets/page-loader';
 import { ProtectedRoute } from './protected-route';
-import { routes } from '../config';
+import { routes } from '../config/routes';
 
 export const AppRouter = () => {
     const routeElements = useRoutes(

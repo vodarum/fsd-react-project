@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { APP_SESSION_LS_KEY } from './const';
+import { APP_SESSION_LS_KEY } from './consts';
 
 export const $rtkApi = createApi({
     baseQuery: fetchBaseQuery({

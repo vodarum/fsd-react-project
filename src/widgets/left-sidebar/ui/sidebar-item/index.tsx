@@ -1,12 +1,12 @@
 import cls from './index.module.scss';
-import { type NavRoute } from '@/app/providers/router';
+import { sessionSelectors } from '@/entities/session';
+import { NavRoute } from '@/shared/api';
 import { classNames } from '@/shared/lib/class-names';
 import { AppLink } from '@/shared/ui/app-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { sessionSelectors } from '@/entities/session';
 
 type SidebarItemProps = NavRoute & {
     collapsed?: boolean;

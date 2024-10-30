@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { SidebarItem } from '.';
-import { navRoutes } from '@/app/providers/router';
+import { navRoutes } from '@/shared/api';
 import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 
 const meta = {

@@ -1,4 +1,6 @@
-import { Countries, Currencies, SortOrders } from './const';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { RouteObject } from 'react-router-dom';
+import { Countries, Currencies, SortOrders } from './consts';
 
 type Country = (typeof Countries)[keyof typeof Countries];
 
@@ -15,4 +17,24 @@ type PropsWithClassName = {
 
 type SortOrder = (typeof SortOrders)[keyof typeof SortOrders];
 
-export type { Country, Currency, ModalOptions, PropsWithClassName, SortOrder };
+type RouteMeta = Partial<{
+    icon: IconDefinition;
+    requiresAuth: boolean;
+}>;
+
+type AppRouteObject = RouteObject & {
+    name?: string;
+    meta?: RouteMeta;
+};
+
+type NavRoute = Required<Pick<AppRouteObject, 'path' | 'name' | 'meta'>>;
+
+export type {
+    AppRouteObject,
+    Country,
+    Currency,
+    ModalOptions,
+    NavRoute,
+    PropsWithClassName,
+    SortOrder,
+};
