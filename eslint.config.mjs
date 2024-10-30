@@ -3,6 +3,7 @@ import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 import pluginI18next from 'eslint-plugin-i18next';
+import pluginUnusedImports from 'eslint-plugin-unused-imports';
 
 export default [
     { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
@@ -14,6 +15,7 @@ export default [
     {
         plugins: {
             i18next: pluginI18next,
+            'unused-imports': pluginUnusedImports,
         },
         rules: {
             indent: ['error', 4, { SwitchCase: 1 }],
@@ -23,6 +25,7 @@ export default [
             ],
             'react/display-name': 'off',
             '@typescript-eslint/ban-ts-comment': 'off',
+            'unused-imports/no-unused-imports': 'error',
         },
         settings: {
             react: {
