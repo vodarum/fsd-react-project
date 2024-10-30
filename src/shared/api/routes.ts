@@ -7,35 +7,61 @@ import {
 import { AppRoutes } from './consts';
 import { NavRoute } from './types';
 
-export const navRoutes: NavRoute[] = [
+const getRouteMain = () => '/';
+
+const getRouteAbout = () => '/about';
+
+const getRouteProfile = () => `/profile`;
+
+const getRouteArticles = () => '/articles';
+
+const getRouteArticle = (id: string) => `/articles/${id}`;
+
+const getRouteUser = (id: string) => `/users/${id}`;
+
+const navRoutes: NavRoute[] = [
     {
+        id: AppRoutes.main,
         name: 'Главная',
-        path: AppRoutes.main,
+        path: getRouteMain(),
         meta: {
             icon: faHome,
         },
     },
     {
+        id: AppRoutes.about,
         name: 'O сайте',
-        path: AppRoutes.about,
+        path: getRouteAbout(),
         meta: {
             icon: faClipboardList,
         },
     },
     {
+        id: AppRoutes.profile,
         name: 'Профиль',
-        path: AppRoutes.profile,
+        path: getRouteProfile(),
         meta: {
             icon: faAddressCard,
             requiresAuth: true,
         },
     },
     {
+        id: AppRoutes.articles,
         name: 'Статьи',
-        path: AppRoutes.articles,
+        path: getRouteArticles(),
         meta: {
             icon: faNewspaper,
             requiresAuth: true,
         },
     },
 ];
+
+export {
+    getRouteMain,
+    getRouteAbout,
+    getRouteProfile,
+    getRouteArticles,
+    getRouteArticle,
+    getRouteUser,
+    navRoutes,
+};

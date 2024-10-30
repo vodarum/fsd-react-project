@@ -1,13 +1,13 @@
 const APP_SESSION_LS_KEY = 'session';
 
 const AppRoutes = {
-    main: '/',
-    about: '/about',
-    profile: '/profile',
-    articles: '/articles',
-    article: '/articles/',
-    user: '/users/',
-    notFound: '*',
+    main: 'main',
+    about: 'about',
+    profile: 'profile',
+    articles: 'articles',
+    article: 'article',
+    user: 'user',
+    notFound: 'notFound',
 } as const;
 
 const Countries = {

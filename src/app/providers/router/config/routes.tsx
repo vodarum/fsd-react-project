@@ -6,7 +6,13 @@ import { NotFound } from '@/pages/not-found';
 import { Profile } from '@/pages/profile';
 import { RouteObject } from 'react-router-dom';
 import { User } from '@/pages/user';
-import { AppRoutes, navRoutes, type AppRouteObject } from '@/shared/api';
+import {
+    AppRoutes,
+    getRouteArticle,
+    getRouteUser,
+    navRoutes,
+    type AppRouteObject,
+} from '@/shared/api';
 
 const navRouteElements: Record<string, RouteObject> = {
     [AppRoutes.main]: {
@@ -17,7 +23,6 @@ const navRouteElements: Record<string, RouteObject> = {
     },
     [AppRoutes.profile]: {
         element: <Profile />,
-        path: AppRoutes.profile,
     },
     [AppRoutes.articles]: {
         element: <Articles />,
@@ -27,24 +32,24 @@ const navRouteElements: Record<string, RouteObject> = {
 export const routes: AppRouteObject[] = [
     ...navRoutes.map((r) => ({
         ...r,
-        ...navRouteElements[r.path],
+        ...navRouteElements[r.id],
     })),
     {
-        path: AppRoutes.article + ':id',
+        path: getRouteArticle(':id'),
         element: <Article />,
         meta: {
             requiresAuth: true,
         },
     },
     {
-        path: AppRoutes.user + ':id',
+        path: getRouteUser(':id'),
         element: <User />,
         meta: {
             requiresAuth: true,
         },
     },
     {
-        path: AppRoutes.notFound,
+        path: '*',
         element: <NotFound />,
     },
 ] as const;

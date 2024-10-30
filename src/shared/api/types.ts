@@ -27,7 +27,7 @@ type AppRouteObject = RouteObject & {
     meta?: RouteMeta;
 };
 
-type NavRoute = Required<Pick<AppRouteObject, 'path' | 'name' | 'meta'>>;
+type NavRoute = Required<Pick<AppRouteObject, 'id' | 'path' | 'name' | 'meta'>>;
 
 export type {
     AppRouteObject,
