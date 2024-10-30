@@ -15,5 +15,6 @@ export const AppRouter = () => {
             ),
         })),
     );
+
     return <Suspense fallback={<PageLoader />}>{routeElements}</Suspense>;
 };
