@@ -68,6 +68,7 @@
         "eslint-plugin-i18next": "^6.0.9",
         "eslint-plugin-react": "^7.35.0",
         "eslint-plugin-storybook": "^0.8.0",
+        "eslint-plugin-unused-imports": "^4.1.4",
         "file-loader": "^6.2.0",
         "fork-ts-checker-webpack-plugin": "^9.0.2",
         "globals": "^15.9.0",
