@@ -80,6 +80,7 @@
         "jest-environment-jsdom": "^29.7.0",
         "jest-html-reporters": "^3.1.7",
         "json-server": "^0.17.4",
+        "lint-staged": "^15.2.10",
         "loki": "^0.35.0",
         "mini-css-extract-plugin": "^2.9.0",
         "msw": "^2.4.11",
@@ -159,5 +160,8 @@
             "last 2 Firefox versions",
             "last 2 Safari versions"
         ]
+    },
+    "lint-staged": {
+        "**/*.ts?(x)": "eslint"
     }
 }
