@@ -31,5 +31,7 @@
     "IT": "IT",
     "Science": "Science",
     "Economics": "Economics",
-    "Ваша оценка": "Your rating"
+    "Ваша оценка": "Your rating",
+    "Административная панель": "Admin panel",
+    "У вас нет доступа к этой странице": "You do not have access to this page"
 }
