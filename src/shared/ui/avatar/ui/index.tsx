@@ -1,38 +1,55 @@
 import { CSSProperties, memo, useMemo } from 'react';
 import Image from './image.jpg';
+import { PropsWithClassName } from '@/shared/api';
+import { AppImage } from '../../app-image';
+import { Skeleton } from '../../skeleton';
 
-const AvatarShapes = {
-    circle: 'circle',
-    square: 'square',
-} as const;
-
-type AvatarProps = {
-    className?: string;
+type AvatarProps = PropsWithClassName & {
     src?: string;
     alt?: string;
     size?: number;
-    shape?: (typeof AvatarShapes)[keyof typeof AvatarShapes];
+    shape?: 'circle' | 'square';
 };
 
-const Avatar = memo(
-    ({
-        className,
-        src = Image,
-        alt,
-        size,
-        shape = AvatarShapes.circle,
-    }: AvatarProps) => {
-        const style: CSSProperties = useMemo(
-            () => ({
-                width: size ? `${size}px` : '100px',
-                height: size ? `${size}px` : '100px',
-                borderRadius: shape === AvatarShapes.square ? `5%` : '50%',
-            }),
-            [size, shape],
-        );
+export const Avatar = memo((props: AvatarProps) => {
+    const { className, src, alt, size, shape = 'circle' } = props;
 
-        return <img className={className} style={style} src={src} alt={alt} />;
-    },
-);
+    const width = size ? `${size}px` : '100px';
+    const height = size ? `${size}px` : '100px';
+    const borderRadius = shape === 'square' ? `5%` : '50%';
 
-export { Avatar, AvatarShapes };
+    const style: CSSProperties = useMemo(
+        () => ({
+            width,
+            height,
+            borderRadius,
+        }),
+        [size, shape],
+    );
+
+    return (
+        <AppImage
+            className={className}
+            style={style}
+            src={src}
+            alt={alt}
+            fallback={
+                <Skeleton
+                    width={width}
+                    height={height}
+                    radius={borderRadius}
+                    active
+                />
+            }
+            errorFallback={
+                // TODO: отображается сначала fallback, затем errorFallback
+                <AppImage
+                    className={className}
+                    style={style}
+                    src={Image}
+                    alt={alt}
+                />
+            }
+        />
+    );
+});

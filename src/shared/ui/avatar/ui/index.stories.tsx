@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Avatar, AvatarShapes } from '.';
+import { Avatar } from '.';
 import Image from './image.jpg';
 
 const meta = {
@@ -29,6 +29,6 @@ export const WithSize: Story = {
 export const Square: Story = {
     args: {
         size: 250,
-        shape: AvatarShapes.square,
+        shape: 'square',
     },
 };
