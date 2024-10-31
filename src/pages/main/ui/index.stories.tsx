@@ -1,21 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Main from '.';
+import { PageDecorator } from '@/shared/config/storybook/page-decorator';
 import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 
 const meta = {
     title: 'pages/Main',
     component: Main,
     tags: ['autodocs'],
-    decorators: [
-        StoreDecorator({}),
-        (Story) => (
-            <div className='layout' style={{ height: '100vh' }}>
-                <main className='layout-main'>
-                    <Story />
-                </main>
-            </div>
-        ),
-    ],
+    decorators: [PageDecorator, StoreDecorator({})],
 } satisfies Meta<typeof Main>;
 
 export default meta;

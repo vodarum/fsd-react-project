@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Article from '.';
+import { PageDecorator } from '@/shared/config/storybook/page-decorator';
 import { StoreDecorator } from '@/shared/config/storybook/store-decorator';
 import {
     articleReducer,
@@ -25,13 +26,7 @@ const meta = {
     component: Article,
     tags: ['autodocs'],
     decorators: [
-        (Story) => (
-            <div className='layout' style={{ height: '100vh' }}>
-                <main className='layout-main'>
-                    <Story />
-                </main>
-            </div>
-        ),
+        PageDecorator,
         StoreDecorator({
             preloadedReducer: {
                 article: articleReducer,
