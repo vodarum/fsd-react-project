@@ -6,6 +6,8 @@ import {
 } from '../../__mocks__';
 import { fetchRecommendations } from '../services';
 
+const mockArticleId = 1;
+
 describe('articleRecommendationsSlice', () => {
     test('fetchByArticleId pending', () => {
         expect(
@@ -14,7 +16,7 @@ describe('articleRecommendationsSlice', () => {
                     ...mockArticleRecommendationsState,
                     error: 'Some error',
                 },
-                fetchRecommendations.pending(''),
+                fetchRecommendations.pending('', mockArticleId),
             ),
         ).toEqual({
             ...mockArticleRecommendationsState,
@@ -27,7 +29,7 @@ describe('articleRecommendationsSlice', () => {
         expect(
             articleRecommendationsReducer(
                 mockArticleRecommendationsState,
-                fetchRecommendations.fulfilled(mockRecommendations, ''),
+                fetchRecommendations.fulfilled(mockRecommendations, '', mockArticleId),
             ),
         ).toEqual({
             ...mockArticleRecommendationsState,
