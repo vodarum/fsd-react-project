@@ -1,35 +1,21 @@
 import cls from './index.module.scss';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import {
-    useAppDispatch,
-    useAsyncStore,
-    useInitialEffect,
-} from '@/shared/lib/hooks';
 import { Text } from '@/shared/ui/text';
 import { Title } from '@/shared/ui/title';
 import { UserCard, UserCardSkeleton } from '@/entities/user';
-import { fetchById, userReducer, userSelectors } from '@/features/user';
 import { Section } from '@/widgets/section';
+import { useGetUserQuery } from '../api';
 
 const User = () => {
     const { t } = useTranslation('user');
-    const dispatch = useAppDispatch();
     const { id } = useParams<{ id: string }>();
-    const user = useSelector(userSelectors.selectUserData);
-    const loading = useSelector(userSelectors.selectLoading);
 
-    useAsyncStore({
-        user: userReducer,
-    });
+    if (!id) return null;
 
-    useInitialEffect(() => {
-        // @ts-ignore
-        if (id) dispatch(fetchById(+id));
-    }, [dispatch]);
+    const { data, isLoading } = useGetUserQuery(+id);
 
-    if (loading) {
+    if (isLoading) {
         return (
             <>
                 <Title className={cls.title}>{t('Пользователь')}</Title>;
@@ -41,8 +27,8 @@ const User = () => {
     return (
         <Section>
             <Title className={cls.title}>{t('Пользователь')}</Title>
-            {user ? (
-                <UserCard data={user} />
+            {data ? (
+                <UserCard data={data} />
             ) : (
                 <Text className='text-error'>
                     {t('Пользователь не найден')}
