@@ -63,7 +63,7 @@ const Article = () => {
         <Section>
             <VStack align='stretch' gap={32}>
                 <ArticleDetails id={+id} />
-                <ArticleRecommendations />
+                <ArticleRecommendations articleId={+id} />
                 <ArticleRating articleId={+id} />
                 <CommentList
                     items={comments}
