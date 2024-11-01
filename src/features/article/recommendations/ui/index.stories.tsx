@@ -12,6 +12,9 @@ const meta = {
     },
     tags: ['autodocs'],
     decorators: [StoreDecorator({})],
+    args: {
+        articleId: 1,
+    },
 } satisfies Meta<typeof ArticleRecommendations>;
 
 export default meta;
@@ -22,7 +25,7 @@ export const Normal: Story = {
         msw: {
             handlers: [
                 http.get(
-                    `${__BASE_URL__}/articles?_expand=user&_limit=4`,
+                    `${__BASE_URL__}/articles?_expand=user&_limit=4&id_ne=1`,
                     () => {
                         return HttpResponse.json(mockRecommendations);
                     },

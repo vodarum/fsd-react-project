@@ -8,9 +8,9 @@ import {
 
 export const fetchRecommendations = createAsyncThunk<
     Article[],
-    void,
+    number,
     ThunkAPI<string>
->('article/fetchRecommendations', async (_, thunkAPI) => {
+>('article/fetchRecommendations', async (articleId, thunkAPI) => {
     const { extra, rejectWithValue } = thunkAPI;
 
     try {
@@ -18,6 +18,7 @@ export const fetchRecommendations = createAsyncThunk<
             params: {
                 _expand: 'user',
                 _limit: ArticlesNumberPerPage[ArticleViewTypes.slider],
+                id_ne: articleId,
             },
         });
 

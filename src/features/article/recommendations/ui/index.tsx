@@ -6,22 +6,29 @@ import { Text } from '@/shared/ui/text';
 import cls from './index.module.scss';
 import { useGetRecommendationsQuery } from '../api';
 
-export const ArticleRecommendations = memo(() => {
-    const { t } = useTranslation('article');
-    const { data, isLoading, error } = useGetRecommendationsQuery(4);
+type ArticleRecommendationsProps = {
+    articleId: number;
+};
 
-    if (isLoading || error || !data) return null;
+export const ArticleRecommendations = memo(
+    ({ articleId }: ArticleRecommendationsProps) => {
+        const { t } = useTranslation('article');
+        const { data, isLoading, error } =
+            useGetRecommendationsQuery(articleId);
 
-    return (
-        <VStack align='stretch' gap={16}>
-            <Text className={cls.title}>{t('Рекомендуем')}</Text>
-            <ArticleList
-                className={cls.list}
-                items={data}
-                loading={isLoading}
-                openInNewTab={true}
-                view={ArticleViewTypes.slider}
-            />
-        </VStack>
-    );
-});
+        if (isLoading || error || !data) return null;
+
+        return (
+            <VStack align='stretch' gap={16}>
+                <Text className={cls.title}>{t('Рекомендуем')}</Text>
+                <ArticleList
+                    className={cls.list}
+                    items={data}
+                    loading={isLoading}
+                    openInNewTab={true}
+                    view={ArticleViewTypes.slider}
+                />
+            </VStack>
+        );
+    },
+);

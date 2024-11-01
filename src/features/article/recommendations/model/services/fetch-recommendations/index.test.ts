@@ -4,10 +4,12 @@ import { mockRecommendations } from '../../../__mocks__';
 import { ArticlesNumberPerPage, ArticleViewTypes } from '@/entities/article';
 
 const url = `/articles`;
+const mockArticleId = 1;
 const requestOptions = {
     params: {
         _expand: 'user',
         _limit: ArticlesNumberPerPage[ArticleViewTypes.slider],
+        id_ne: mockArticleId,
     },
 };
 
@@ -20,7 +22,7 @@ describe('fetchRecommendations', () => {
             Promise.resolve({ data: mockRecommendations }),
         );
 
-        const result = await callThunk();
+        const result = await callThunk(mockArticleId);
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(api.get).toHaveBeenCalledWith(url, requestOptions);
@@ -34,7 +36,7 @@ describe('fetchRecommendations', () => {
 
         api.get.mockReturnValueOnce(Promise.resolve({ status: 403 }));
 
-        const result = await callThunk();
+        const result = await callThunk(mockArticleId);
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(api.get).toHaveBeenCalledWith(url, requestOptions);
