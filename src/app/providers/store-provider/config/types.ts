@@ -19,8 +19,8 @@ import { $rtkApi } from '@/shared/api';
 type State = {
     [$rtkApi.reducerPath]: ReturnType<typeof $rtkApi.reducer>;
     session: SessionState;
+    user: UserState;
     scrollPosition: ScrollPositionState;
-    user?: UserState;
     login?: LoginState;
     article?: ArticleState;
     articleComments?: ArticleCommentsState;

@@ -1,5 +1,6 @@
 import { configureStore, Reducer } from '@reduxjs/toolkit';
 import { sessionReducer } from '@/entities/session';
+import { userReducer } from '@/features/user';
 import { $api, $rtkApi } from '@/shared/api';
 import { scrollPositionReducer } from '@/widgets/section';
 import { createReducerManager } from './reducer-manager';
@@ -13,6 +14,7 @@ export const configureAppStore = ({
     const reducerManager = createReducerManager({
         ...preloadedReducer,
         session: sessionReducer,
+        user: userReducer,
         scrollPosition: scrollPositionReducer,
         [$rtkApi.reducerPath]: $rtkApi.reducer,
     });

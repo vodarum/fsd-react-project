@@ -9,7 +9,7 @@ const mockUserState: UserState = {
 };
 
 const mockInitialAppState: State = {
-    user: undefined,
+    user: mockUserState,
 } as State;
 
 export { mockUserState, mockInitialAppState };
