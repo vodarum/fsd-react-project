@@ -1,4 +1,8 @@
-import { Article, ArticlesNumberPerPage, ArticleViewTypes } from '@/entities/article';
+import {
+    Article,
+    ArticlesNumberPerPage,
+    ArticleViewTypes,
+} from '@/entities/article';
 import { $rtkApi } from '@/shared/api';
 
 const articleRecommendationsApi = $rtkApi.injectEndpoints({

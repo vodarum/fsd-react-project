@@ -13,7 +13,7 @@ type Reducers = {
 
 export const useAsyncStore = (
     reducers: Reducers,
-    removeOnUnmount: boolean = true,
+    removeOnUnmount: boolean = true, // TODO: флаг должен передаваться на конкретный редуктор
 ) => {
     const store = useStore() as StoreWithReducerManager;
     const dispatch = useDispatch();

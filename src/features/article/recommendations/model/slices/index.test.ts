@@ -29,7 +29,11 @@ describe('articleRecommendationsSlice', () => {
         expect(
             articleRecommendationsReducer(
                 mockArticleRecommendationsState,
-                fetchRecommendations.fulfilled(mockRecommendations, '', mockArticleId),
+                fetchRecommendations.fulfilled(
+                    mockRecommendations,
+                    '',
+                    mockArticleId,
+                ),
             ),
         ).toEqual({
             ...mockArticleRecommendationsState,
