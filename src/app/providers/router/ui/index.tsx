@@ -9,7 +9,9 @@ export const AppRouter = () => {
         routes.map((r) => ({
             ...r,
             element: r.meta?.requiresAuth ? (
-                <ProtectedRoute>{r.element}</ProtectedRoute>
+                <ProtectedRoute availableFor={r.meta?.availableFor}>
+                    {r.element}
+                </ProtectedRoute>
             ) : (
                 r.element
             ),

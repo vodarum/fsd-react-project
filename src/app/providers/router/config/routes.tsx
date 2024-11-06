@@ -8,11 +8,15 @@ import { RouteObject } from 'react-router-dom';
 import { User } from '@/pages/user';
 import {
     AppRoutes,
+    getRouteAdmin,
     getRouteArticle,
+    getRouteForbidden,
     getRouteUser,
     navRoutes,
     type AppRouteObject,
 } from '@/shared/api';
+import { Admin } from '@/pages/admin';
+import { Forbidden } from '@/pages/forbidden';
 
 const navRouteElements: Record<string, RouteObject> = {
     [AppRoutes.main]: {
@@ -44,6 +48,21 @@ export const routes: AppRouteObject[] = [
     {
         path: getRouteUser(':id'),
         element: <User />,
+        meta: {
+            requiresAuth: true,
+        },
+    },
+    {
+        path: getRouteAdmin(),
+        element: <Admin />,
+        meta: {
+            requiresAuth: true,
+            availableFor: ['admin', 'manager'],
+        },
+    },
+    {
+        path: getRouteForbidden(),
+        element: <Forbidden />,
         meta: {
             requiresAuth: true,
         },

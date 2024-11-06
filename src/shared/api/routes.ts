@@ -19,6 +19,10 @@ const getRouteArticle = (id: string) => `/articles/${id}`;
 
 const getRouteUser = (id: string) => `/users/${id}`;
 
+const getRouteAdmin = () => '/admin';
+
+const getRouteForbidden = () => `/forbidden`;
+
 const navRoutes: NavRoute[] = [
     {
         id: AppRoutes.main,
@@ -63,5 +67,7 @@ export {
     getRouteArticles,
     getRouteArticle,
     getRouteUser,
+    getRouteAdmin,
+    getRouteForbidden,
     navRoutes,
 };

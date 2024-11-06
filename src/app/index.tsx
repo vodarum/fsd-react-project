@@ -1,20 +1,23 @@
 import './styles/index.scss';
 import { AppRouter } from './providers/router';
-import { sessionActions } from '@/entities/session';
-import { Suspense, useCallback, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { Suspense, useCallback, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { sessionActions, sessionSelectors } from '@/entities/session';
+import { fetchById } from '@/features/user';
 import { APP_SESSION_LS_KEY } from '@/shared/api';
 import { classNames } from '@/shared/lib/class-names';
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks';
 import { useTheme } from '@/shared/lib/theme';
+import { MenuButton } from '@/shared/ui/menu-button';
+import { SettingsButton } from '@/shared/ui/settings-button';
 import { Navbar } from '@/widgets/navbar';
 import { LeftSidebar } from '@/widgets/left-sidebar';
 import { RightSidebar } from '@/widgets/right-sidebar';
-import { MenuButton } from '@/shared/ui/menu-button';
-import { SettingsButton } from '@/shared/ui/settings-button';
 
 export const App = () => {
     const { theme } = useTheme();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
+    const session = useSelector(sessionSelectors.selectSessionData);
 
     const [leftSidebarOpen, setLeftSidebarOpen] = useState<boolean>(false);
     const [rightSidebarOpen, setRightSidebarOpen] = useState<boolean>(false);
@@ -31,13 +34,21 @@ export const App = () => {
         setRightSidebarOpen(false);
     }, []);
 
-    useEffect(() => {
+    useInitialEffect(() => {
         const userSession = localStorage.getItem(APP_SESSION_LS_KEY);
 
         if (userSession) {
             dispatch(sessionActions.setData(JSON.parse(userSession)));
         }
     }, [dispatch]);
+
+    useInitialEffect(() => {
+        if (session?.userId) {
+            localStorage.setItem(APP_SESSION_LS_KEY, JSON.stringify(session));
+            // @ts-ignore
+            dispatch(fetchById(session.userId));
+        }
+    }, [dispatch, session]);
 
     return (
         <div className={classNames('app layout', {}, [theme])}>

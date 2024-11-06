@@ -15,6 +15,8 @@ export const UserMenuButton = ({ className }: UserMenuButtonProps) => {
     const { t } = useTranslation('navigation');
     const dispatch = useAppDispatch();
     const data = useSelector(userSelectors.selectUserData);
+    const userIsLoading = useSelector(userSelectors.selectLoading);
+    const hasRole = useSelector(userSelectors.selectHasRole);
     const handleLogoutClick = useCallback(() => {
         dispatch(sessionActions.resetData());
     }, [dispatch]);
@@ -29,15 +31,27 @@ export const UserMenuButton = ({ className }: UserMenuButtonProps) => {
                 content: t('Профиль'),
                 to: '/profile',
             },
+            ...(hasRole('admin')
+                ? [
+                      {
+                          content: t('Админ панель'),
+                          to: '/admin',
+                      } as DropdownItem,
+                ]
+                : []),
         ],
-        [t, handleLogoutClick],
+        [t, handleLogoutClick, hasRole],
     );
+
+    const avatar = <Avatar src={data?.avatar} size={30} />;
+
+    if (userIsLoading) return avatar;
 
     return (
         <Dropdown
             className={className}
             anchor='bottom end'
-            activator={<Avatar src={data?.avatar} size={30} />}
+            activator={avatar}
             items={items}
         />
     );
