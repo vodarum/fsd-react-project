@@ -8,7 +8,9 @@ const getToken = (): string => {
 
 export const $api = axios.create({
     baseURL: __BASE_URL__,
-    headers: {
-        authorization: getToken(),
-    },
+});
+
+$api.interceptors.request.use((config) => {
+    config.headers.set('authorization', getToken());
+    return config;
 });
