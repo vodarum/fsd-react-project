@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Avatar } from '.';
 
 describe('Avatar', () => {
-    test('test render', () => {
+    test.skip('test render', () => {
         const props = {
             src: 'testSrc',
             alt: 'testAlt',

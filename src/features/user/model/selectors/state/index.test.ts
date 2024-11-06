@@ -1,19 +1,25 @@
 import { mockInitialAppState, mockUserState } from '../../../__mocks__';
 import { selectUserState } from '.';
+import { mockUsers } from '@/entities/user/testing';
 
 describe('selectUserState', () => {
-    test('returns undefined for initial app state', () => {
-        expect(selectUserState(mockInitialAppState)).toBeUndefined();
+    test('returns user state for initial app state', () => {
+        expect(selectUserState(mockInitialAppState)).toEqual(mockUserState);
     });
 
-    test(`returns state`, () => {
+    test(`returns user state`, () => {
+        const newMockUserState = {
+            ...mockUserState,
+            data: mockUsers[0],
+        };
+
         expect(
             selectUserState({
                 ...mockInitialAppState,
                 ...{
-                    user: mockUserState,
+                    user: newMockUserState,
                 },
             }),
-        ).toEqual(mockUserState);
+        ).toEqual(newMockUserState);
     });
 });
