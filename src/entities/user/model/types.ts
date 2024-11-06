@@ -1,4 +1,4 @@
-import { Country, Currency } from '@/shared/api';
+import { Country, Currency, UserRole } from '@/shared/api';
 
 type User = Partial<{
     id: number;
@@ -11,6 +11,7 @@ type User = Partial<{
     country: Country;
     city: string;
     avatar: string;
+    roles: UserRole[];
 }>;
 
 export type { User };

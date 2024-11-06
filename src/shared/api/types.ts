@@ -17,9 +17,12 @@ type PropsWithClassName = {
 
 type SortOrder = (typeof SortOrders)[keyof typeof SortOrders];
 
+type UserRole = 'admin' | 'manager' | 'user';
+
 type RouteMeta = Partial<{
     icon: IconDefinition;
     requiresAuth: boolean;
+    availableFor: UserRole[];
 }>;
 
 type AppRouteObject = RouteObject & {
@@ -36,5 +39,7 @@ export type {
     ModalOptions,
     NavRoute,
     PropsWithClassName,
+    RouteMeta,
     SortOrder,
+    UserRole,
 };

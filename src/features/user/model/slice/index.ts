@@ -35,6 +35,8 @@ const userSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchById.pending, (state) => {
+                state.data = undefined;
+                state.form = undefined;
                 state.error = undefined;
                 state.loading = true;
             })

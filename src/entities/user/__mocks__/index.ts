@@ -17,6 +17,7 @@ const mockUsers: User[] = [
         avatar: ImageSunnyLion,
         // avatar: 'https://us.123rf.com/450wm/whitecity/whitecity2403/whitecity240301752/227835211-lion-in-sunglasses-vector-illustration-of-a-lion-with-sunglasses.jpg?ver=6',
         // avatar: 'https://png.pngtree.com/png-clipart/20230916/original/pngtree-cartoon-sticker-cute-lion-with-glasses-clipart-vector-png-image_12252135.png',
+        roles: ['admin'],
     },
     {
         id: 2,
@@ -30,6 +31,7 @@ const mockUsers: User[] = [
         city: 'Волгоград',
         avatar: ImageMan,
         // avatar: 'https://img.freepik.com/premium-photo/3d-style-avatar-profile-picture-featuring-male-character-generative-ai_739548-13626.jpg',
+        roles: ['user'],
     },
     {
         id: 3,
@@ -43,6 +45,7 @@ const mockUsers: User[] = [
         city: 'Волгоград',
         avatar: ImageGloomyLion,
         // avatar: 'https://thumbs.dreamstime.com/b/cartoon-lion-glasses-poses-confidently-casual-clothing-character-wearing-attire-long-hair-329908583.jpg',
+        roles: ['manager'],
     },
 ];
 
