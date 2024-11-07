@@ -8,9 +8,7 @@ describe('selectUserData', () => {
     });
 
     test('returns undefined for initial user state', () => {
-        expect(
-            selectUserData(mockInitialAppState),
-        ).toBeUndefined();
+        expect(selectUserData(mockInitialAppState)).toBeUndefined();
     });
 
     test(`returns user object`, () => {

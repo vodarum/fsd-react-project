@@ -10,9 +10,7 @@ describe('selectUserRoles', () => {
     });
 
     test('returns empty array for initial user state', () => {
-        expect(
-            selectUserRoles(mockInitialAppState),
-        ).toEqual([]);
+        expect(selectUserRoles(mockInitialAppState)).toEqual([]);
     });
 
     test(`returns ${mockUser.roles}`, () => {
