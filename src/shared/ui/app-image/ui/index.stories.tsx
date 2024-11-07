@@ -23,7 +23,6 @@ export const Default: Story = {
 
 export const ErrorFallback: Story = {
     args: {
-        src: 'test',
         errorFallback: <Skeleton width={100} height={100} active />,
     },
 };
