@@ -60,7 +60,7 @@ const Article = () => {
     }, [id]);
 
     return (
-        <Section>
+        <Section data-testid='articlePage'>
             <VStack align='stretch' gap={32}>
                 <ArticleDetails id={+id} />
                 <ArticleRecommendations articleId={+id} />

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const Forbidden = () => {
     const { t } = useTranslation();
     return (
-        <Section>
+        <Section data-testid='forbiddenPage'>
             <Title>{t('У вас нет доступа к этой странице')}</Title>
         </Section>
     );

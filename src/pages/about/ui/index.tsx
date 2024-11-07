@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const About = () => {
     const { t } = useTranslation('about');
     return (
-        <Section>
+        <Section data-testid='aboutPage'>
             <Title>{t('O сайте')}</Title>
         </Section>
     );

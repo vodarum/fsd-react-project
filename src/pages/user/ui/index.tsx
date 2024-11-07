@@ -25,7 +25,7 @@ const User = () => {
     }
 
     return (
-        <Section>
+        <Section data-testid='userPage'>
             <Title className={cls.title}>{t('Пользователь')}</Title>
             {data ? (
                 <UserCard data={data} />

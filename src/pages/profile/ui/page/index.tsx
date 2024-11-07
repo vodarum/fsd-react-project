@@ -8,7 +8,7 @@ const Profile = () => {
     const { t } = useTranslation('profile');
 
     return (
-        <Section>
+        <Section data-testid='profilePage'>
             <Title className={cls.title}>{t('Профиль')}</Title>
             <ProfilePageContent />
         </Section>

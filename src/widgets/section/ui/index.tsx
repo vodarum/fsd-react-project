@@ -2,6 +2,7 @@ import { State } from '@/app/providers/store-provider';
 import { MutableRefObject, PropsWithChildren, useRef, UIEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { PropsWithClassName } from '@/shared/api';
 import { classNames } from '@/shared/lib/class-names';
 import {
     useAppDispatch,
@@ -12,12 +13,14 @@ import {
 import { scrollPositionActions, scrollPositionSelectors } from '../model';
 import cls from './index.module.scss';
 
-type SectionProps = PropsWithChildren & {
-    className?: string;
-    onScrollEnd?: () => void;
-};
+type SectionProps = PropsWithChildren &
+    PropsWithClassName & {
+        onScrollEnd?: () => void;
+        'data-testid'?: string;
+    };
 
-export const Section = ({ children, className, onScrollEnd }: SectionProps) => {
+export const Section = (props: SectionProps) => {
+    const { children, className, onScrollEnd, ...otherProps } = props;
     const { pathname } = useLocation();
     const dispatch = useAppDispatch();
 
@@ -53,6 +56,7 @@ export const Section = ({ children, className, onScrollEnd }: SectionProps) => {
             className={classNames(cls.section, {}, [className])}
             ref={rootRef}
             onScroll={handleScroll}
+            {...otherProps}
         >
             {children}
             <div ref={targetRef} />

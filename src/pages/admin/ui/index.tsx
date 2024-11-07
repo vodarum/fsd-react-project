@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const Admin = () => {
     const { t } = useTranslation();
     return (
-        <Section>
+        <Section data-testid='adminPage'>
             <Title>{t('Административная панель')}</Title>
         </Section>
     );

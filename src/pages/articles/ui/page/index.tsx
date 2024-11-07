@@ -48,7 +48,7 @@ const Articles = () => {
     }, []);
 
     return (
-        <Section onScrollEnd={handlePageScrollEnd}>
+        <Section onScrollEnd={handlePageScrollEnd} data-testid='articlesPage'>
             <h1 className={cls.title}>{t('Статьи')}</h1>
 
             <ArticlesFilters />
