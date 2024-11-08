@@ -7,11 +7,39 @@
     <title>Reports</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .title {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .link {
+            padding: 4px 8px;
+            border: 1px solid;
+            border-radius: 4px;
+            text-decoration-line: none;
+            transition: 0.2s ease all;
+        }
+
+        .link:hover {
+            background-color: -webkit-link;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
-    <a href="./unit/report.html">Unit</a>
-    <a href="./.loki/report.html">UI</a>
+    <h2 class="title">Reports</h2>
+    <div class="links">
+        <a href="./unit/report.html" class="link">Unit</a>
+        <a href="./.loki/report.html" class="link">UI</a>
+    </div>
 </body>
 
 </html>
