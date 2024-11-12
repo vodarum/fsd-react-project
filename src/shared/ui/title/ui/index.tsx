@@ -1,4 +1,5 @@
-import { memo, ReactNode } from 'react';
+import { memo, PropsWithChildren } from 'react';
+import { DefaultProps } from '@/shared/api';
 import { classNames } from '@/shared/lib/class-names';
 import cls from './index.module.scss';
 
@@ -13,30 +14,23 @@ const TitleLevels = {
 
 type TitleLevel = (typeof TitleLevels)[keyof typeof TitleLevels];
 
-type TitleProps = {
-    className?: string;
-    children?: ReactNode;
-    level?: TitleLevel;
-};
+type TitleProps = PropsWithChildren &
+    DefaultProps & {
+        level?: TitleLevel;
+    };
 
 const Title = memo((props: TitleProps) => {
-    const { className, children, level = 1 } = props;
-    const _className = classNames('', {}, [className, cls[`title-${level}`]]);
+    const { className, children, level = 1, ...otherProps } = props;
+    const Wrapper: keyof HTMLElementTagNameMap = `h${level}`;
 
-    switch (level) {
-        case TitleLevels.H2:
-            return <h2 className={_className}>{children}</h2>;
-        case TitleLevels.H3:
-            return <h3 className={_className}>{children}</h3>;
-        case TitleLevels.H4:
-            return <h4 className={_className}>{children}</h4>;
-        case TitleLevels.H5:
-            return <h5 className={_className}>{children}</h5>;
-        case TitleLevels.H6:
-            return <h6 className={_className}>{children}</h6>;
-        default:
-            return <h1 className={_className}>{children}</h1>;
-    }
+    return (
+        <Wrapper
+            className={classNames('', {}, [className, cls[`title-${level}`]])}
+            {...otherProps}
+        >
+            {children}
+        </Wrapper>
+    );
 });
 
 export { Title, TitleLevels };

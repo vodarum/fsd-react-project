@@ -6,11 +6,17 @@ type Country = (typeof Countries)[keyof typeof Countries];
 
 type Currency = (typeof Currencies)[keyof typeof Currencies];
 
+type DefaultProps = {
+    className?: string;
+    'data-testid'?: string;
+};
+
 type ModalOptions = {
     open?: boolean;
     onClose?: () => void;
 };
 
+// TODO: заменить на DefaultProps
 type PropsWithClassName = {
     className?: string;
 };
@@ -36,6 +42,7 @@ export type {
     AppRouteObject,
     Country,
     Currency,
+    DefaultProps,
     ModalOptions,
     NavRoute,
     PropsWithClassName,

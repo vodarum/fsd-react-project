@@ -35,6 +35,7 @@ export const Avatar = memo((props: AvatarProps) => {
             alt={alt}
             fallback={
                 <Skeleton
+                    className={className}
                     width={width}
                     height={height}
                     radius={borderRadius}

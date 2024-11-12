@@ -1,19 +1,20 @@
 import { PropsWithChildren } from 'react';
 import cls from './index.module.scss';
+import { DefaultProps } from '@/shared/api';
 import { classNames } from '@/shared/lib/class-names';
 
 type FlexJustify = 'start' | 'end' | 'center' | 'between' | 'around';
 type FlexAlign = 'start' | 'end' | 'center' | 'stretch';
 type FlexDirection = 'row' | 'column';
 type FlexGap = 4 | 8 | 16 | 32;
-type FlexProps = PropsWithChildren & {
-    className?: string;
-    justify?: FlexJustify;
-    align?: FlexAlign;
-    direction?: FlexDirection;
-    gap?: FlexGap;
-    tag?: keyof HTMLElementTagNameMap;
-};
+type FlexProps = PropsWithChildren &
+    DefaultProps & {
+        justify?: FlexJustify;
+        align?: FlexAlign;
+        direction?: FlexDirection;
+        gap?: FlexGap;
+        tag?: keyof HTMLElementTagNameMap;
+    };
 
 export const Flex = (props: FlexProps) => {
     const {
@@ -24,6 +25,7 @@ export const Flex = (props: FlexProps) => {
         direction = 'row',
         gap,
         tag = 'div',
+        ...otherProps
     } = props;
 
     const Wrapper = tag;
@@ -37,7 +39,7 @@ export const Flex = (props: FlexProps) => {
     ];
 
     return (
-        <Wrapper className={classNames(cls.flex, {}, classes)}>
+        <Wrapper className={classNames(cls.flex, {}, classes)} {...otherProps}>
             {children}
         </Wrapper>
     );
