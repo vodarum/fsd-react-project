@@ -48,6 +48,7 @@ const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
             title={t('Оцените статью')}
             feedbackTitle={t('Почему Вы поставили такую оценку?')}
             onSubmit={handleRatingSubmit}
+            data-testid='ArticleRating'
         />
     );
 });

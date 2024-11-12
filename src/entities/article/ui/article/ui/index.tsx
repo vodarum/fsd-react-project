@@ -90,11 +90,11 @@ export const Article = memo(({ className, id }: ArticleProps) => {
     }
 
     return (
-        <VStack className={className} gap={16}>
+        <VStack className={className} gap={16} data-testid='ArticleDetails'>
             <Avatar size={150} src={data?.img} className={cls.avatar} />
 
             <VStack gap={8}>
-                <Title>{data?.title}</Title>
+                <Title data-testid='ArticleDetails.title'>{data?.title}</Title>
                 <Text>{data?.subtitle}</Text>
             </VStack>
 

@@ -1,18 +1,25 @@
 import { PropsWithChildren } from 'react';
-import { type PropsWithClassName } from '@/shared/api';
+import { type DefaultProps } from '@/shared/api';
 import { classNames } from '@/shared/lib/class-names';
 import { Text } from '@/shared/ui/text';
 import cls from './index.module.scss';
 
 type CardProps = PropsWithChildren &
-    PropsWithClassName & {
+    DefaultProps & {
         title?: string;
         width?: number | string;
         bordered?: boolean;
     };
 
 export const Card = (props: CardProps) => {
-    const { className, children, title, width, bordered = true } = props;
+    const {
+        className,
+        children,
+        title,
+        width,
+        bordered = true,
+        ...otherProps
+    } = props;
 
     return (
         <div
@@ -26,6 +33,7 @@ export const Card = (props: CardProps) => {
             style={{
                 width,
             }}
+            {...otherProps}
         >
             {title && (
                 <div className={cls.header}>

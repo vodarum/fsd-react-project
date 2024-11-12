@@ -7,6 +7,7 @@ import {
     memo,
     PropsWithChildren,
 } from 'react';
+import { type DefaultProps } from '@/shared/api';
 
 const ButtonVariants = {
     clear: 'clear',
@@ -16,8 +17,8 @@ const ButtonVariants = {
 type ButtonVariant = (typeof ButtonVariants)[keyof typeof ButtonVariants];
 
 type ButtonProps = PropsWithChildren &
-    ButtonHTMLAttributes<HTMLButtonElement> & {
-        className?: string;
+    ButtonHTMLAttributes<HTMLButtonElement> &
+    DefaultProps & {
         variant?: ButtonVariant;
     };
 

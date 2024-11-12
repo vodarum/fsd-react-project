@@ -34,7 +34,7 @@ export const CommentList = memo(
             <VStack className={className} align='stretch' gap={16}>
                 <Text className={cls.title}>{t('Комментарии')}</Text>
                 {form}
-                <VStack align='stretch' gap={8}>
+                <VStack align='stretch' gap={8} data-testid='CommentList.items'>
                     {items?.length ? (
                         items.map((i) => <CommentCard key={i.id} data={i} />)
                     ) : (

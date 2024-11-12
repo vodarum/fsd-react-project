@@ -7,6 +7,7 @@ import {
     useEffect,
     useRef,
 } from 'react';
+import { type DefaultProps } from '@/shared/api';
 
 const InputVariants = {
     outlined: 'outlined',
@@ -18,13 +19,13 @@ type InputVariant = (typeof InputVariants)[keyof typeof InputVariants];
 type InputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
     'value' | 'onChange'
-> & {
-    className?: string;
-    label?: string;
-    value?: string;
-    variant?: InputVariant;
-    onChange?: (value: string) => void;
-};
+> &
+    DefaultProps & {
+        label?: string;
+        value?: string;
+        variant?: InputVariant;
+        onChange?: (value: string) => void;
+    };
 
 const Input = memo((props: InputProps) => {
     const {

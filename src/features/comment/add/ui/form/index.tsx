@@ -38,9 +38,17 @@ export const CommentForm = memo(({ className, onSubmit }: CommentFormProps) => {
     });
 
     return (
-        <div className={className}>
-            <Input value={text} onChange={handleChange} />
-            <Button className={cls.btn} onClick={handleClick}>
+        <div className={className} data-testid='CommentForm'>
+            <Input
+                value={text}
+                onChange={handleChange}
+                data-testid='CommentForm.input'
+            />
+            <Button
+                className={cls.btn}
+                onClick={handleClick}
+                data-testid='CommentForm.send'
+            >
                 {t('Отправить')}
             </Button>
         </div>

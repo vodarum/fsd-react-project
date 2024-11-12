@@ -1,6 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { PropsWithClassName } from '@/shared/api';
+import { type DefaultProps } from '@/shared/api';
 import { classNames } from '@/shared/lib/class-names';
 import { Button } from '@/shared/ui/button';
 import { Card } from '@/shared/ui/card';
@@ -12,7 +12,7 @@ import { Text } from '@/shared/ui/text';
 import cls from './index.module.scss';
 import type { Rating } from '../../model/types';
 
-type RatingCardProps = PropsWithClassName & {
+type RatingCardProps = DefaultProps & {
     data?: Rating;
     title?: string;
     feedbackTitle?: string;
@@ -20,7 +20,8 @@ type RatingCardProps = PropsWithClassName & {
 };
 
 export const RatingCard = memo((props: RatingCardProps) => {
-    const { className, data, title, feedbackTitle, onSubmit } = props;
+    const { className, data, title, feedbackTitle, onSubmit, ...otherProps } =
+        props;
     const { t } = useTranslation();
 
     const [isOpenModal, setIsOpenModal] = useState(false);
@@ -52,7 +53,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
     }, [rating, feedback, onSubmit]);
 
     return (
-        <Card className={classNames(cls.wrapper, {}, [className])}>
+        <Card
+            className={classNames(cls.wrapper, {}, [className])}
+            {...otherProps}
+        >
             {title && (
                 <Text className={cls.title} align='center'>
                     {data?.rating ? t('Ваша оценка') : title}
@@ -63,11 +67,16 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 <Modal open={isOpenModal} className={cls.modal}>
                     <VStack align='stretch' gap={8}>
                         <Text>{feedbackTitle}</Text>
-                        <Input value={feedback} onChange={setFeedback} />
+                        <Input
+                            value={feedback}
+                            onChange={setFeedback}
+                            data-testid='RatingCard.Input'
+                        />
                         <HStack justify='end' gap={8}>
                             <Button
                                 className={cls.btnClose}
                                 onClick={handleCloseBtnClick}
+                                data-testid='RatingCard.Close'
                             >
                                 {t('Закрыть')}
                             </Button>
@@ -75,6 +84,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                                 className={cls.btnSubmit}
                                 onClick={handleSubmitBtnClick}
                                 disabled={!feedback}
+                                data-testid='RatingCard.Sumbit'
                             >
                                 {t('Отправить')}
                             </Button>
