@@ -1,0 +1,10 @@
+{
+    "id": 21,
+    "title": "Test Article",
+    "subtitle": "Test Article Subtitle",
+    "views": 0,
+    "createdAt": "2024-11-11",
+    "userId": 1,
+    "type": ["IT"],
+    "blocks": []
+}

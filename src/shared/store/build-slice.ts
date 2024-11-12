@@ -27,14 +27,16 @@ export const buildSlice = <
     Selectors extends SliceSelectors<State>,
     ReducerPath extends string = Name,
 >(
-    options: CreateSliceOptions< // eslint-disable-line indent
+    // eslint-disable-next-line indent
+    options: CreateSliceOptions<
         State,
         CaseReducers,
         Name,
         ReducerPath,
         Selectors
     >,
-): BuildSliceResult<State, CaseReducers, Name, ReducerPath, Selectors> => { // eslint-disable-line indent
+    // eslint-disable-next-line indent
+): BuildSliceResult<State, CaseReducers, Name, ReducerPath, Selectors> => {
     const slice = createSlice(options);
     const useActions = () => {
         const dispatch = useAppDispatch();
