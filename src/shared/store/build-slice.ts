@@ -27,7 +27,6 @@ export const buildSlice = <
     Selectors extends SliceSelectors<State>,
     ReducerPath extends string = Name,
 >(
-    // eslint-disable-next-line indent
     options: CreateSliceOptions<
         State,
         CaseReducers,
@@ -35,7 +34,6 @@ export const buildSlice = <
         ReducerPath,
         Selectors
     >,
-    // eslint-disable-next-line indent
 ): BuildSliceResult<State, CaseReducers, Name, ReducerPath, Selectors> => {
     const slice = createSlice(options);
     const useActions = () => {

@@ -37,7 +37,7 @@ export const UserMenuButton = ({ className }: UserMenuButtonProps) => {
                           content: t('Админ панель'),
                           to: '/admin',
                       } as DropdownItem,
-                ]
+                  ]
                 : []),
         ],
         [t, handleLogoutClick, hasRole],

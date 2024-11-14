@@ -1,5 +1,6 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
+import eslintConfigPrettier from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 import pluginI18next from 'eslint-plugin-i18next';
@@ -85,4 +86,5 @@ export default [
             },
         },
     },
+    eslintConfigPrettier,
 ];

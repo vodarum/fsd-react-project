@@ -30,11 +30,11 @@ export const buildBabelLoader = ({
                 '@babel/plugin-transform-runtime',
                 isTSX &&
                     !isDev && [
-                    babelAttributeExtractPlugin,
-                    {
-                        attrs: ['data-testid'],
-                    },
-                ],
+                        babelAttributeExtractPlugin,
+                        {
+                            attrs: ['data-testid'],
+                        },
+                    ],
             ].filter(Boolean),
         },
     },

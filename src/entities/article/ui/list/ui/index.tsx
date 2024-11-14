@@ -45,13 +45,13 @@ export const ArticleList = memo(
             <div className={classNames(cls[view], {}, [className])}>
                 {items.length
                     ? items.map((i) => (
-                        <ArticleCard
-                            key={i.id}
-                            data={i}
-                            view={view}
-                            openInNewTab={openInNewTab}
-                        />
-                    ))
+                          <ArticleCard
+                              key={i.id}
+                              data={i}
+                              view={view}
+                              openInNewTab={openInNewTab}
+                          />
+                      ))
                     : null}
                 {loading && getAticleListSkeleton(view)}
             </div>
