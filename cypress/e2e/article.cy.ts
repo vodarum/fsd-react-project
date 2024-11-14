@@ -36,7 +36,10 @@ describe('article', () => {
 
         beforeEach(() => {
             cy.fixture('article.json').then((json) => {
-                cy.intercept('GET', '**/articles/*', { ...json, id: articleId, });
+                cy.intercept('GET', '**/articles/*', {
+                    ...json,
+                    id: articleId,
+                });
             });
         });
 
